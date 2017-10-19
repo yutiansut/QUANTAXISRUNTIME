@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+//import "stock_day.proto";
+// .\protoc.exe --python_out .  --proto_path . --grpc_out . --plugin=protoc-gen-grpc=.\grp c_csharp_plugin.exe .\stock_hq.proto
+import "stock_min.proto";
+
+service StockHQService {
+
+    rpc ListFeatures (stock_min) returns (stream stock_min);
+    //rpc RouteChat (stream long) returns (stream long_hq);
+  }
+  
+
+
+
