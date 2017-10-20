@@ -6,6 +6,9 @@ import grpc
 import stock_hq_pb2
 import stock_hq_pb2_grpc
 import stock_min_pb2
+from fetcher import QA_Fetcher
+
+
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
@@ -14,7 +17,7 @@ class StockHQService(stock_hq_pb2_grpc.StockHQServiceServicer):
 
   def QA_fetch_get(self, request, context):
     #print(request.code)
-    return stock_min_pb2.stock_min(code=request.code)
+    return QA_Fetcher(request.code,request.type)
 
 
 def serve():

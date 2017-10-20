@@ -11,7 +11,7 @@ def run():
   channel = grpc.insecure_channel('localhost:50052')
   stub = stock_hq_pb2_grpc.StockHQServiceStub(channel)
   response = stub.QA_fetch_get(stock_hq_pb2.Query(code='600010',type='1min'))
-  print("Greeter client received: " + response.code)
+  print([response.code,response.open,response.high,response.low,response.close])
 
 
 if __name__ == '__main__':
