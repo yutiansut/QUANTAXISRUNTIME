@@ -1,4 +1,6 @@
 syntax="proto3";
+
+package QUANTAXIS_STOCK_MIN;
 message stock_min{
  string code=1; 
  float open=2;
@@ -11,5 +13,6 @@ message stock_min{
  string date_stamp=9;
  string datetime =10;
  string time_stamp =11;
+ string message = 12;
 
 }

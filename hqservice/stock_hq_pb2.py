@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='stock_hq.proto',
   package='stock_hq',
   syntax='proto3',
-  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2A\n\x0eStockHQService\x12/\n\x0cQA_fetch_get\x12\x0f.stock_hq.Query\x1a\n.stock_min(\x01\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2Q\n\x0eStockHQService\x12?\n\x0cQA_fetch_get\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_minb\x06proto3')
   ,
   dependencies=[stock__min__pb2.DESCRIPTOR,])
 
@@ -83,7 +83,7 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   options=None,
   serialized_start=82,
-  serialized_end=147,
+  serialized_end=163,
   methods=[
   _descriptor.MethodDescriptor(
     name='QA_fetch_get',
@@ -119,7 +119,7 @@ try:
       Args:
         channel: A grpc.Channel.
       """
-      self.QA_fetch_get = channel.stream_stream(
+      self.QA_fetch_get = channel.unary_unary(
           '/stock_hq.StockHQService/QA_fetch_get',
           request_serializer=Query.SerializeToString,
           response_deserializer=stock__min__pb2.stock_min.FromString,
@@ -130,7 +130,7 @@ try:
     # missing associated documentation comment in .proto file
     pass
 
-    def QA_fetch_get(self, request_iterator, context):
+    def QA_fetch_get(self, request, context):
       # missing associated documentation comment in .proto file
       pass
       context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -140,7 +140,7 @@ try:
 
   def add_StockHQServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-        'QA_fetch_get': grpc.stream_stream_rpc_method_handler(
+        'QA_fetch_get': grpc.unary_unary_rpc_method_handler(
             servicer.QA_fetch_get,
             request_deserializer=Query.FromString,
             response_serializer=stock__min__pb2.stock_min.SerializeToString,
@@ -159,7 +159,7 @@ try:
     only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
     # missing associated documentation comment in .proto file
     pass
-    def QA_fetch_get(self, request_iterator, context):
+    def QA_fetch_get(self, request, context):
       # missing associated documentation comment in .proto file
       pass
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
@@ -173,10 +173,11 @@ try:
     only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
     # missing associated documentation comment in .proto file
     pass
-    def QA_fetch_get(self, request_iterator, timeout, metadata=None, with_call=False, protocol_options=None):
+    def QA_fetch_get(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
       # missing associated documentation comment in .proto file
       pass
       raise NotImplementedError()
+    QA_fetch_get.future = None
 
 
   def beta_create_StockHQService_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
@@ -192,7 +193,7 @@ try:
       ('stock_hq.StockHQService', 'QA_fetch_get'): stock__min__pb2.stock_min.SerializeToString,
     }
     method_implementations = {
-      ('stock_hq.StockHQService', 'QA_fetch_get'): face_utilities.stream_stream_inline(servicer.QA_fetch_get),
+      ('stock_hq.StockHQService', 'QA_fetch_get'): face_utilities.unary_unary_inline(servicer.QA_fetch_get),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
     return beta_implementations.server(method_implementations, options=server_options)
@@ -211,7 +212,7 @@ try:
       ('stock_hq.StockHQService', 'QA_fetch_get'): stock__min__pb2.stock_min.FromString,
     }
     cardinalities = {
-      'QA_fetch_get': cardinality.Cardinality.STREAM_STREAM,
+      'QA_fetch_get': cardinality.Cardinality.UNARY_UNARY,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
     return beta_implementations.dynamic_stub(channel, 'stock_hq.StockHQService', cardinalities, options=stub_options)

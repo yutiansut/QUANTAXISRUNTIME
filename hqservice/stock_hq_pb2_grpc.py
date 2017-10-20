@@ -15,7 +15,7 @@ class StockHQServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.QA_fetch_get = channel.stream_stream(
+    self.QA_fetch_get = channel.unary_unary(
         '/stock_hq.StockHQService/QA_fetch_get',
         request_serializer=stock__hq__pb2.Query.SerializeToString,
         response_deserializer=stock__min__pb2.stock_min.FromString,
@@ -26,7 +26,7 @@ class StockHQServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
-  def QA_fetch_get(self, request_iterator, context):
+  def QA_fetch_get(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -36,7 +36,7 @@ class StockHQServiceServicer(object):
 
 def add_StockHQServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'QA_fetch_get': grpc.stream_stream_rpc_method_handler(
+      'QA_fetch_get': grpc.unary_unary_rpc_method_handler(
           servicer.QA_fetch_get,
           request_deserializer=stock__hq__pb2.Query.FromString,
           response_serializer=stock__min__pb2.stock_min.SerializeToString,
