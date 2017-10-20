@@ -11,16 +11,9 @@ def __select_market_code(code):
     return 0
 
 
-def change(pack, code):
-    data = hq_struct()
-    data.open = pack[0]['open']
-    data.close = pack[0]['close']
-    data.high = pack[0]['high']
-    data.low = pack[0]['low']
-    data.code = str(code)[0:6]
-    data.volume = pack[0]['vol']
-    return data
+
 def changer(pack, code):
+    print(pack)
     data = hq_struct()
     data.open = pack['open']
     data.close = pack['close']
@@ -28,16 +21,18 @@ def changer(pack, code):
     data.low = pack['low']
     data.code = str(code)[0:6]
     data.volume = pack['vol']
+    data.datetime= pack['datetime']
+
     return data
 
 def single_task(code, timeout=100):
     api = TdxHq_API()
     api.connect('115.238.90.165', 7709)
     market = __select_market_code(code)
-    res = api.get_security_bars(1, market, code, 0, 1)
+    res = api.get_security_bars(1, market, code, 0, 1)[0]
     #re=[change(x,code) for x in res]
     #res=api.get_security_quotes([(__select_market_code(code), code)])
-    return change(res, code)
+    return changer(res, code)
 def multiple_task(code, timeout=100):
     api = TdxHq_API()
     api.connect('115.238.90.165', 7709)

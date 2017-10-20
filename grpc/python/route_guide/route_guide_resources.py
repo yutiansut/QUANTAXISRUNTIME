@@ -35,4 +35,7 @@ def read_route_guide_database():
               latitude=item["location"]["latitude"],
               longitude=item["location"]["longitude"]))
       feature_list.append(feature)
+
+    print(feature_list)
+    input()
   return feature_list

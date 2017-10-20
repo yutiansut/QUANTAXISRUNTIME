@@ -66,7 +66,7 @@ def generate_route(feature_list):
     random_feature = feature_list[random.randint(0, len(feature_list) - 1)]
     print("Visiting point %s" % random_feature.location)
     yield random_feature.location
-    time.sleep(random.uniform(0.5, 1.5))
+    #time.sleep(random.uniform(0.5, 1.5))
 
 
 def guide_record_route(stub):
@@ -74,10 +74,10 @@ def guide_record_route(stub):
 
   route_iterator = generate_route(feature_list)
   route_summary = stub.RecordRoute(route_iterator)
-  print("Finished trip with %s points " % route_summary.point_count)
-  print("Passed %s features " % route_summary.feature_count)
-  print("Travelled %s meters " % route_summary.distance)
-  print("It took %s seconds " % route_summary.elapsed_time)
+  #print("Finished trip with %s points " % route_summary.point_count)
+  #print("Passed %s features " % route_summary.feature_count)
+  #print("Travelled %s meters " % route_summary.distance)
+  #print("It took %s seconds " % route_summary.elapsed_time)
 
 
 def generate_messages():
@@ -103,14 +103,14 @@ def guide_route_chat(stub):
 def run():
   channel = grpc.insecure_channel('localhost:50051')
   stub = route_guide_pb2_grpc.RouteGuideStub(channel)
-  print("-------------- GetFeature --------------")
-  guide_get_feature(stub)
-  print("-------------- ListFeatures --------------")
-  guide_list_features(stub)
-  print("-------------- RecordRoute --------------")
+  #print("-------------- GetFeature --------------")
+  #guide_get_feature(stub)
+  #print("-------------- ListFeatures --------------")
+  #guide_list_features(stub)
+  #print("-------------- RecordRoute --------------")
   guide_record_route(stub)
-  print("-------------- RouteChat --------------")
-  guide_route_chat(stub)
+  #print("-------------- RouteChat --------------")
+  #guide_route_chat(stub)
 
 
 if __name__ == '__main__':
