@@ -3,21 +3,21 @@ import time
 
 import grpc
 
-import helloworld_pb2
-import helloworld_pb2_grpc
+import stock_hq_pb2
+import stock_hq_pb2_grpc
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 
-class Greeter(helloworld_pb2_grpc.GreeterServicer):
+class StockHQService(stock_hq_pb2_grpc.StockHQServiceServicer):
 
   def SayHello(self, request, context):
-    return helloworld_pb2.HelloReply(message='Hello, %s!' % request.name)
+    return stock_hq_pb2.Query(message='Hello, %s!' % request.code)
 
 
 def serve():
   server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-  helloworld_pb2_grpc.add_GreeterServicer_to_server(Greeter(), server)
+  stock_hq_pb2_grpc.add_StockHQServiceServicer_to_server(StockHQService(), server)
   server.add_insecure_port('[::]:50051')
   server.start()
   try:
