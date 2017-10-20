@@ -29,7 +29,7 @@ def gen():
 def p2p():
     channel = grpc.insecure_channel('192.168.4.239:50052')
     stub = stock_hq_pb2_grpc.StockHQServiceStub(channel)
-    response = stub.QA_fetch_get(
+    response = stub.QA_fetch_p2p(
         stock_hq_pb2.Query(code='601801', type='1min'))
     print(response.code, response.open,
           response.high, response.low, response.close)
@@ -38,7 +38,7 @@ def p2p():
 def p2s():
     channel = grpc.insecure_channel('192.168.4.239:50052')
     stub = stock_hq_pb2_grpc.StockHQServiceStub(channel)
-    resp = stub.QA_fetch_conn(stock_hq_pb2.Query(code='601801', type='1min'))
+    resp = stub.QA_fetch_p2s(stock_hq_pb2.Query(code='601801', type='1min'))
     print([(response.code, response.open, response.high,
             response.low, response.close) for response in resp])
 
@@ -46,7 +46,7 @@ def p2s():
 def s2s():
     channel = grpc.insecure_channel('192.168.4.239:50052')
     stub = stock_hq_pb2_grpc.StockHQServiceStub(channel)
-    resp = stub.QA_fetch_multi(gen())
+    resp = stub.QA_fetch_s2s(gen())
     #response = stub.QA_fetch_get(stock_hq_pb2.Query(code='601801',type='1min'))
     print([(response.code, response.open, response.high,
             response.low, response.close) for response in resp])
