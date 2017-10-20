@@ -9,6 +9,8 @@ import stock_hq_pb2_grpc
 stock_list=['000001','000002','000004','600010']
 
 
+
+
 def gen():
     for item in stock_list:
         yield stock_hq_pb2.Query(code=item,type='1min')
