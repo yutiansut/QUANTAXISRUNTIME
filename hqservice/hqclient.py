@@ -10,7 +10,7 @@ import stock_hq_pb2_grpc
 def run():
   channel = grpc.insecure_channel('localhost:50052')
   stub = stock_hq_pb2_grpc.StockHQServiceStub(channel)
-  response = stub.QA_fetch_get(stock_hq_pb2.Query(code='600010',type='1min'))
+  response = stub.QA_fetch_get(stock_hq_pb2.Query(code='601801',type='1min'))
   print([response.code,response.open,response.high,response.low,response.close])
 
 

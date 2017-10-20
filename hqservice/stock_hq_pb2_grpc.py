@@ -20,6 +20,11 @@ class StockHQServiceStub(object):
         request_serializer=stock__hq__pb2.Query.SerializeToString,
         response_deserializer=stock__min__pb2.stock_min.FromString,
         )
+    self.QA_fetch_conn = channel.unary_stream(
+        '/stock_hq.StockHQService/QA_fetch_conn',
+        request_serializer=stock__hq__pb2.Query.SerializeToString,
+        response_deserializer=stock__min__pb2.stock_min.FromString,
+        )
 
 
 class StockHQServiceServicer(object):
@@ -33,11 +38,23 @@ class StockHQServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def QA_fetch_conn(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_StockHQServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'QA_fetch_get': grpc.unary_unary_rpc_method_handler(
           servicer.QA_fetch_get,
+          request_deserializer=stock__hq__pb2.Query.FromString,
+          response_serializer=stock__min__pb2.stock_min.SerializeToString,
+      ),
+      'QA_fetch_conn': grpc.unary_stream_rpc_method_handler(
+          servicer.QA_fetch_conn,
           request_deserializer=stock__hq__pb2.Query.FromString,
           response_serializer=stock__min__pb2.stock_min.SerializeToString,
       ),

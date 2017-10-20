@@ -10,7 +10,6 @@ def __select_market_code(code):
 
 
 def change(pack,code):
-    print(pack[0]['open'])
     data=stock_min()
     data.open=pack[0]['open']
     data.close=pack[0]['close']
@@ -27,7 +26,6 @@ def task(code, timeout=100):
     api.connect('115.238.90.165', 7709)
     market = __select_market_code(code)
     res = api.get_security_bars(1, market, code, 0,1)
-    print(res)
     #re=[change(x,code) for x in res]
     #res=api.get_security_quotes([(__select_market_code(code), code)])
     return change(res,code)
@@ -45,9 +43,7 @@ def QA_Fetcher(code,type_):
         for f in as_completed(future_tasks):
             try:
                 if f.done():
-                    #print(f.result())
                     data=f.result()
-                    print(data)
                     return data
             except Exception as e:
                 f.cancel()

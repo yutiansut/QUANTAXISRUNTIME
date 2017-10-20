@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='stock_hq.proto',
   package='stock_hq',
   syntax='proto3',
-  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2Q\n\x0eStockHQService\x12?\n\x0cQA_fetch_get\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_minb\x06proto3')
+  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2\x95\x01\n\x0eStockHQService\x12?\n\x0cQA_fetch_get\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min\x12\x42\n\rQA_fetch_conn\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min0\x01\x62\x06proto3')
   ,
   dependencies=[stock__min__pb2.DESCRIPTOR,])
 
@@ -82,13 +82,22 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=82,
-  serialized_end=163,
+  serialized_start=83,
+  serialized_end=232,
   methods=[
   _descriptor.MethodDescriptor(
     name='QA_fetch_get',
     full_name='stock_hq.StockHQService.QA_fetch_get',
     index=0,
+    containing_service=None,
+    input_type=_QUERY,
+    output_type=stock__min__pb2._STOCK_MIN,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='QA_fetch_conn',
+    full_name='stock_hq.StockHQService.QA_fetch_conn',
+    index=1,
     containing_service=None,
     input_type=_QUERY,
     output_type=stock__min__pb2._STOCK_MIN,
@@ -124,6 +133,11 @@ try:
           request_serializer=Query.SerializeToString,
           response_deserializer=stock__min__pb2.stock_min.FromString,
           )
+      self.QA_fetch_conn = channel.unary_stream(
+          '/stock_hq.StockHQService/QA_fetch_conn',
+          request_serializer=Query.SerializeToString,
+          response_deserializer=stock__min__pb2.stock_min.FromString,
+          )
 
 
   class StockHQServiceServicer(object):
@@ -137,11 +151,23 @@ try:
       context.set_details('Method not implemented!')
       raise NotImplementedError('Method not implemented!')
 
+    def QA_fetch_conn(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
 
   def add_StockHQServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
         'QA_fetch_get': grpc.unary_unary_rpc_method_handler(
             servicer.QA_fetch_get,
+            request_deserializer=Query.FromString,
+            response_serializer=stock__min__pb2.stock_min.SerializeToString,
+        ),
+        'QA_fetch_conn': grpc.unary_stream_rpc_method_handler(
+            servicer.QA_fetch_conn,
             request_deserializer=Query.FromString,
             response_serializer=stock__min__pb2.stock_min.SerializeToString,
         ),
@@ -163,6 +189,10 @@ try:
       # missing associated documentation comment in .proto file
       pass
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def QA_fetch_conn(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
 
 
   class BetaStockHQServiceStub(object):
@@ -178,6 +208,10 @@ try:
       pass
       raise NotImplementedError()
     QA_fetch_get.future = None
+    def QA_fetch_conn(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
 
 
   def beta_create_StockHQService_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
@@ -187,12 +221,15 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
+      ('stock_hq.StockHQService', 'QA_fetch_conn'): Query.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_get'): Query.FromString,
     }
     response_serializers = {
+      ('stock_hq.StockHQService', 'QA_fetch_conn'): stock__min__pb2.stock_min.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_get'): stock__min__pb2.stock_min.SerializeToString,
     }
     method_implementations = {
+      ('stock_hq.StockHQService', 'QA_fetch_conn'): face_utilities.unary_stream_inline(servicer.QA_fetch_conn),
       ('stock_hq.StockHQService', 'QA_fetch_get'): face_utilities.unary_unary_inline(servicer.QA_fetch_get),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
@@ -206,12 +243,15 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
+      ('stock_hq.StockHQService', 'QA_fetch_conn'): Query.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_get'): Query.SerializeToString,
     }
     response_deserializers = {
+      ('stock_hq.StockHQService', 'QA_fetch_conn'): stock__min__pb2.stock_min.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_get'): stock__min__pb2.stock_min.FromString,
     }
     cardinalities = {
+      'QA_fetch_conn': cardinality.Cardinality.UNARY_STREAM,
       'QA_fetch_get': cardinality.Cardinality.UNARY_UNARY,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
