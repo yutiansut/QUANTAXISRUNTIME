@@ -8,10 +8,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using grpc = global::Grpc.Core;
 
-namespace  {
+namespace StockHq {
   public static partial class StockHQService
   {
-    static readonly string __ServiceName = "StockHQService";
+    static readonly string __ServiceName = "stock_hq.StockHQService";
 
     static readonly grpc::Marshaller<global::stock_min> __Marshaller_stock_min = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::stock_min.Parser.ParseFrom);
 
@@ -25,7 +25,7 @@ namespace  {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::StockHqReflection.Descriptor.Services[0]; }
+      get { return global::StockHq.StockHqReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of StockHQService</summary>

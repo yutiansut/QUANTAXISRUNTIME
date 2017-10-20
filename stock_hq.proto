@@ -1,8 +1,10 @@
 syntax = "proto3";
 
 //import "stock_day.proto";
-// .\protoc.exe --python_out .  --proto_path . --grpc_out . --plugin=protoc-gen-grpc=.\grp c_csharp_plugin.exe .\stock_hq.proto
+// .\protoc.exe --python_out .  --proto_path . --grpc_out . --plugin=protoc-gen-grpc=.\grpc_csharp_plugin.exe .\stock_hq.proto
 import "stock_min.proto";
+
+package stock_hq;
 
 service StockHQService {
 
@@ -11,5 +13,10 @@ service StockHQService {
   }
   
 
+
+message Query{
+  string type =1;
+  string code =2;
+}
 
 

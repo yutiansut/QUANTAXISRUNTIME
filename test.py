@@ -7,6 +7,7 @@ from concurrent.futures import wait, as_completed
 from pytdx.hq import TdxHq_API
 import tushare as ts
 import asyncio
+import datetime
 from stock_min_pb2 import stock_min
 def __select_market_code(code):
     code = str(code)
@@ -15,15 +16,16 @@ def __select_market_code(code):
     return 0
 
 
-CODE = ts.get_hs300s()['code'].tolist()
+CODE = ts.get_hs300s()['code'].tolist()[0:2]
 
 #@asyncio.coroutine
-def change(pack):
+def change(pack,code):
     data=stock_min()
     data.open=pack['open']
     data.close=pack['close']
     data.high=pack['high']
     data.low=pack['low']
+    data.code=str(code)[0:6]
     return data
 
 
@@ -33,10 +35,8 @@ def task(code, timeout=100):
     api = TdxHq_API()
     api.connect('115.238.90.165', 7709)
     market = __select_market_code(code)
-    # print('get'+code+','+str(market))
-    #print(api.get_security_bars(5,market,code,0,1) )
-    res = api.get_security_bars(1, market, code, 0, 800)
-    re=[change(x) for x in res]
+    res = api.get_security_bars(1, market, code, 0, 2)
+    re=[change(x,code) for x in res]
     #res=api.get_security_quotes([(__select_market_code(code), code)])
     return re
 
@@ -67,7 +67,8 @@ with Pool(max_workers=40) as executor:
 
 
 #api = TdxHq_API()
-#print(data)
+print(data)
+print([type(data_) for data_ in data])
 #dt=[change(x) for x in data]
 print(datetime.datetime.now() - a)
 #print(dt)
