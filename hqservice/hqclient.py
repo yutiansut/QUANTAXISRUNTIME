@@ -28,7 +28,17 @@ class QA_Runtime_client:
         self.channel = grpc.insecure_channel('192.168.4.239:50052')
         self.stub = stock_hq_pb2_grpc.StockHQServiceStub(self.channel)
 
-    def connect(self,channel):
+    def _generator(self, stock_list, type_list):
+
+        type_list = type_list if isinstance(type_list, list) else [type_list]
+        stock_list = stock_list if isinstance(
+            stock_list, list) else [stock_list]
+
+        for item in type_list:
+            for code in stock_list:
+                yield stock_hq_pb2.query_struct(code=code, type=item)
+
+    def connect(self, channel):
         self.channel = grpc.insecure_channel(channel)
         self.stub = stock_hq_pb2_grpc.StockHQServiceStub(self.channel)
 
@@ -46,19 +56,17 @@ class QA_Runtime_client:
 
     def s2s(self):
         resp = self.stub.QA_fetch_s2s(gen())
-        #response = stub.QA_fetch_get(stock_hq_pb2.query_struct(code='601801',type='1min'))
         print([(response.code, response.open, response.high,
                 response.low, response.close, response.datetime) for response in resp])
 
-    def _generator(self,stock_list,type_list):
-        for item in type_list:
-            for code in stock_list:
-                yield stock_hq_pb2.query_struct(code=code, type=item)
-
-    def subscribe(self,code,type='1min'):
+    # 订阅(直到结束)
+    def subscribe(self, code, type='1min'):
         pass
+    # 取消订阅
+
     def unsubscribe(self):
         pass
+
 
 if __name__ == '__main__':
     QA_Runtime_client().s2s()
