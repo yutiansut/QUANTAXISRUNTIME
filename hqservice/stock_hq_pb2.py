@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='stock_hq.proto',
   package='stock_hq',
   syntax='proto3',
-  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2\xdc\x01\n\x0eStockHQService\x12?\n\x0cQA_fetch_get\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min\x12\x42\n\rQA_fetch_conn\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min0\x01\x12\x45\n\x0eQA_fetch_multi\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min(\x01\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2\x9c\x02\n\x0eStockHQService\x12?\n\x0cQA_fetch_p2p\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min\x12\x41\n\x0cQA_fetch_p2s\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min0\x01\x12\x43\n\x0cQA_fetch_s2s\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min(\x01\x30\x01\x12\x41\n\x0cQA_fetch_s2p\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min(\x01\x62\x06proto3')
   ,
   dependencies=[stock__min__pb2.DESCRIPTOR,])
 
@@ -83,11 +83,11 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   options=None,
   serialized_start=83,
-  serialized_end=303,
+  serialized_end=367,
   methods=[
   _descriptor.MethodDescriptor(
-    name='QA_fetch_get',
-    full_name='stock_hq.StockHQService.QA_fetch_get',
+    name='QA_fetch_p2p',
+    full_name='stock_hq.StockHQService.QA_fetch_p2p',
     index=0,
     containing_service=None,
     input_type=_QUERY,
@@ -95,8 +95,8 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
     options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='QA_fetch_conn',
-    full_name='stock_hq.StockHQService.QA_fetch_conn',
+    name='QA_fetch_p2s',
+    full_name='stock_hq.StockHQService.QA_fetch_p2s',
     index=1,
     containing_service=None,
     input_type=_QUERY,
@@ -104,9 +104,18 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
     options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='QA_fetch_multi',
-    full_name='stock_hq.StockHQService.QA_fetch_multi',
+    name='QA_fetch_s2s',
+    full_name='stock_hq.StockHQService.QA_fetch_s2s',
     index=2,
+    containing_service=None,
+    input_type=_QUERY,
+    output_type=stock__min__pb2._STOCK_MIN,
+    options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='QA_fetch_s2p',
+    full_name='stock_hq.StockHQService.QA_fetch_s2p',
+    index=3,
     containing_service=None,
     input_type=_QUERY,
     output_type=stock__min__pb2._STOCK_MIN,
@@ -137,18 +146,23 @@ try:
       Args:
         channel: A grpc.Channel.
       """
-      self.QA_fetch_get = channel.unary_unary(
-          '/stock_hq.StockHQService/QA_fetch_get',
+      self.QA_fetch_p2p = channel.unary_unary(
+          '/stock_hq.StockHQService/QA_fetch_p2p',
           request_serializer=Query.SerializeToString,
           response_deserializer=stock__min__pb2.stock_min.FromString,
           )
-      self.QA_fetch_conn = channel.unary_stream(
-          '/stock_hq.StockHQService/QA_fetch_conn',
+      self.QA_fetch_p2s = channel.unary_stream(
+          '/stock_hq.StockHQService/QA_fetch_p2s',
           request_serializer=Query.SerializeToString,
           response_deserializer=stock__min__pb2.stock_min.FromString,
           )
-      self.QA_fetch_multi = channel.stream_stream(
-          '/stock_hq.StockHQService/QA_fetch_multi',
+      self.QA_fetch_s2s = channel.stream_stream(
+          '/stock_hq.StockHQService/QA_fetch_s2s',
+          request_serializer=Query.SerializeToString,
+          response_deserializer=stock__min__pb2.stock_min.FromString,
+          )
+      self.QA_fetch_s2p = channel.stream_unary(
+          '/stock_hq.StockHQService/QA_fetch_s2p',
           request_serializer=Query.SerializeToString,
           response_deserializer=stock__min__pb2.stock_min.FromString,
           )
@@ -158,21 +172,28 @@ try:
     # missing associated documentation comment in .proto file
     pass
 
-    def QA_fetch_get(self, request, context):
+    def QA_fetch_p2p(self, request, context):
       # missing associated documentation comment in .proto file
       pass
       context.set_code(grpc.StatusCode.UNIMPLEMENTED)
       context.set_details('Method not implemented!')
       raise NotImplementedError('Method not implemented!')
 
-    def QA_fetch_conn(self, request, context):
+    def QA_fetch_p2s(self, request, context):
       # missing associated documentation comment in .proto file
       pass
       context.set_code(grpc.StatusCode.UNIMPLEMENTED)
       context.set_details('Method not implemented!')
       raise NotImplementedError('Method not implemented!')
 
-    def QA_fetch_multi(self, request_iterator, context):
+    def QA_fetch_s2s(self, request_iterator, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+    def QA_fetch_s2p(self, request_iterator, context):
       """rpc RouteChat (stream long) returns (stream long_hq);
       """
       context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -182,18 +203,23 @@ try:
 
   def add_StockHQServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-        'QA_fetch_get': grpc.unary_unary_rpc_method_handler(
-            servicer.QA_fetch_get,
+        'QA_fetch_p2p': grpc.unary_unary_rpc_method_handler(
+            servicer.QA_fetch_p2p,
             request_deserializer=Query.FromString,
             response_serializer=stock__min__pb2.stock_min.SerializeToString,
         ),
-        'QA_fetch_conn': grpc.unary_stream_rpc_method_handler(
-            servicer.QA_fetch_conn,
+        'QA_fetch_p2s': grpc.unary_stream_rpc_method_handler(
+            servicer.QA_fetch_p2s,
             request_deserializer=Query.FromString,
             response_serializer=stock__min__pb2.stock_min.SerializeToString,
         ),
-        'QA_fetch_multi': grpc.stream_stream_rpc_method_handler(
-            servicer.QA_fetch_multi,
+        'QA_fetch_s2s': grpc.stream_stream_rpc_method_handler(
+            servicer.QA_fetch_s2s,
+            request_deserializer=Query.FromString,
+            response_serializer=stock__min__pb2.stock_min.SerializeToString,
+        ),
+        'QA_fetch_s2p': grpc.stream_unary_rpc_method_handler(
+            servicer.QA_fetch_s2p,
             request_deserializer=Query.FromString,
             response_serializer=stock__min__pb2.stock_min.SerializeToString,
         ),
@@ -211,15 +237,19 @@ try:
     only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
     # missing associated documentation comment in .proto file
     pass
-    def QA_fetch_get(self, request, context):
+    def QA_fetch_p2p(self, request, context):
       # missing associated documentation comment in .proto file
       pass
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def QA_fetch_conn(self, request, context):
+    def QA_fetch_p2s(self, request, context):
       # missing associated documentation comment in .proto file
       pass
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def QA_fetch_multi(self, request_iterator, context):
+    def QA_fetch_s2s(self, request_iterator, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def QA_fetch_s2p(self, request_iterator, context):
       """rpc RouteChat (stream long) returns (stream long_hq);
       """
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
@@ -233,19 +263,24 @@ try:
     only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
     # missing associated documentation comment in .proto file
     pass
-    def QA_fetch_get(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+    def QA_fetch_p2p(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
       # missing associated documentation comment in .proto file
       pass
       raise NotImplementedError()
-    QA_fetch_get.future = None
-    def QA_fetch_conn(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+    QA_fetch_p2p.future = None
+    def QA_fetch_p2s(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
       # missing associated documentation comment in .proto file
       pass
       raise NotImplementedError()
-    def QA_fetch_multi(self, request_iterator, timeout, metadata=None, with_call=False, protocol_options=None):
+    def QA_fetch_s2s(self, request_iterator, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
+    def QA_fetch_s2p(self, request_iterator, timeout, metadata=None, with_call=False, protocol_options=None):
       """rpc RouteChat (stream long) returns (stream long_hq);
       """
       raise NotImplementedError()
+    QA_fetch_s2p.future = None
 
 
   def beta_create_StockHQService_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
@@ -255,19 +290,22 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_conn'): Query.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_get'): Query.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_multi'): Query.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): Query.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): Query.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): Query.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): Query.FromString,
     }
     response_serializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_conn'): stock__min__pb2.stock_min.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_get'): stock__min__pb2.stock_min.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_multi'): stock__min__pb2.stock_min.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): stock__min__pb2.stock_min.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): stock__min__pb2.stock_min.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): stock__min__pb2.stock_min.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): stock__min__pb2.stock_min.SerializeToString,
     }
     method_implementations = {
-      ('stock_hq.StockHQService', 'QA_fetch_conn'): face_utilities.unary_stream_inline(servicer.QA_fetch_conn),
-      ('stock_hq.StockHQService', 'QA_fetch_get'): face_utilities.unary_unary_inline(servicer.QA_fetch_get),
-      ('stock_hq.StockHQService', 'QA_fetch_multi'): face_utilities.stream_stream_inline(servicer.QA_fetch_multi),
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): face_utilities.unary_unary_inline(servicer.QA_fetch_p2p),
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): face_utilities.unary_stream_inline(servicer.QA_fetch_p2s),
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): face_utilities.stream_unary_inline(servicer.QA_fetch_s2p),
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): face_utilities.stream_stream_inline(servicer.QA_fetch_s2s),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
     return beta_implementations.server(method_implementations, options=server_options)
@@ -280,19 +318,22 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_conn'): Query.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_get'): Query.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_multi'): Query.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): Query.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): Query.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): Query.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): Query.SerializeToString,
     }
     response_deserializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_conn'): stock__min__pb2.stock_min.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_get'): stock__min__pb2.stock_min.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_multi'): stock__min__pb2.stock_min.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): stock__min__pb2.stock_min.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): stock__min__pb2.stock_min.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): stock__min__pb2.stock_min.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): stock__min__pb2.stock_min.FromString,
     }
     cardinalities = {
-      'QA_fetch_conn': cardinality.Cardinality.UNARY_STREAM,
-      'QA_fetch_get': cardinality.Cardinality.UNARY_UNARY,
-      'QA_fetch_multi': cardinality.Cardinality.STREAM_STREAM,
+      'QA_fetch_p2p': cardinality.Cardinality.UNARY_UNARY,
+      'QA_fetch_p2s': cardinality.Cardinality.UNARY_STREAM,
+      'QA_fetch_s2p': cardinality.Cardinality.STREAM_UNARY,
+      'QA_fetch_s2s': cardinality.Cardinality.STREAM_STREAM,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
     return beta_implementations.dynamic_stub(channel, 'stock_hq.StockHQService', cardinalities, options=stub_options)

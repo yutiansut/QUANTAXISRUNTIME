@@ -15,13 +15,13 @@ _ONE_DAY_IN_SECONDS = 60 * 60 * 24
 
 class StockHQService(stock_hq_pb2_grpc.StockHQServiceServicer):
 
-  def QA_fetch_get(self, request, context):
+  def QA_fetch_p2p(self, request, context):
     #print(request.code)
     return QA_Fetcher(request.code,request.type)
-  def QA_fetch_conn(self,request,context):
+  def QA_fetch_p2s(self,request,context):
     for item in QA_Fetcher_long(request.code,request.type):
           yield item
-  def QA_fetch_multi(self,request,context):
+  def QA_fetch_s2s(self,request,context):
     for req in request:    
       for item in QA_Fetcher_long(req.code,req.type):
           yield item        
