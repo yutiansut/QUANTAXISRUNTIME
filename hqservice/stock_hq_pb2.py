@@ -13,37 +13,42 @@ from google.protobuf import descriptor_pb2
 _sym_db = _symbol_database.Default()
 
 
-import stock_min_pb2 as stock__min__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='stock_hq.proto',
   package='stock_hq',
   syntax='proto3',
-  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2\x9c\x02\n\x0eStockHQService\x12?\n\x0cQA_fetch_p2p\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min\x12\x41\n\x0cQA_fetch_p2s\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min0\x01\x12\x43\n\x0cQA_fetch_s2s\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min(\x01\x30\x01\x12\x41\n\x0cQA_fetch_s2p\x12\x0f.stock_hq.Query\x1a\x1e.QUANTAXIS_STOCK_MIN.stock_min(\x01\x62\x06proto3')
-  ,
-  dependencies=[stock__min__pb2.DESCRIPTOR,])
+  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\";\n\x0cquery_struct\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"\xca\x01\n\thq_struct\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04open\x18\x02 \x01(\x02\x12\x0c\n\x04high\x18\x03 \x01(\x02\x12\x0b\n\x03low\x18\x04 \x01(\x02\x12\r\n\x05\x63lose\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x07 \x01(\t\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x02\x12\x12\n\ndate_stamp\x18\t \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\n \x01(\t\x12\x12\n\ntime_stamp\x18\x0b \x01(\t\x12\x0f\n\x07message\x18\x0c \x01(\t2\x8c\x02\n\x0eStockHQService\x12;\n\x0cQA_fetch_p2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct\x12=\n\x0cQA_fetch_p2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct0\x01\x12?\n\x0cQA_fetch_s2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x30\x01\x12=\n\x0cQA_fetch_s2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x62\x06proto3')
+)
 
 
 
 
-_QUERY = _descriptor.Descriptor(
-  name='Query',
-  full_name='stock_hq.Query',
+_QUERY_STRUCT = _descriptor.Descriptor(
+  name='query_struct',
+  full_name='stock_hq.query_struct',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='stock_hq.Query.type', index=0,
+      name='type', full_name='stock_hq.query_struct.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='code', full_name='stock_hq.Query.code', index=1,
+      name='code', full_name='stock_hq.query_struct.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='stock_hq.query_struct.message', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -60,19 +65,135 @@ _QUERY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=45,
-  serialized_end=80,
+  serialized_start=28,
+  serialized_end=87,
 )
 
-DESCRIPTOR.message_types_by_name['Query'] = _QUERY
+
+_HQ_STRUCT = _descriptor.Descriptor(
+  name='hq_struct',
+  full_name='stock_hq.hq_struct',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='code', full_name='stock_hq.hq_struct.code', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='open', full_name='stock_hq.hq_struct.open', index=1,
+      number=2, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='high', full_name='stock_hq.hq_struct.high', index=2,
+      number=3, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='low', full_name='stock_hq.hq_struct.low', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='close', full_name='stock_hq.hq_struct.close', index=4,
+      number=5, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='volume', full_name='stock_hq.hq_struct.volume', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='date', full_name='stock_hq.hq_struct.date', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='stock_hq.hq_struct.amount', index=7,
+      number=8, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='date_stamp', full_name='stock_hq.hq_struct.date_stamp', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='datetime', full_name='stock_hq.hq_struct.datetime', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='time_stamp', full_name='stock_hq.hq_struct.time_stamp', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='stock_hq.hq_struct.message', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=90,
+  serialized_end=292,
+)
+
+DESCRIPTOR.message_types_by_name['query_struct'] = _QUERY_STRUCT
+DESCRIPTOR.message_types_by_name['hq_struct'] = _HQ_STRUCT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Query = _reflection.GeneratedProtocolMessageType('Query', (_message.Message,), dict(
-  DESCRIPTOR = _QUERY,
+query_struct = _reflection.GeneratedProtocolMessageType('query_struct', (_message.Message,), dict(
+  DESCRIPTOR = _QUERY_STRUCT,
   __module__ = 'stock_hq_pb2'
-  # @@protoc_insertion_point(class_scope:stock_hq.Query)
+  # @@protoc_insertion_point(class_scope:stock_hq.query_struct)
   ))
-_sym_db.RegisterMessage(Query)
+_sym_db.RegisterMessage(query_struct)
+
+hq_struct = _reflection.GeneratedProtocolMessageType('hq_struct', (_message.Message,), dict(
+  DESCRIPTOR = _HQ_STRUCT,
+  __module__ = 'stock_hq_pb2'
+  # @@protoc_insertion_point(class_scope:stock_hq.hq_struct)
+  ))
+_sym_db.RegisterMessage(hq_struct)
 
 
 
@@ -82,16 +203,16 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=83,
-  serialized_end=367,
+  serialized_start=295,
+  serialized_end=563,
   methods=[
   _descriptor.MethodDescriptor(
     name='QA_fetch_p2p',
     full_name='stock_hq.StockHQService.QA_fetch_p2p',
     index=0,
     containing_service=None,
-    input_type=_QUERY,
-    output_type=stock__min__pb2._STOCK_MIN,
+    input_type=_QUERY_STRUCT,
+    output_type=_HQ_STRUCT,
     options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -99,8 +220,8 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
     full_name='stock_hq.StockHQService.QA_fetch_p2s',
     index=1,
     containing_service=None,
-    input_type=_QUERY,
-    output_type=stock__min__pb2._STOCK_MIN,
+    input_type=_QUERY_STRUCT,
+    output_type=_HQ_STRUCT,
     options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -108,8 +229,8 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
     full_name='stock_hq.StockHQService.QA_fetch_s2s',
     index=2,
     containing_service=None,
-    input_type=_QUERY,
-    output_type=stock__min__pb2._STOCK_MIN,
+    input_type=_QUERY_STRUCT,
+    output_type=_HQ_STRUCT,
     options=None,
   ),
   _descriptor.MethodDescriptor(
@@ -117,8 +238,8 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
     full_name='stock_hq.StockHQService.QA_fetch_s2p',
     index=3,
     containing_service=None,
-    input_type=_QUERY,
-    output_type=stock__min__pb2._STOCK_MIN,
+    input_type=_QUERY_STRUCT,
+    output_type=_HQ_STRUCT,
     options=None,
   ),
 ])
@@ -148,23 +269,23 @@ try:
       """
       self.QA_fetch_p2p = channel.unary_unary(
           '/stock_hq.StockHQService/QA_fetch_p2p',
-          request_serializer=Query.SerializeToString,
-          response_deserializer=stock__min__pb2.stock_min.FromString,
+          request_serializer=query_struct.SerializeToString,
+          response_deserializer=hq_struct.FromString,
           )
       self.QA_fetch_p2s = channel.unary_stream(
           '/stock_hq.StockHQService/QA_fetch_p2s',
-          request_serializer=Query.SerializeToString,
-          response_deserializer=stock__min__pb2.stock_min.FromString,
+          request_serializer=query_struct.SerializeToString,
+          response_deserializer=hq_struct.FromString,
           )
       self.QA_fetch_s2s = channel.stream_stream(
           '/stock_hq.StockHQService/QA_fetch_s2s',
-          request_serializer=Query.SerializeToString,
-          response_deserializer=stock__min__pb2.stock_min.FromString,
+          request_serializer=query_struct.SerializeToString,
+          response_deserializer=hq_struct.FromString,
           )
       self.QA_fetch_s2p = channel.stream_unary(
           '/stock_hq.StockHQService/QA_fetch_s2p',
-          request_serializer=Query.SerializeToString,
-          response_deserializer=stock__min__pb2.stock_min.FromString,
+          request_serializer=query_struct.SerializeToString,
+          response_deserializer=hq_struct.FromString,
           )
 
 
@@ -205,23 +326,23 @@ try:
     rpc_method_handlers = {
         'QA_fetch_p2p': grpc.unary_unary_rpc_method_handler(
             servicer.QA_fetch_p2p,
-            request_deserializer=Query.FromString,
-            response_serializer=stock__min__pb2.stock_min.SerializeToString,
+            request_deserializer=query_struct.FromString,
+            response_serializer=hq_struct.SerializeToString,
         ),
         'QA_fetch_p2s': grpc.unary_stream_rpc_method_handler(
             servicer.QA_fetch_p2s,
-            request_deserializer=Query.FromString,
-            response_serializer=stock__min__pb2.stock_min.SerializeToString,
+            request_deserializer=query_struct.FromString,
+            response_serializer=hq_struct.SerializeToString,
         ),
         'QA_fetch_s2s': grpc.stream_stream_rpc_method_handler(
             servicer.QA_fetch_s2s,
-            request_deserializer=Query.FromString,
-            response_serializer=stock__min__pb2.stock_min.SerializeToString,
+            request_deserializer=query_struct.FromString,
+            response_serializer=hq_struct.SerializeToString,
         ),
         'QA_fetch_s2p': grpc.stream_unary_rpc_method_handler(
             servicer.QA_fetch_s2p,
-            request_deserializer=Query.FromString,
-            response_serializer=stock__min__pb2.stock_min.SerializeToString,
+            request_deserializer=query_struct.FromString,
+            response_serializer=hq_struct.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -290,16 +411,16 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_p2p'): Query.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_p2s'): Query.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_s2p'): Query.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_s2s'): Query.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): query_struct.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): query_struct.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): query_struct.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): query_struct.FromString,
     }
     response_serializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_p2p'): stock__min__pb2.stock_min.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_p2s'): stock__min__pb2.stock_min.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_s2p'): stock__min__pb2.stock_min.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_s2s'): stock__min__pb2.stock_min.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): hq_struct.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): hq_struct.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): hq_struct.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): hq_struct.SerializeToString,
     }
     method_implementations = {
       ('stock_hq.StockHQService', 'QA_fetch_p2p'): face_utilities.unary_unary_inline(servicer.QA_fetch_p2p),
@@ -318,16 +439,16 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_p2p'): Query.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_p2s'): Query.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_s2p'): Query.SerializeToString,
-      ('stock_hq.StockHQService', 'QA_fetch_s2s'): Query.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): query_struct.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): query_struct.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): query_struct.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): query_struct.SerializeToString,
     }
     response_deserializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_p2p'): stock__min__pb2.stock_min.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_p2s'): stock__min__pb2.stock_min.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_s2p'): stock__min__pb2.stock_min.FromString,
-      ('stock_hq.StockHQService', 'QA_fetch_s2s'): stock__min__pb2.stock_min.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2p'): hq_struct.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_p2s'): hq_struct.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2p'): hq_struct.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_s2s'): hq_struct.FromString,
     }
     cardinalities = {
       'QA_fetch_p2p': cardinality.Cardinality.UNARY_UNARY,

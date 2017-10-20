@@ -2,7 +2,6 @@
 import grpc
 
 import stock_hq_pb2 as stock__hq__pb2
-import stock_min_pb2 as stock__min__pb2
 
 
 class StockHQServiceStub(object):
@@ -17,23 +16,23 @@ class StockHQServiceStub(object):
     """
     self.QA_fetch_p2p = channel.unary_unary(
         '/stock_hq.StockHQService/QA_fetch_p2p',
-        request_serializer=stock__hq__pb2.Query.SerializeToString,
-        response_deserializer=stock__min__pb2.stock_min.FromString,
+        request_serializer=stock__hq__pb2.query_struct.SerializeToString,
+        response_deserializer=stock__hq__pb2.hq_struct.FromString,
         )
     self.QA_fetch_p2s = channel.unary_stream(
         '/stock_hq.StockHQService/QA_fetch_p2s',
-        request_serializer=stock__hq__pb2.Query.SerializeToString,
-        response_deserializer=stock__min__pb2.stock_min.FromString,
+        request_serializer=stock__hq__pb2.query_struct.SerializeToString,
+        response_deserializer=stock__hq__pb2.hq_struct.FromString,
         )
     self.QA_fetch_s2s = channel.stream_stream(
         '/stock_hq.StockHQService/QA_fetch_s2s',
-        request_serializer=stock__hq__pb2.Query.SerializeToString,
-        response_deserializer=stock__min__pb2.stock_min.FromString,
+        request_serializer=stock__hq__pb2.query_struct.SerializeToString,
+        response_deserializer=stock__hq__pb2.hq_struct.FromString,
         )
     self.QA_fetch_s2p = channel.stream_unary(
         '/stock_hq.StockHQService/QA_fetch_s2p',
-        request_serializer=stock__hq__pb2.Query.SerializeToString,
-        response_deserializer=stock__min__pb2.stock_min.FromString,
+        request_serializer=stock__hq__pb2.query_struct.SerializeToString,
+        response_deserializer=stock__hq__pb2.hq_struct.FromString,
         )
 
 
@@ -74,23 +73,23 @@ def add_StockHQServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
       'QA_fetch_p2p': grpc.unary_unary_rpc_method_handler(
           servicer.QA_fetch_p2p,
-          request_deserializer=stock__hq__pb2.Query.FromString,
-          response_serializer=stock__min__pb2.stock_min.SerializeToString,
+          request_deserializer=stock__hq__pb2.query_struct.FromString,
+          response_serializer=stock__hq__pb2.hq_struct.SerializeToString,
       ),
       'QA_fetch_p2s': grpc.unary_stream_rpc_method_handler(
           servicer.QA_fetch_p2s,
-          request_deserializer=stock__hq__pb2.Query.FromString,
-          response_serializer=stock__min__pb2.stock_min.SerializeToString,
+          request_deserializer=stock__hq__pb2.query_struct.FromString,
+          response_serializer=stock__hq__pb2.hq_struct.SerializeToString,
       ),
       'QA_fetch_s2s': grpc.stream_stream_rpc_method_handler(
           servicer.QA_fetch_s2s,
-          request_deserializer=stock__hq__pb2.Query.FromString,
-          response_serializer=stock__min__pb2.stock_min.SerializeToString,
+          request_deserializer=stock__hq__pb2.query_struct.FromString,
+          response_serializer=stock__hq__pb2.hq_struct.SerializeToString,
       ),
       'QA_fetch_s2p': grpc.stream_unary_rpc_method_handler(
           servicer.QA_fetch_s2p,
-          request_deserializer=stock__hq__pb2.Query.FromString,
-          response_serializer=stock__min__pb2.stock_min.SerializeToString,
+          request_deserializer=stock__hq__pb2.query_struct.FromString,
+          response_serializer=stock__hq__pb2.hq_struct.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -11,7 +11,7 @@ stock_list = ['000001', '000002', '000004', '600010']
 
 def gen():
     for item in stock_list:
-        yield stock_hq_pb2.Query(code=item, type='1min')
+        yield stock_hq_pb2.query_struct(code=item, type='1min')
 
 
 """
@@ -30,7 +30,7 @@ def p2p():
     channel = grpc.insecure_channel('192.168.4.239:50052')
     stub = stock_hq_pb2_grpc.StockHQServiceStub(channel)
     response = stub.QA_fetch_p2p(
-        stock_hq_pb2.Query(code='601801', type='1min'))
+        stock_hq_pb2.query_struct(code='601801', type='1min'))
     print(response.code, response.open,
           response.high, response.low, response.close)
 
@@ -38,7 +38,7 @@ def p2p():
 def p2s():
     channel = grpc.insecure_channel('192.168.4.239:50052')
     stub = stock_hq_pb2_grpc.StockHQServiceStub(channel)
-    resp = stub.QA_fetch_p2s(stock_hq_pb2.Query(code='601801', type='1min'))
+    resp = stub.QA_fetch_p2s(stock_hq_pb2.query_struct(code='601801', type='1min'))
     print([(response.code, response.open, response.high,
             response.low, response.close) for response in resp])
 
@@ -47,7 +47,7 @@ def s2s():
     channel = grpc.insecure_channel('192.168.4.239:50052')
     stub = stock_hq_pb2_grpc.StockHQServiceStub(channel)
     resp = stub.QA_fetch_s2s(gen())
-    #response = stub.QA_fetch_get(stock_hq_pb2.Query(code='601801',type='1min'))
+    #response = stub.QA_fetch_get(stock_hq_pb2.query_struct(code='601801',type='1min'))
     print([(response.code, response.open, response.high,
             response.low, response.close) for response in resp])
 

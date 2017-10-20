@@ -1,7 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor as Pool
 from concurrent.futures import wait, as_completed
 from pytdx.hq import TdxHq_API
-from stock_min_pb2 import stock_min
+from stock_hq_pb2 import hq_struct
 
 
 def __select_market_code(code):
@@ -12,7 +12,7 @@ def __select_market_code(code):
 
 
 def change(pack, code):
-    data = stock_min()
+    data = hq_struct()
     data.open = pack[0]['open']
     data.close = pack[0]['close']
     data.high = pack[0]['high']
@@ -21,7 +21,7 @@ def change(pack, code):
     data.volume = pack[0]['vol']
     return data
 def changer(pack, code):
-    data = stock_min()
+    data = hq_struct()
     data.open = pack['open']
     data.close = pack['close']
     data.high = pack['high']
