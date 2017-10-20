@@ -8,7 +8,7 @@ package stock_hq;
 
 service StockHQService {
 
-    rpc ListFeatures (stock_min) returns (stream stock_min);
+    rpc QA_fetch_get (stream Query) returns (stream stock_min);
     //rpc RouteChat (stream long) returns (stream long_hq);
   }
   

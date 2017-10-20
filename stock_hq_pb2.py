@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='stock_hq.proto',
   package='stock_hq',
   syntax='proto3',
-  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2:\n\x0eStockHQService\x12(\n\x0cListFeatures\x12\n.stock_min\x1a\n.stock_min0\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\x1a\x0fstock_min.proto\"#\n\x05Query\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t2A\n\x0eStockHQService\x12/\n\x0cQA_fetch_get\x12\x0f.stock_hq.Query\x1a\n.stock_min(\x01\x30\x01\x62\x06proto3')
   ,
   dependencies=[stock__min__pb2.DESCRIPTOR,])
 
@@ -83,14 +83,14 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   options=None,
   serialized_start=82,
-  serialized_end=140,
+  serialized_end=147,
   methods=[
   _descriptor.MethodDescriptor(
-    name='ListFeatures',
-    full_name='stock_hq.StockHQService.ListFeatures',
+    name='QA_fetch_get',
+    full_name='stock_hq.StockHQService.QA_fetch_get',
     index=0,
     containing_service=None,
-    input_type=stock__min__pb2._STOCK_MIN,
+    input_type=_QUERY,
     output_type=stock__min__pb2._STOCK_MIN,
     options=None,
   ),

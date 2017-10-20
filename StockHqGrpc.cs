@@ -13,13 +13,14 @@ namespace StockHq {
   {
     static readonly string __ServiceName = "stock_hq.StockHQService";
 
+    static readonly grpc::Marshaller<global::StockHq.Query> __Marshaller_Query = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::StockHq.Query.Parser.ParseFrom);
     static readonly grpc::Marshaller<global::stock_min> __Marshaller_stock_min = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::stock_min.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::stock_min, global::stock_min> __Method_ListFeatures = new grpc::Method<global::stock_min, global::stock_min>(
-        grpc::MethodType.ServerStreaming,
+    static readonly grpc::Method<global::StockHq.Query, global::stock_min> __Method_QA_fetch_get = new grpc::Method<global::StockHq.Query, global::stock_min>(
+        grpc::MethodType.DuplexStreaming,
         __ServiceName,
-        "ListFeatures",
-        __Marshaller_stock_min,
+        "QA_fetch_get",
+        __Marshaller_Query,
         __Marshaller_stock_min);
 
     /// <summary>Service descriptor</summary>
@@ -34,11 +35,11 @@ namespace StockHq {
       /// <summary>
       ///rpc RouteChat (stream long) returns (stream long_hq);
       /// </summary>
-      /// <param name="request">The request received from the client.</param>
+      /// <param name="requestStream">Used for reading requests from the client.</param>
       /// <param name="responseStream">Used for sending responses back to the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>A task indicating completion of the handler.</returns>
-      public virtual global::System.Threading.Tasks.Task ListFeatures(global::stock_min request, grpc::IServerStreamWriter<global::stock_min> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task QA_fetch_get(grpc::IAsyncStreamReader<global::StockHq.Query> requestStream, grpc::IServerStreamWriter<global::stock_min> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -71,24 +72,22 @@ namespace StockHq {
       /// <summary>
       ///rpc RouteChat (stream long) returns (stream long_hq);
       /// </summary>
-      /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncServerStreamingCall<global::stock_min> ListFeatures(global::stock_min request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual grpc::AsyncDuplexStreamingCall<global::StockHq.Query, global::stock_min> QA_fetch_get(grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return ListFeatures(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+        return QA_fetch_get(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
       ///rpc RouteChat (stream long) returns (stream long_hq);
       /// </summary>
-      /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncServerStreamingCall<global::stock_min> ListFeatures(global::stock_min request, grpc::CallOptions options)
+      public virtual grpc::AsyncDuplexStreamingCall<global::StockHq.Query, global::stock_min> QA_fetch_get(grpc::CallOptions options)
       {
-        return CallInvoker.AsyncServerStreamingCall(__Method_ListFeatures, null, options, request);
+        return CallInvoker.AsyncDuplexStreamingCall(__Method_QA_fetch_get, null, options);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       protected override StockHQServiceClient NewInstance(ClientBaseConfiguration configuration)
@@ -102,7 +101,7 @@ namespace StockHq {
     public static grpc::ServerServiceDefinition BindService(StockHQServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_ListFeatures, serviceImpl.ListFeatures).Build();
+          .AddMethod(__Method_QA_fetch_get, serviceImpl.QA_fetch_get).Build();
     }
 
   }
