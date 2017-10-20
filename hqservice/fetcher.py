@@ -36,7 +36,6 @@ def task(code, timeout=100):
 def QA_Fetcher(code,type_):
     with Pool(max_workers=40) as executor:
         future_tasks = [executor.submit(task, code,type_)]
-        #data = []
         for f in future_tasks:
             if f.running():
                 print('%s is running' % str(f))
