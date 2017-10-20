@@ -6,7 +6,7 @@ import grpc
 import stock_hq_pb2
 import stock_hq_pb2_grpc
 import stock_min_pb2
-from fetcher import QA_Fetcher
+from fetcher import QA_Fetcher,QA_Fetcher_long
 
 
 
@@ -19,7 +19,12 @@ class StockHQService(stock_hq_pb2_grpc.StockHQServiceServicer):
     #print(request.code)
     return QA_Fetcher(request.code,request.type)
   def QA_fetch_conn(self,request,context):
-    pass
+    for item in QA_Fetcher_long(request.code,request.type):
+          yield item
+  def QA_fetch_multi(self,request,context):
+    for req in request:    
+      for item in QA_Fetcher_long(req.code,req.type):
+            yield item        
 
 
 def serve():

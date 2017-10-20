@@ -25,6 +25,11 @@ class StockHQServiceStub(object):
         request_serializer=stock__hq__pb2.Query.SerializeToString,
         response_deserializer=stock__min__pb2.stock_min.FromString,
         )
+    self.QA_fetch_multi = channel.stream_stream(
+        '/stock_hq.StockHQService/QA_fetch_multi',
+        request_serializer=stock__hq__pb2.Query.SerializeToString,
+        response_deserializer=stock__min__pb2.stock_min.FromString,
+        )
 
 
 class StockHQServiceServicer(object):
@@ -45,6 +50,13 @@ class StockHQServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def QA_fetch_multi(self, request_iterator, context):
+    """rpc RouteChat (stream long) returns (stream long_hq);
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_StockHQServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -55,6 +67,11 @@ def add_StockHQServiceServicer_to_server(servicer, server):
       ),
       'QA_fetch_conn': grpc.unary_stream_rpc_method_handler(
           servicer.QA_fetch_conn,
+          request_deserializer=stock__hq__pb2.Query.FromString,
+          response_serializer=stock__min__pb2.stock_min.SerializeToString,
+      ),
+      'QA_fetch_multi': grpc.stream_stream_rpc_method_handler(
+          servicer.QA_fetch_multi,
           request_deserializer=stock__hq__pb2.Query.FromString,
           response_serializer=stock__min__pb2.stock_min.SerializeToString,
       ),

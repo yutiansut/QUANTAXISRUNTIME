@@ -10,7 +10,7 @@ service StockHQService {
 
     rpc QA_fetch_get (Query) returns (QUANTAXIS_STOCK_MIN.stock_min);
     rpc QA_fetch_conn (Query) returns (stream QUANTAXIS_STOCK_MIN.stock_min);
-
+    rpc QA_fetch_multi (stream Query) returns (stream QUANTAXIS_STOCK_MIN.stock_min);
     //rpc RouteChat (stream long) returns (stream long_hq);
   }
   
