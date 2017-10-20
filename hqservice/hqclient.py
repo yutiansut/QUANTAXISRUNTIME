@@ -23,14 +23,13 @@ def gen():
         yield stock_hq_pb2.query_struct(code=item, type='1min')
 
 
-def quote():
-    for item in stock_list:
-        yield stock_hq_pb2.query_struct(code=item, type='1min')
-
-
 class QA_Runtime_client:
     def __init__(self, *args, **kwargs):
         self.channel = grpc.insecure_channel('192.168.4.239:50052')
+        self.stub = stock_hq_pb2_grpc.StockHQServiceStub(self.channel)
+
+    def connect(self,channel):
+        self.channel = grpc.insecure_channel(channel)
         self.stub = stock_hq_pb2_grpc.StockHQServiceStub(self.channel)
 
     def p2p(self):
@@ -51,6 +50,15 @@ class QA_Runtime_client:
         print([(response.code, response.open, response.high,
                 response.low, response.close, response.datetime) for response in resp])
 
+    def _generator(self,stock_list,type_list):
+        for item in type_list:
+            for code in stock_list:
+                yield stock_hq_pb2.query_struct(code=code, type=item)
+
+    def subscribe(self,code,type='1min'):
+        pass
+    def unsubscribe(self):
+        pass
 
 if __name__ == '__main__':
     QA_Runtime_client().s2s()
