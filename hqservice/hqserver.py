@@ -24,7 +24,7 @@ class StockHQService(stock_hq_pb2_grpc.StockHQServiceServicer):
   def QA_fetch_multi(self,request,context):
     for req in request:    
       for item in QA_Fetcher_long(req.code,req.type):
-            yield item        
+          yield item        
 
 
 def serve():
