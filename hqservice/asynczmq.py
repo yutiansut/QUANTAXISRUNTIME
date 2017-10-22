@@ -26,7 +26,7 @@ def start_zmq_server():
     except KeyboardInterrupt:
         exit()
 
-
+    
 @asyncio.coroutine
 def go():
     server = yield from aiozmq.rpc.serve_rpc(
