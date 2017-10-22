@@ -11,7 +11,8 @@ socket.connect("tcp://localhost:5555")
 for request in range(10):
     print("Sending request %s …" % request)
     socket.send(b"Hello")
-
+    message=stock_min()
     #  Get the reply.
-    message = socket.recv()
-    print("Received reply %s [ %s ]" % (message.open))
+    #print(socket.recv())
+    messager = message.FromString(socket.recv())
+    print("Received reply %s [ %s ]" % (messager))

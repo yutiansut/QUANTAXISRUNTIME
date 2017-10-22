@@ -25,4 +25,4 @@ while True:
     b.low=1
 
     #  Send reply back to client
-    socket.send(b)
+    socket.send(b.SerializeToString())
