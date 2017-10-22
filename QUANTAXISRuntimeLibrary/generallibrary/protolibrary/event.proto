@@ -1,0 +1,3 @@
+syntax="proto3";
+
+package QUANTAXIS_Runtime_Event;

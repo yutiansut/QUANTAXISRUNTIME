@@ -4,7 +4,7 @@ syntax = "proto3";
 // .\protoc.exe --python_out .  --proto_path . --grpc_out . --plugin=protoc-gen-grpc=.\grpc_csharp_plugin.exe .\stock_hq.proto
 //import "stock_min.proto";
 
-package stock_hq;
+package QUANTAXIS_Runtime_Quotation;
 
 service StockHQService {
 
