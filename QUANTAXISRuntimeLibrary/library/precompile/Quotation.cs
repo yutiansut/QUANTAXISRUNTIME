@@ -25,26 +25,35 @@ namespace QUANTAXISRuntimeQuotation {
             "Cg9xdW90YXRpb24ucHJvdG8SG1FVQU5UQVhJU19SdW50aW1lX1F1b3RhdGlv",
             "biJ2Cg1xdW90YXRpb25fcmVxEhAKCGV4Y2hhbmdlGAEgASgJEgwKBHR5cGUY",
             "AiABKAkSDAoEY29kZRgDIAEoCRIKCgJpcBgEIAEoCRIMCgR0aW1lGAUgASgJ",
-            "EgwKBGRhdGUYBiABKAkSDwoHbWVzc2FnZRgHIAEoCSLuAQoNcXVvdGF0aW9u",
-            "X3JlcBIMCgRjb2RlGAEgASgJEgwKBG9wZW4YAiABKAISDAoEaGlnaBgDIAEo",
-            "AhILCgNsb3cYBCABKAISDQoFY2xvc2UYBSABKAISDgoGdm9sdW1lGAYgASgC",
-            "EgwKBGRhdGUYByABKAkSDgoGYW1vdW50GAggASgCEhIKCmRhdGVfc3RhbXAY",
-            "CSABKAkSEAoIZGF0ZXRpbWUYCiABKAkSEgoKdGltZV9zdGFtcBgLIAEoCRIP",
-            "CgdtZXNzYWdlGAwgASgJEhAKCGV4Y2hhbmdlGA0gASgJEgwKBHR5cGUYDiAB",
-            "KAky3wIKE1FSX1F1b3RhdGlvblNlcnZpY2USagoQUVJfcXVvdGF0aW9uX3Ay",
-            "cBIqLlFVQU5UQVhJU19SdW50aW1lX1F1b3RhdGlvbi5xdW90YXRpb25fcmVx",
-            "GiouUVVBTlRBWElTX1J1bnRpbWVfUXVvdGF0aW9uLnF1b3RhdGlvbl9yZXAS",
-            "bAoQUUFfcXVvdGF0aW9uX3AycxIqLlFVQU5UQVhJU19SdW50aW1lX1F1b3Rh",
-            "dGlvbi5xdW90YXRpb25fcmVxGiouUVVBTlRBWElTX1J1bnRpbWVfUXVvdGF0",
-            "aW9uLnF1b3RhdGlvbl9yZXAwARJuChBRQV9xdW90YXRpb25fczJzEiouUVVB",
-            "TlRBWElTX1J1bnRpbWVfUXVvdGF0aW9uLnF1b3RhdGlvbl9yZXEaKi5RVUFO",
-            "VEFYSVNfUnVudGltZV9RdW90YXRpb24ucXVvdGF0aW9uX3JlcCgBMAFiBnBy",
-            "b3RvMw=="));
+            "EgwKBGRhdGUYBiABKAkSDwoHbWVzc2FnZRgHIAEoCSKOBQoNcXVvdGF0aW9u",
+            "X3JlcBITCgtleGNoYW5nZV9pZBgBIAEoCRIOCgZ0aWNrZXIYAiABKAkSDAoE",
+            "Y29kZRgDIAEoCRISCgpsYXN0X3ByaWNlGAQgASgBEhcKD3ByZV9jbG9zZV9w",
+            "cmljZRgFIAEoARIMCgRvcGVuGAYgASgBEgwKBGhpZ2gYByABKAESCwoDbG93",
+            "GAggASgBEg0KBWNsb3NlGAkgASgBEhMKC2Nsb3NlX3ByaWNlGAogASgBEhkK",
+            "EXByZV9vcGVuX2ludGVyZXN0GAsgASgBEhUKDW9wZW5faW50ZXJlc3QYDCAB",
+            "KAESHAoUcHJlX3NldHRsZW1lbnRfcHJpY2UYDSABKAESGAoQc2V0dGxlbWVu",
+            "dF9wcmljZRgOIAEoARIZChF1cHBlcl9saW1pdF9wcmljZRgPIAEoARIZChFs",
+            "b3dlcl9saW1pdF9wcmljZRgQIAEoARIRCglwcmVfZGVsdGEYESABKAESEgoK",
+            "Y3Vycl9kZWx0YRgSIAEoARIRCglkYXRhX3RpbWUYEyABKBISEAoIZGF0ZXRp",
+            "bWUYFCABKAkSCwoDcXR5GBUgASgSEg4KBnZvbHVtZRgWIAEoAhILCgN2b2wY",
+            "FyABKAISEAoIdHVybm92ZXIYGCABKAESEQoJYXZnX3ByaWNlGBkgASgBEgwK",
+            "BGlvcHYYGiABKAESFQoNZXRmX2J1eV9jb3VudBgbIAEoERIWCg5ldGZfc2Vs",
+            "bF9jb3VudBgcIAEoERITCgtldGZfYnV5X3F0eRgdIAEoARIVCg1ldGZfYnV5",
+            "X21vbmV5GB4gASgBEhQKDGV0Zl9zZWxsX3F0eRgfIAEoARIWCg5ldGZfc2Vs",
+            "bF9tb25leRggIAEoATLfAgoTUVJfUXVvdGF0aW9uU2VydmljZRJqChBRUl9x",
+            "dW90YXRpb25fcDJwEiouUVVBTlRBWElTX1J1bnRpbWVfUXVvdGF0aW9uLnF1",
+            "b3RhdGlvbl9yZXEaKi5RVUFOVEFYSVNfUnVudGltZV9RdW90YXRpb24ucXVv",
+            "dGF0aW9uX3JlcBJsChBRQV9xdW90YXRpb25fcDJzEiouUVVBTlRBWElTX1J1",
+            "bnRpbWVfUXVvdGF0aW9uLnF1b3RhdGlvbl9yZXEaKi5RVUFOVEFYSVNfUnVu",
+            "dGltZV9RdW90YXRpb24ucXVvdGF0aW9uX3JlcDABEm4KEFFBX3F1b3RhdGlv",
+            "bl9zMnMSKi5RVUFOVEFYSVNfUnVudGltZV9RdW90YXRpb24ucXVvdGF0aW9u",
+            "X3JlcRoqLlFVQU5UQVhJU19SdW50aW1lX1F1b3RhdGlvbi5xdW90YXRpb25f",
+            "cmVwKAEwAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeQuotation.quotation_req), global::QUANTAXISRuntimeQuotation.quotation_req.Parser, new[]{ "Exchange", "Type", "Code", "Ip", "Time", "Date", "Message" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeQuotation.quotation_rep), global::QUANTAXISRuntimeQuotation.quotation_rep.Parser, new[]{ "Code", "Open", "High", "Low", "Close", "Volume", "Date", "Amount", "DateStamp", "Datetime", "TimeStamp", "Message", "Exchange", "Type" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeQuotation.quotation_rep), global::QUANTAXISRuntimeQuotation.quotation_rep.Parser, new[]{ "ExchangeId", "Ticker", "Code", "LastPrice", "PreClosePrice", "Open", "High", "Low", "Close", "ClosePrice", "PreOpenInterest", "OpenInterest", "PreSettlementPrice", "SettlementPrice", "UpperLimitPrice", "LowerLimitPrice", "PreDelta", "CurrDelta", "DataTime", "Datetime", "Qty", "Volume", "Vol", "Turnover", "AvgPrice", "Iopv", "EtfBuyCount", "EtfSellCount", "EtfBuyQty", "EtfBuyMoney", "EtfSellQty", "EtfSellMoney" }, null, null, null)
           }));
     }
     #endregion
@@ -372,20 +381,38 @@ namespace QUANTAXISRuntimeQuotation {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public quotation_rep(quotation_rep other) : this() {
+      exchangeId_ = other.exchangeId_;
+      ticker_ = other.ticker_;
       code_ = other.code_;
+      lastPrice_ = other.lastPrice_;
+      preClosePrice_ = other.preClosePrice_;
       open_ = other.open_;
       high_ = other.high_;
       low_ = other.low_;
       close_ = other.close_;
-      volume_ = other.volume_;
-      date_ = other.date_;
-      amount_ = other.amount_;
-      dateStamp_ = other.dateStamp_;
+      closePrice_ = other.closePrice_;
+      preOpenInterest_ = other.preOpenInterest_;
+      openInterest_ = other.openInterest_;
+      preSettlementPrice_ = other.preSettlementPrice_;
+      settlementPrice_ = other.settlementPrice_;
+      upperLimitPrice_ = other.upperLimitPrice_;
+      lowerLimitPrice_ = other.lowerLimitPrice_;
+      preDelta_ = other.preDelta_;
+      currDelta_ = other.currDelta_;
+      dataTime_ = other.dataTime_;
       datetime_ = other.datetime_;
-      timeStamp_ = other.timeStamp_;
-      message_ = other.message_;
-      exchange_ = other.exchange_;
-      type_ = other.type_;
+      qty_ = other.qty_;
+      volume_ = other.volume_;
+      vol_ = other.vol_;
+      turnover_ = other.turnover_;
+      avgPrice_ = other.avgPrice_;
+      iopv_ = other.iopv_;
+      etfBuyCount_ = other.etfBuyCount_;
+      etfSellCount_ = other.etfSellCount_;
+      etfBuyQty_ = other.etfBuyQty_;
+      etfBuyMoney_ = other.etfBuyMoney_;
+      etfSellQty_ = other.etfSellQty_;
+      etfSellMoney_ = other.etfSellMoney_;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -393,8 +420,30 @@ namespace QUANTAXISRuntimeQuotation {
       return new quotation_rep(this);
     }
 
+    /// <summary>Field number for the "exchange_id" field.</summary>
+    public const int ExchangeIdFieldNumber = 1;
+    private string exchangeId_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string ExchangeId {
+      get { return exchangeId_; }
+      set {
+        exchangeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "ticker" field.</summary>
+    public const int TickerFieldNumber = 2;
+    private string ticker_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Ticker {
+      get { return ticker_; }
+      set {
+        ticker_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     /// <summary>Field number for the "code" field.</summary>
-    public const int CodeFieldNumber = 1;
+    public const int CodeFieldNumber = 3;
     private string code_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Code {
@@ -404,11 +453,33 @@ namespace QUANTAXISRuntimeQuotation {
       }
     }
 
-    /// <summary>Field number for the "open" field.</summary>
-    public const int OpenFieldNumber = 2;
-    private float open_;
+    /// <summary>Field number for the "last_price" field.</summary>
+    public const int LastPriceFieldNumber = 4;
+    private double lastPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Open {
+    public double LastPrice {
+      get { return lastPrice_; }
+      set {
+        lastPrice_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pre_close_price" field.</summary>
+    public const int PreClosePriceFieldNumber = 5;
+    private double preClosePrice_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double PreClosePrice {
+      get { return preClosePrice_; }
+      set {
+        preClosePrice_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "open" field.</summary>
+    public const int OpenFieldNumber = 6;
+    private double open_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Open {
       get { return open_; }
       set {
         open_ = value;
@@ -416,10 +487,10 @@ namespace QUANTAXISRuntimeQuotation {
     }
 
     /// <summary>Field number for the "high" field.</summary>
-    public const int HighFieldNumber = 3;
-    private float high_;
+    public const int HighFieldNumber = 7;
+    private double high_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float High {
+    public double High {
       get { return high_; }
       set {
         high_ = value;
@@ -427,10 +498,10 @@ namespace QUANTAXISRuntimeQuotation {
     }
 
     /// <summary>Field number for the "low" field.</summary>
-    public const int LowFieldNumber = 4;
-    private float low_;
+    public const int LowFieldNumber = 8;
+    private double low_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Low {
+    public double Low {
       get { return low_; }
       set {
         low_ = value;
@@ -438,62 +509,146 @@ namespace QUANTAXISRuntimeQuotation {
     }
 
     /// <summary>Field number for the "close" field.</summary>
-    public const int CloseFieldNumber = 5;
-    private float close_;
+    public const int CloseFieldNumber = 9;
+    private double close_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Close {
+    public double Close {
       get { return close_; }
       set {
         close_ = value;
       }
     }
 
-    /// <summary>Field number for the "volume" field.</summary>
-    public const int VolumeFieldNumber = 6;
-    private float volume_;
+    /// <summary>Field number for the "close_price" field.</summary>
+    public const int ClosePriceFieldNumber = 10;
+    private double closePrice_;
+    /// <summary>
+    ///今收盘
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Volume {
-      get { return volume_; }
+    public double ClosePrice {
+      get { return closePrice_; }
       set {
-        volume_ = value;
+        closePrice_ = value;
       }
     }
 
-    /// <summary>Field number for the "date" field.</summary>
-    public const int DateFieldNumber = 7;
-    private string date_ = "";
+    /// <summary>Field number for the "pre_open_interest" field.</summary>
+    public const int PreOpenInterestFieldNumber = 11;
+    private double preOpenInterest_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Date {
-      get { return date_; }
+    public double PreOpenInterest {
+      get { return preOpenInterest_; }
       set {
-        date_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        preOpenInterest_ = value;
       }
     }
 
-    /// <summary>Field number for the "amount" field.</summary>
-    public const int AmountFieldNumber = 8;
-    private float amount_;
+    /// <summary>Field number for the "open_interest" field.</summary>
+    public const int OpenInterestFieldNumber = 12;
+    private double openInterest_;
+    /// <summary>
+    ///持仓量
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public float Amount {
-      get { return amount_; }
+    public double OpenInterest {
+      get { return openInterest_; }
       set {
-        amount_ = value;
+        openInterest_ = value;
       }
     }
 
-    /// <summary>Field number for the "date_stamp" field.</summary>
-    public const int DateStampFieldNumber = 9;
-    private string dateStamp_ = "";
+    /// <summary>Field number for the "pre_settlement_price" field.</summary>
+    public const int PreSettlementPriceFieldNumber = 13;
+    private double preSettlementPrice_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string DateStamp {
-      get { return dateStamp_; }
+    public double PreSettlementPrice {
+      get { return preSettlementPrice_; }
       set {
-        dateStamp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        preSettlementPrice_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "settlement_price" field.</summary>
+    public const int SettlementPriceFieldNumber = 14;
+    private double settlementPrice_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double SettlementPrice {
+      get { return settlementPrice_; }
+      set {
+        settlementPrice_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "upper_limit_price" field.</summary>
+    public const int UpperLimitPriceFieldNumber = 15;
+    private double upperLimitPrice_;
+    /// <summary>
+    ///涨停板价
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double UpperLimitPrice {
+      get { return upperLimitPrice_; }
+      set {
+        upperLimitPrice_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "lower_limit_price" field.</summary>
+    public const int LowerLimitPriceFieldNumber = 16;
+    private double lowerLimitPrice_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double LowerLimitPrice {
+      get { return lowerLimitPrice_; }
+      set {
+        lowerLimitPrice_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "pre_delta" field.</summary>
+    public const int PreDeltaFieldNumber = 17;
+    private double preDelta_;
+    /// <summary>
+    ///昨虚实度
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double PreDelta {
+      get { return preDelta_; }
+      set {
+        preDelta_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "curr_delta" field.</summary>
+    public const int CurrDeltaFieldNumber = 18;
+    private double currDelta_;
+    /// <summary>
+    ///今虚实度
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double CurrDelta {
+      get { return currDelta_; }
+      set {
+        currDelta_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "data_time" field.</summary>
+    public const int DataTimeFieldNumber = 19;
+    private long dataTime_;
+    /// <summary>
+    ///YYYYMMDDHHMMSSsss
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public long DataTime {
+      get { return dataTime_; }
+      set {
+        dataTime_ = value;
       }
     }
 
     /// <summary>Field number for the "datetime" field.</summary>
-    public const int DatetimeFieldNumber = 10;
+    public const int DatetimeFieldNumber = 20;
     private string datetime_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public string Datetime {
@@ -503,47 +658,141 @@ namespace QUANTAXISRuntimeQuotation {
       }
     }
 
-    /// <summary>Field number for the "time_stamp" field.</summary>
-    public const int TimeStampFieldNumber = 11;
-    private string timeStamp_ = "";
+    /// <summary>Field number for the "qty" field.</summary>
+    public const int QtyFieldNumber = 21;
+    private long qty_;
+    /// <summary>
+    ///总成交量
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string TimeStamp {
-      get { return timeStamp_; }
+    public long Qty {
+      get { return qty_; }
       set {
-        timeStamp_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        qty_ = value;
       }
     }
 
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 12;
-    private string message_ = "";
+    /// <summary>Field number for the "volume" field.</summary>
+    public const int VolumeFieldNumber = 22;
+    private float volume_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Message {
-      get { return message_; }
+    public float Volume {
+      get { return volume_; }
       set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        volume_ = value;
       }
     }
 
-    /// <summary>Field number for the "exchange" field.</summary>
-    public const int ExchangeFieldNumber = 13;
-    private string exchange_ = "";
+    /// <summary>Field number for the "vol" field.</summary>
+    public const int VolFieldNumber = 23;
+    private float vol_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Exchange {
-      get { return exchange_; }
+    public float Vol {
+      get { return vol_; }
       set {
-        exchange_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        vol_ = value;
       }
     }
 
-    /// <summary>Field number for the "type" field.</summary>
-    public const int TypeFieldNumber = 14;
-    private string type_ = "";
+    /// <summary>Field number for the "turnover" field.</summary>
+    public const int TurnoverFieldNumber = 24;
+    private double turnover_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Type {
-      get { return type_; }
+    public double Turnover {
+      get { return turnover_; }
       set {
-        type_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        turnover_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "avg_price" field.</summary>
+    public const int AvgPriceFieldNumber = 25;
+    private double avgPrice_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double AvgPrice {
+      get { return avgPrice_; }
+      set {
+        avgPrice_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "iopv" field.</summary>
+    public const int IopvFieldNumber = 26;
+    private double iopv_;
+    /// <summary>
+    ///ETF净值估值
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double Iopv {
+      get { return iopv_; }
+      set {
+        iopv_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "etf_buy_count" field.</summary>
+    public const int EtfBuyCountFieldNumber = 27;
+    private int etfBuyCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EtfBuyCount {
+      get { return etfBuyCount_; }
+      set {
+        etfBuyCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "etf_sell_count" field.</summary>
+    public const int EtfSellCountFieldNumber = 28;
+    private int etfSellCount_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int EtfSellCount {
+      get { return etfSellCount_; }
+      set {
+        etfSellCount_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "etf_buy_qty" field.</summary>
+    public const int EtfBuyQtyFieldNumber = 29;
+    private double etfBuyQty_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double EtfBuyQty {
+      get { return etfBuyQty_; }
+      set {
+        etfBuyQty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "etf_buy_money" field.</summary>
+    public const int EtfBuyMoneyFieldNumber = 30;
+    private double etfBuyMoney_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double EtfBuyMoney {
+      get { return etfBuyMoney_; }
+      set {
+        etfBuyMoney_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "etf_sell_qty" field.</summary>
+    public const int EtfSellQtyFieldNumber = 31;
+    private double etfSellQty_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double EtfSellQty {
+      get { return etfSellQty_; }
+      set {
+        etfSellQty_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "etf_sell_money" field.</summary>
+    public const int EtfSellMoneyFieldNumber = 32;
+    private double etfSellMoney_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public double EtfSellMoney {
+      get { return etfSellMoney_; }
+      set {
+        etfSellMoney_ = value;
       }
     }
 
@@ -560,40 +809,76 @@ namespace QUANTAXISRuntimeQuotation {
       if (ReferenceEquals(other, this)) {
         return true;
       }
+      if (ExchangeId != other.ExchangeId) return false;
+      if (Ticker != other.Ticker) return false;
       if (Code != other.Code) return false;
+      if (LastPrice != other.LastPrice) return false;
+      if (PreClosePrice != other.PreClosePrice) return false;
       if (Open != other.Open) return false;
       if (High != other.High) return false;
       if (Low != other.Low) return false;
       if (Close != other.Close) return false;
-      if (Volume != other.Volume) return false;
-      if (Date != other.Date) return false;
-      if (Amount != other.Amount) return false;
-      if (DateStamp != other.DateStamp) return false;
+      if (ClosePrice != other.ClosePrice) return false;
+      if (PreOpenInterest != other.PreOpenInterest) return false;
+      if (OpenInterest != other.OpenInterest) return false;
+      if (PreSettlementPrice != other.PreSettlementPrice) return false;
+      if (SettlementPrice != other.SettlementPrice) return false;
+      if (UpperLimitPrice != other.UpperLimitPrice) return false;
+      if (LowerLimitPrice != other.LowerLimitPrice) return false;
+      if (PreDelta != other.PreDelta) return false;
+      if (CurrDelta != other.CurrDelta) return false;
+      if (DataTime != other.DataTime) return false;
       if (Datetime != other.Datetime) return false;
-      if (TimeStamp != other.TimeStamp) return false;
-      if (Message != other.Message) return false;
-      if (Exchange != other.Exchange) return false;
-      if (Type != other.Type) return false;
+      if (Qty != other.Qty) return false;
+      if (Volume != other.Volume) return false;
+      if (Vol != other.Vol) return false;
+      if (Turnover != other.Turnover) return false;
+      if (AvgPrice != other.AvgPrice) return false;
+      if (Iopv != other.Iopv) return false;
+      if (EtfBuyCount != other.EtfBuyCount) return false;
+      if (EtfSellCount != other.EtfSellCount) return false;
+      if (EtfBuyQty != other.EtfBuyQty) return false;
+      if (EtfBuyMoney != other.EtfBuyMoney) return false;
+      if (EtfSellQty != other.EtfSellQty) return false;
+      if (EtfSellMoney != other.EtfSellMoney) return false;
       return true;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
+      if (ExchangeId.Length != 0) hash ^= ExchangeId.GetHashCode();
+      if (Ticker.Length != 0) hash ^= Ticker.GetHashCode();
       if (Code.Length != 0) hash ^= Code.GetHashCode();
-      if (Open != 0F) hash ^= Open.GetHashCode();
-      if (High != 0F) hash ^= High.GetHashCode();
-      if (Low != 0F) hash ^= Low.GetHashCode();
-      if (Close != 0F) hash ^= Close.GetHashCode();
-      if (Volume != 0F) hash ^= Volume.GetHashCode();
-      if (Date.Length != 0) hash ^= Date.GetHashCode();
-      if (Amount != 0F) hash ^= Amount.GetHashCode();
-      if (DateStamp.Length != 0) hash ^= DateStamp.GetHashCode();
+      if (LastPrice != 0D) hash ^= LastPrice.GetHashCode();
+      if (PreClosePrice != 0D) hash ^= PreClosePrice.GetHashCode();
+      if (Open != 0D) hash ^= Open.GetHashCode();
+      if (High != 0D) hash ^= High.GetHashCode();
+      if (Low != 0D) hash ^= Low.GetHashCode();
+      if (Close != 0D) hash ^= Close.GetHashCode();
+      if (ClosePrice != 0D) hash ^= ClosePrice.GetHashCode();
+      if (PreOpenInterest != 0D) hash ^= PreOpenInterest.GetHashCode();
+      if (OpenInterest != 0D) hash ^= OpenInterest.GetHashCode();
+      if (PreSettlementPrice != 0D) hash ^= PreSettlementPrice.GetHashCode();
+      if (SettlementPrice != 0D) hash ^= SettlementPrice.GetHashCode();
+      if (UpperLimitPrice != 0D) hash ^= UpperLimitPrice.GetHashCode();
+      if (LowerLimitPrice != 0D) hash ^= LowerLimitPrice.GetHashCode();
+      if (PreDelta != 0D) hash ^= PreDelta.GetHashCode();
+      if (CurrDelta != 0D) hash ^= CurrDelta.GetHashCode();
+      if (DataTime != 0L) hash ^= DataTime.GetHashCode();
       if (Datetime.Length != 0) hash ^= Datetime.GetHashCode();
-      if (TimeStamp.Length != 0) hash ^= TimeStamp.GetHashCode();
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (Exchange.Length != 0) hash ^= Exchange.GetHashCode();
-      if (Type.Length != 0) hash ^= Type.GetHashCode();
+      if (Qty != 0L) hash ^= Qty.GetHashCode();
+      if (Volume != 0F) hash ^= Volume.GetHashCode();
+      if (Vol != 0F) hash ^= Vol.GetHashCode();
+      if (Turnover != 0D) hash ^= Turnover.GetHashCode();
+      if (AvgPrice != 0D) hash ^= AvgPrice.GetHashCode();
+      if (Iopv != 0D) hash ^= Iopv.GetHashCode();
+      if (EtfBuyCount != 0) hash ^= EtfBuyCount.GetHashCode();
+      if (EtfSellCount != 0) hash ^= EtfSellCount.GetHashCode();
+      if (EtfBuyQty != 0D) hash ^= EtfBuyQty.GetHashCode();
+      if (EtfBuyMoney != 0D) hash ^= EtfBuyMoney.GetHashCode();
+      if (EtfSellQty != 0D) hash ^= EtfSellQty.GetHashCode();
+      if (EtfSellMoney != 0D) hash ^= EtfSellMoney.GetHashCode();
       return hash;
     }
 
@@ -604,108 +889,234 @@ namespace QUANTAXISRuntimeQuotation {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Code.Length != 0) {
+      if (ExchangeId.Length != 0) {
         output.WriteRawTag(10);
+        output.WriteString(ExchangeId);
+      }
+      if (Ticker.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Ticker);
+      }
+      if (Code.Length != 0) {
+        output.WriteRawTag(26);
         output.WriteString(Code);
       }
-      if (Open != 0F) {
-        output.WriteRawTag(21);
-        output.WriteFloat(Open);
+      if (LastPrice != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(LastPrice);
       }
-      if (High != 0F) {
-        output.WriteRawTag(29);
-        output.WriteFloat(High);
+      if (PreClosePrice != 0D) {
+        output.WriteRawTag(41);
+        output.WriteDouble(PreClosePrice);
       }
-      if (Low != 0F) {
-        output.WriteRawTag(37);
-        output.WriteFloat(Low);
+      if (Open != 0D) {
+        output.WriteRawTag(49);
+        output.WriteDouble(Open);
       }
-      if (Close != 0F) {
-        output.WriteRawTag(45);
-        output.WriteFloat(Close);
+      if (High != 0D) {
+        output.WriteRawTag(57);
+        output.WriteDouble(High);
       }
-      if (Volume != 0F) {
-        output.WriteRawTag(53);
-        output.WriteFloat(Volume);
+      if (Low != 0D) {
+        output.WriteRawTag(65);
+        output.WriteDouble(Low);
       }
-      if (Date.Length != 0) {
-        output.WriteRawTag(58);
-        output.WriteString(Date);
+      if (Close != 0D) {
+        output.WriteRawTag(73);
+        output.WriteDouble(Close);
       }
-      if (Amount != 0F) {
-        output.WriteRawTag(69);
-        output.WriteFloat(Amount);
+      if (ClosePrice != 0D) {
+        output.WriteRawTag(81);
+        output.WriteDouble(ClosePrice);
       }
-      if (DateStamp.Length != 0) {
-        output.WriteRawTag(74);
-        output.WriteString(DateStamp);
+      if (PreOpenInterest != 0D) {
+        output.WriteRawTag(89);
+        output.WriteDouble(PreOpenInterest);
+      }
+      if (OpenInterest != 0D) {
+        output.WriteRawTag(97);
+        output.WriteDouble(OpenInterest);
+      }
+      if (PreSettlementPrice != 0D) {
+        output.WriteRawTag(105);
+        output.WriteDouble(PreSettlementPrice);
+      }
+      if (SettlementPrice != 0D) {
+        output.WriteRawTag(113);
+        output.WriteDouble(SettlementPrice);
+      }
+      if (UpperLimitPrice != 0D) {
+        output.WriteRawTag(121);
+        output.WriteDouble(UpperLimitPrice);
+      }
+      if (LowerLimitPrice != 0D) {
+        output.WriteRawTag(129, 1);
+        output.WriteDouble(LowerLimitPrice);
+      }
+      if (PreDelta != 0D) {
+        output.WriteRawTag(137, 1);
+        output.WriteDouble(PreDelta);
+      }
+      if (CurrDelta != 0D) {
+        output.WriteRawTag(145, 1);
+        output.WriteDouble(CurrDelta);
+      }
+      if (DataTime != 0L) {
+        output.WriteRawTag(152, 1);
+        output.WriteSInt64(DataTime);
       }
       if (Datetime.Length != 0) {
-        output.WriteRawTag(82);
+        output.WriteRawTag(162, 1);
         output.WriteString(Datetime);
       }
-      if (TimeStamp.Length != 0) {
-        output.WriteRawTag(90);
-        output.WriteString(TimeStamp);
+      if (Qty != 0L) {
+        output.WriteRawTag(168, 1);
+        output.WriteSInt64(Qty);
       }
-      if (Message.Length != 0) {
-        output.WriteRawTag(98);
-        output.WriteString(Message);
+      if (Volume != 0F) {
+        output.WriteRawTag(181, 1);
+        output.WriteFloat(Volume);
       }
-      if (Exchange.Length != 0) {
-        output.WriteRawTag(106);
-        output.WriteString(Exchange);
+      if (Vol != 0F) {
+        output.WriteRawTag(189, 1);
+        output.WriteFloat(Vol);
       }
-      if (Type.Length != 0) {
-        output.WriteRawTag(114);
-        output.WriteString(Type);
+      if (Turnover != 0D) {
+        output.WriteRawTag(193, 1);
+        output.WriteDouble(Turnover);
+      }
+      if (AvgPrice != 0D) {
+        output.WriteRawTag(201, 1);
+        output.WriteDouble(AvgPrice);
+      }
+      if (Iopv != 0D) {
+        output.WriteRawTag(209, 1);
+        output.WriteDouble(Iopv);
+      }
+      if (EtfBuyCount != 0) {
+        output.WriteRawTag(216, 1);
+        output.WriteSInt32(EtfBuyCount);
+      }
+      if (EtfSellCount != 0) {
+        output.WriteRawTag(224, 1);
+        output.WriteSInt32(EtfSellCount);
+      }
+      if (EtfBuyQty != 0D) {
+        output.WriteRawTag(233, 1);
+        output.WriteDouble(EtfBuyQty);
+      }
+      if (EtfBuyMoney != 0D) {
+        output.WriteRawTag(241, 1);
+        output.WriteDouble(EtfBuyMoney);
+      }
+      if (EtfSellQty != 0D) {
+        output.WriteRawTag(249, 1);
+        output.WriteDouble(EtfSellQty);
+      }
+      if (EtfSellMoney != 0D) {
+        output.WriteRawTag(129, 2);
+        output.WriteDouble(EtfSellMoney);
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
+      if (ExchangeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ExchangeId);
+      }
+      if (Ticker.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Ticker);
+      }
       if (Code.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Code);
       }
-      if (Open != 0F) {
-        size += 1 + 4;
+      if (LastPrice != 0D) {
+        size += 1 + 8;
       }
-      if (High != 0F) {
-        size += 1 + 4;
+      if (PreClosePrice != 0D) {
+        size += 1 + 8;
       }
-      if (Low != 0F) {
-        size += 1 + 4;
+      if (Open != 0D) {
+        size += 1 + 8;
       }
-      if (Close != 0F) {
-        size += 1 + 4;
+      if (High != 0D) {
+        size += 1 + 8;
       }
-      if (Volume != 0F) {
-        size += 1 + 4;
+      if (Low != 0D) {
+        size += 1 + 8;
       }
-      if (Date.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Date);
+      if (Close != 0D) {
+        size += 1 + 8;
       }
-      if (Amount != 0F) {
-        size += 1 + 4;
+      if (ClosePrice != 0D) {
+        size += 1 + 8;
       }
-      if (DateStamp.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(DateStamp);
+      if (PreOpenInterest != 0D) {
+        size += 1 + 8;
+      }
+      if (OpenInterest != 0D) {
+        size += 1 + 8;
+      }
+      if (PreSettlementPrice != 0D) {
+        size += 1 + 8;
+      }
+      if (SettlementPrice != 0D) {
+        size += 1 + 8;
+      }
+      if (UpperLimitPrice != 0D) {
+        size += 1 + 8;
+      }
+      if (LowerLimitPrice != 0D) {
+        size += 2 + 8;
+      }
+      if (PreDelta != 0D) {
+        size += 2 + 8;
+      }
+      if (CurrDelta != 0D) {
+        size += 2 + 8;
+      }
+      if (DataTime != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeSInt64Size(DataTime);
       }
       if (Datetime.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Datetime);
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(Datetime);
       }
-      if (TimeStamp.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(TimeStamp);
+      if (Qty != 0L) {
+        size += 2 + pb::CodedOutputStream.ComputeSInt64Size(Qty);
       }
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      if (Volume != 0F) {
+        size += 2 + 4;
       }
-      if (Exchange.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Exchange);
+      if (Vol != 0F) {
+        size += 2 + 4;
       }
-      if (Type.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
+      if (Turnover != 0D) {
+        size += 2 + 8;
+      }
+      if (AvgPrice != 0D) {
+        size += 2 + 8;
+      }
+      if (Iopv != 0D) {
+        size += 2 + 8;
+      }
+      if (EtfBuyCount != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeSInt32Size(EtfBuyCount);
+      }
+      if (EtfSellCount != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeSInt32Size(EtfSellCount);
+      }
+      if (EtfBuyQty != 0D) {
+        size += 2 + 8;
+      }
+      if (EtfBuyMoney != 0D) {
+        size += 2 + 8;
+      }
+      if (EtfSellQty != 0D) {
+        size += 2 + 8;
+      }
+      if (EtfSellMoney != 0D) {
+        size += 2 + 8;
       }
       return size;
     }
@@ -715,47 +1126,101 @@ namespace QUANTAXISRuntimeQuotation {
       if (other == null) {
         return;
       }
+      if (other.ExchangeId.Length != 0) {
+        ExchangeId = other.ExchangeId;
+      }
+      if (other.Ticker.Length != 0) {
+        Ticker = other.Ticker;
+      }
       if (other.Code.Length != 0) {
         Code = other.Code;
       }
-      if (other.Open != 0F) {
+      if (other.LastPrice != 0D) {
+        LastPrice = other.LastPrice;
+      }
+      if (other.PreClosePrice != 0D) {
+        PreClosePrice = other.PreClosePrice;
+      }
+      if (other.Open != 0D) {
         Open = other.Open;
       }
-      if (other.High != 0F) {
+      if (other.High != 0D) {
         High = other.High;
       }
-      if (other.Low != 0F) {
+      if (other.Low != 0D) {
         Low = other.Low;
       }
-      if (other.Close != 0F) {
+      if (other.Close != 0D) {
         Close = other.Close;
       }
-      if (other.Volume != 0F) {
-        Volume = other.Volume;
+      if (other.ClosePrice != 0D) {
+        ClosePrice = other.ClosePrice;
       }
-      if (other.Date.Length != 0) {
-        Date = other.Date;
+      if (other.PreOpenInterest != 0D) {
+        PreOpenInterest = other.PreOpenInterest;
       }
-      if (other.Amount != 0F) {
-        Amount = other.Amount;
+      if (other.OpenInterest != 0D) {
+        OpenInterest = other.OpenInterest;
       }
-      if (other.DateStamp.Length != 0) {
-        DateStamp = other.DateStamp;
+      if (other.PreSettlementPrice != 0D) {
+        PreSettlementPrice = other.PreSettlementPrice;
+      }
+      if (other.SettlementPrice != 0D) {
+        SettlementPrice = other.SettlementPrice;
+      }
+      if (other.UpperLimitPrice != 0D) {
+        UpperLimitPrice = other.UpperLimitPrice;
+      }
+      if (other.LowerLimitPrice != 0D) {
+        LowerLimitPrice = other.LowerLimitPrice;
+      }
+      if (other.PreDelta != 0D) {
+        PreDelta = other.PreDelta;
+      }
+      if (other.CurrDelta != 0D) {
+        CurrDelta = other.CurrDelta;
+      }
+      if (other.DataTime != 0L) {
+        DataTime = other.DataTime;
       }
       if (other.Datetime.Length != 0) {
         Datetime = other.Datetime;
       }
-      if (other.TimeStamp.Length != 0) {
-        TimeStamp = other.TimeStamp;
+      if (other.Qty != 0L) {
+        Qty = other.Qty;
       }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
+      if (other.Volume != 0F) {
+        Volume = other.Volume;
       }
-      if (other.Exchange.Length != 0) {
-        Exchange = other.Exchange;
+      if (other.Vol != 0F) {
+        Vol = other.Vol;
       }
-      if (other.Type.Length != 0) {
-        Type = other.Type;
+      if (other.Turnover != 0D) {
+        Turnover = other.Turnover;
+      }
+      if (other.AvgPrice != 0D) {
+        AvgPrice = other.AvgPrice;
+      }
+      if (other.Iopv != 0D) {
+        Iopv = other.Iopv;
+      }
+      if (other.EtfBuyCount != 0) {
+        EtfBuyCount = other.EtfBuyCount;
+      }
+      if (other.EtfSellCount != 0) {
+        EtfSellCount = other.EtfSellCount;
+      }
+      if (other.EtfBuyQty != 0D) {
+        EtfBuyQty = other.EtfBuyQty;
+      }
+      if (other.EtfBuyMoney != 0D) {
+        EtfBuyMoney = other.EtfBuyMoney;
+      }
+      if (other.EtfSellQty != 0D) {
+        EtfSellQty = other.EtfSellQty;
+      }
+      if (other.EtfSellMoney != 0D) {
+        EtfSellMoney = other.EtfSellMoney;
       }
     }
 
@@ -768,59 +1233,131 @@ namespace QUANTAXISRuntimeQuotation {
             input.SkipLastField();
             break;
           case 10: {
+            ExchangeId = input.ReadString();
+            break;
+          }
+          case 18: {
+            Ticker = input.ReadString();
+            break;
+          }
+          case 26: {
             Code = input.ReadString();
             break;
           }
-          case 21: {
-            Open = input.ReadFloat();
+          case 33: {
+            LastPrice = input.ReadDouble();
             break;
           }
-          case 29: {
-            High = input.ReadFloat();
+          case 41: {
+            PreClosePrice = input.ReadDouble();
             break;
           }
-          case 37: {
-            Low = input.ReadFloat();
+          case 49: {
+            Open = input.ReadDouble();
             break;
           }
-          case 45: {
-            Close = input.ReadFloat();
+          case 57: {
+            High = input.ReadDouble();
             break;
           }
-          case 53: {
-            Volume = input.ReadFloat();
+          case 65: {
+            Low = input.ReadDouble();
             break;
           }
-          case 58: {
-            Date = input.ReadString();
+          case 73: {
+            Close = input.ReadDouble();
             break;
           }
-          case 69: {
-            Amount = input.ReadFloat();
+          case 81: {
+            ClosePrice = input.ReadDouble();
             break;
           }
-          case 74: {
-            DateStamp = input.ReadString();
+          case 89: {
+            PreOpenInterest = input.ReadDouble();
             break;
           }
-          case 82: {
+          case 97: {
+            OpenInterest = input.ReadDouble();
+            break;
+          }
+          case 105: {
+            PreSettlementPrice = input.ReadDouble();
+            break;
+          }
+          case 113: {
+            SettlementPrice = input.ReadDouble();
+            break;
+          }
+          case 121: {
+            UpperLimitPrice = input.ReadDouble();
+            break;
+          }
+          case 129: {
+            LowerLimitPrice = input.ReadDouble();
+            break;
+          }
+          case 137: {
+            PreDelta = input.ReadDouble();
+            break;
+          }
+          case 145: {
+            CurrDelta = input.ReadDouble();
+            break;
+          }
+          case 152: {
+            DataTime = input.ReadSInt64();
+            break;
+          }
+          case 162: {
             Datetime = input.ReadString();
             break;
           }
-          case 90: {
-            TimeStamp = input.ReadString();
+          case 168: {
+            Qty = input.ReadSInt64();
             break;
           }
-          case 98: {
-            Message = input.ReadString();
+          case 181: {
+            Volume = input.ReadFloat();
             break;
           }
-          case 106: {
-            Exchange = input.ReadString();
+          case 189: {
+            Vol = input.ReadFloat();
             break;
           }
-          case 114: {
-            Type = input.ReadString();
+          case 193: {
+            Turnover = input.ReadDouble();
+            break;
+          }
+          case 201: {
+            AvgPrice = input.ReadDouble();
+            break;
+          }
+          case 209: {
+            Iopv = input.ReadDouble();
+            break;
+          }
+          case 216: {
+            EtfBuyCount = input.ReadSInt32();
+            break;
+          }
+          case 224: {
+            EtfSellCount = input.ReadSInt32();
+            break;
+          }
+          case 233: {
+            EtfBuyQty = input.ReadDouble();
+            break;
+          }
+          case 241: {
+            EtfBuyMoney = input.ReadDouble();
+            break;
+          }
+          case 249: {
+            EtfSellQty = input.ReadDouble();
+            break;
+          }
+          case 257: {
+            EtfSellMoney = input.ReadDouble();
             break;
           }
         }

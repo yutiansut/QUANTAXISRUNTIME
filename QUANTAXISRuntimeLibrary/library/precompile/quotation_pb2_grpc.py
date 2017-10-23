@@ -7,6 +7,8 @@ import quotation_pb2 as quotation__pb2
 class QR_QuotationServiceStub(object):
   """行情服务  无状态的
 
+  参考XTP MarketDataStruct
+
   """
 
   def __init__(self, channel):
@@ -34,6 +36,8 @@ class QR_QuotationServiceStub(object):
 
 class QR_QuotationServiceServicer(object):
   """行情服务  无状态的
+
+  参考XTP MarketDataStruct
 
   """
 

@@ -28,6 +28,11 @@ public:
  ::google::protobuf::internal::ExplicitlyConstructed<tradergateway_req_gateway_status>
      _instance;
 } _tradergateway_req_gateway_status_default_instance_;
+class tradergateway_req_orderDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<tradergateway_req_order>
+     _instance;
+} _tradergateway_req_order_default_instance_;
 class tradergateway_reqDefaultTypeInternal {
 public:
  ::google::protobuf::internal::ExplicitlyConstructed<tradergateway_req>
@@ -39,7 +44,7 @@ namespace protobuf_tradergateway_2eproto {
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[3];
+::google::protobuf::Metadata file_level_metadata[4];
 
 }  // namespace
 
@@ -54,6 +59,7 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
@@ -84,6 +90,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_trader, trader_encrymethod_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_trader, trader_rawdatalength_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_trader, trader_rejectmessage_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_trader, trader_txpassword_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_gateway_status, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -91,6 +98,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_gateway_status, gateway_islogin_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_gateway_status, gateway_iserror_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_order, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req_order, order_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(tradergateway_req, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -105,13 +118,15 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(tradergateway_req_trader)},
-  { 24, -1, sizeof(tradergateway_req_gateway_status)},
-  { 31, -1, sizeof(tradergateway_req)},
+  { 25, -1, sizeof(tradergateway_req_gateway_status)},
+  { 32, -1, sizeof(tradergateway_req_order)},
+  { 38, -1, sizeof(tradergateway_req)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_tradergateway_req_trader_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_tradergateway_req_gateway_status_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_tradergateway_req_order_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_tradergateway_req_default_instance_),
 };
 
@@ -133,7 +148,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 3);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 4);
 }
 
 }  // namespace
@@ -145,7 +160,9 @@ void TableStruct::InitDefaultsImpl() {
   ::google::protobuf::internal::OnShutdownDestroyMessage(
       &_tradergateway_req_trader_default_instance_);_tradergateway_req_gateway_status_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_tradergateway_req_gateway_status_default_instance_);_tradergateway_req_default_instance_._instance.DefaultConstruct();
+      &_tradergateway_req_gateway_status_default_instance_);_tradergateway_req_order_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_tradergateway_req_order_default_instance_);_tradergateway_req_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
       &_tradergateway_req_default_instance_);}
 
@@ -158,11 +175,11 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\023tradergateway.proto\022\037QUANTAXIS_Runtime"
-      "_Tradergateway\"\322\005\n\021tradergateway_req\022\026\n\016"
+      "_Tradergateway\"\205\006\n\021tradergateway_req\022\026\n\016"
       "gateway_broker\030\001 \001(\t\022\024\n\014gateway_user\030\002 \001"
       "(\t\022\030\n\020gateway_password\030\003 \001(\t\022\025\n\rgateway_"
       "token\030\004 \001(\t\022\027\n\017gateway_session\030\005 \001(\t\022\027\n\017"
-      "gateway_message\030\006 \001(\t\032\347\003\n\006trader\022\025\n\rtrad"
+      "gateway_message\030\006 \001(\t\032\202\004\n\006trader\022\025\n\rtrad"
       "er_broker\030\001 \001(\t\022\023\n\013trader_user\030\002 \001(\t\022\027\n\017"
       "trader_password\030\003 \001(\t\022\024\n\014trader_token\030\004 "
       "\001(\t\022\026\n\016trader_session\030\005 \001(\t\022\021\n\ttrader_ip"
@@ -174,12 +191,13 @@ void AddDescriptorsImpl() {
       "ount_model\030\016 \001(\t\022\023\n\013trader_time\030\017 \001(\t\022\030\n"
       "\020trader_heartbeat\030\020 \001(\t\022\032\n\022trader_encrym"
       "ethod\030\021 \001(\t\022\034\n\024trader_rawdatalength\030\022 \001("
-      "\t\022\034\n\024trader_rejectmessage\030\023 \001(\t\032B\n\016gatew"
-      "ay_status\022\027\n\017gateway_islogin\030\001 \001(\t\022\027\n\017ga"
-      "teway_iserror\030\002 \001(\tb\006proto3"
+      "\t\022\034\n\024trader_rejectmessage\030\023 \001(\t\022\031\n\021trade"
+      "r_txpassword\030\024 \001(\t\032B\n\016gateway_status\022\027\n\017"
+      "gateway_islogin\030\001 \001(\t\022\027\n\017gateway_iserror"
+      "\030\002 \001(\t\032\026\n\005order\022\r\n\005order\030\001 \001(\tb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 787);
+      descriptor, 838);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "tradergateway.proto", &protobuf_RegisterTypes);
 }
@@ -221,6 +239,7 @@ const int tradergateway_req_trader::kTraderHeartbeatFieldNumber;
 const int tradergateway_req_trader::kTraderEncrymethodFieldNumber;
 const int tradergateway_req_trader::kTraderRawdatalengthFieldNumber;
 const int tradergateway_req_trader::kTraderRejectmessageFieldNumber;
+const int tradergateway_req_trader::kTraderTxpasswordFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 tradergateway_req_trader::tradergateway_req_trader()
@@ -312,6 +331,10 @@ tradergateway_req_trader::tradergateway_req_trader(const tradergateway_req_trade
   if (from.trader_rejectmessage().size() > 0) {
     trader_rejectmessage_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.trader_rejectmessage_);
   }
+  trader_txpassword_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.trader_txpassword().size() > 0) {
+    trader_txpassword_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.trader_txpassword_);
+  }
   // @@protoc_insertion_point(copy_constructor:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader)
 }
 
@@ -335,6 +358,7 @@ void tradergateway_req_trader::SharedCtor() {
   trader_encrymethod_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   trader_rawdatalength_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   trader_rejectmessage_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  trader_txpassword_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _cached_size_ = 0;
 }
 
@@ -363,6 +387,7 @@ void tradergateway_req_trader::SharedDtor() {
   trader_encrymethod_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   trader_rawdatalength_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   trader_rejectmessage_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  trader_txpassword_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void tradergateway_req_trader::SetCachedSize(int size) const {
@@ -413,6 +438,7 @@ void tradergateway_req_trader::Clear() {
   trader_encrymethod_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   trader_rawdatalength_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   trader_rejectmessage_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  trader_txpassword_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
@@ -730,6 +756,22 @@ bool tradergateway_req_trader::MergePartialFromCodedStream(
         break;
       }
 
+      // string trader_txpassword = 20;
+      case 20: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(162u /* 162 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_trader_txpassword()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->trader_txpassword().data(), static_cast<int>(this->trader_txpassword().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -944,6 +986,16 @@ void tradergateway_req_trader::SerializeWithCachedSizes(
       "QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_rejectmessage");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
       19, this->trader_rejectmessage(), output);
+  }
+
+  // string trader_txpassword = 20;
+  if (this->trader_txpassword().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->trader_txpassword().data(), static_cast<int>(this->trader_txpassword().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      20, this->trader_txpassword(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1169,6 +1221,17 @@ void tradergateway_req_trader::SerializeWithCachedSizes(
         19, this->trader_rejectmessage(), target);
   }
 
+  // string trader_txpassword = 20;
+  if (this->trader_txpassword().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->trader_txpassword().data(), static_cast<int>(this->trader_txpassword().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        20, this->trader_txpassword(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -1319,6 +1382,13 @@ size_t tradergateway_req_trader::ByteSizeLong() const {
         this->trader_rejectmessage());
   }
 
+  // string trader_txpassword = 20;
+  if (this->trader_txpassword().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->trader_txpassword());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
   _cached_size_ = cached_size;
@@ -1424,6 +1494,10 @@ void tradergateway_req_trader::MergeFrom(const tradergateway_req_trader& from) {
 
     trader_rejectmessage_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.trader_rejectmessage_);
   }
+  if (from.trader_txpassword().size() > 0) {
+
+    trader_txpassword_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.trader_txpassword_);
+  }
 }
 
 void tradergateway_req_trader::CopyFrom(const ::google::protobuf::Message& from) {
@@ -1469,6 +1543,7 @@ void tradergateway_req_trader::InternalSwap(tradergateway_req_trader* other) {
   trader_encrymethod_.Swap(&other->trader_encrymethod_);
   trader_rawdatalength_.Swap(&other->trader_rawdatalength_);
   trader_rejectmessage_.Swap(&other->trader_rejectmessage_);
+  trader_txpassword_.Swap(&other->trader_txpassword_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }
@@ -2488,6 +2563,59 @@ void tradergateway_req_trader::set_allocated_trader_rejectmessage(::std::string*
   // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_rejectmessage)
 }
 
+// string trader_txpassword = 20;
+void tradergateway_req_trader::clear_trader_txpassword() {
+  trader_txpassword_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& tradergateway_req_trader::trader_txpassword() const {
+  // @@protoc_insertion_point(field_get:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+  return trader_txpassword_.GetNoArena();
+}
+void tradergateway_req_trader::set_trader_txpassword(const ::std::string& value) {
+  
+  trader_txpassword_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+#if LANG_CXX11
+void tradergateway_req_trader::set_trader_txpassword(::std::string&& value) {
+  
+  trader_txpassword_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+#endif
+void tradergateway_req_trader::set_trader_txpassword(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  trader_txpassword_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+void tradergateway_req_trader::set_trader_txpassword(const char* value, size_t size) {
+  
+  trader_txpassword_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+::std::string* tradergateway_req_trader::mutable_trader_txpassword() {
+  
+  // @@protoc_insertion_point(field_mutable:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+  return trader_txpassword_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* tradergateway_req_trader::release_trader_txpassword() {
+  // @@protoc_insertion_point(field_release:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+  
+  return trader_txpassword_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void tradergateway_req_trader::set_allocated_trader_txpassword(::std::string* trader_txpassword) {
+  if (trader_txpassword != NULL) {
+    
+  } else {
+    
+  }
+  trader_txpassword_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), trader_txpassword);
+  // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
 
 // ===================================================================
@@ -2907,6 +3035,317 @@ void tradergateway_req_gateway_status::set_allocated_gateway_iserror(::std::stri
   }
   gateway_iserror_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), gateway_iserror);
   // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_status.gateway_iserror)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int tradergateway_req_order::kOrderFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+tradergateway_req_order::tradergateway_req_order()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_tradergateway_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+}
+tradergateway_req_order::tradergateway_req_order(const tradergateway_req_order& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  order_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.order().size() > 0) {
+    order_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.order_);
+  }
+  // @@protoc_insertion_point(copy_constructor:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+}
+
+void tradergateway_req_order::SharedCtor() {
+  order_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _cached_size_ = 0;
+}
+
+tradergateway_req_order::~tradergateway_req_order() {
+  // @@protoc_insertion_point(destructor:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  SharedDtor();
+}
+
+void tradergateway_req_order::SharedDtor() {
+  order_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void tradergateway_req_order::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* tradergateway_req_order::descriptor() {
+  protobuf_tradergateway_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_tradergateway_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const tradergateway_req_order& tradergateway_req_order::default_instance() {
+  protobuf_tradergateway_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+tradergateway_req_order* tradergateway_req_order::New(::google::protobuf::Arena* arena) const {
+  tradergateway_req_order* n = new tradergateway_req_order;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void tradergateway_req_order::Clear() {
+// @@protoc_insertion_point(message_clear_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  order_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+bool tradergateway_req_order::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string order = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_order()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->order().data(), static_cast<int>(this->order().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  return false;
+#undef DO_
+}
+
+void tradergateway_req_order::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string order = 1;
+  if (this->order().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->order().data(), static_cast<int>(this->order().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->order(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+}
+
+::google::protobuf::uint8* tradergateway_req_order::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string order = 1;
+  if (this->order().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->order().data(), static_cast<int>(this->order().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->order(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  return target;
+}
+
+size_t tradergateway_req_order::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string order = 1;
+  if (this->order().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->order());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void tradergateway_req_order::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  GOOGLE_DCHECK_NE(&from, this);
+  const tradergateway_req_order* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const tradergateway_req_order>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+    MergeFrom(*source);
+  }
+}
+
+void tradergateway_req_order::MergeFrom(const tradergateway_req_order& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.order().size() > 0) {
+
+    order_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.order_);
+  }
+}
+
+void tradergateway_req_order::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void tradergateway_req_order::CopyFrom(const tradergateway_req_order& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool tradergateway_req_order::IsInitialized() const {
+  return true;
+}
+
+void tradergateway_req_order::Swap(tradergateway_req_order* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void tradergateway_req_order::InternalSwap(tradergateway_req_order* other) {
+  using std::swap;
+  order_.Swap(&other->order_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata tradergateway_req_order::GetMetadata() const {
+  protobuf_tradergateway_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_tradergateway_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// tradergateway_req_order
+
+// string order = 1;
+void tradergateway_req_order::clear_order() {
+  order_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& tradergateway_req_order::order() const {
+  // @@protoc_insertion_point(field_get:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+  return order_.GetNoArena();
+}
+void tradergateway_req_order::set_order(const ::std::string& value) {
+  
+  order_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+}
+#if LANG_CXX11
+void tradergateway_req_order::set_order(::std::string&& value) {
+  
+  order_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+}
+#endif
+void tradergateway_req_order::set_order(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  order_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+}
+void tradergateway_req_order::set_order(const char* value, size_t size) {
+  
+  order_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+}
+::std::string* tradergateway_req_order::mutable_order() {
+  
+  // @@protoc_insertion_point(field_mutable:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+  return order_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* tradergateway_req_order::release_order() {
+  // @@protoc_insertion_point(field_release:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+  
+  return order_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void tradergateway_req_order::set_allocated_order(::std::string* order) {
+  if (order != NULL) {
+    
+  } else {
+    
+  }
+  order_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), order);
+  // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

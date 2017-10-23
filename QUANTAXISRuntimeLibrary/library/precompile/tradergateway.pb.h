@@ -37,6 +37,9 @@ extern tradergateway_reqDefaultTypeInternal _tradergateway_req_default_instance_
 class tradergateway_req_gateway_status;
 class tradergateway_req_gateway_statusDefaultTypeInternal;
 extern tradergateway_req_gateway_statusDefaultTypeInternal _tradergateway_req_gateway_status_default_instance_;
+class tradergateway_req_order;
+class tradergateway_req_orderDefaultTypeInternal;
+extern tradergateway_req_orderDefaultTypeInternal _tradergateway_req_order_default_instance_;
 class tradergateway_req_trader;
 class tradergateway_req_traderDefaultTypeInternal;
 extern tradergateway_req_traderDefaultTypeInternal _tradergateway_req_trader_default_instance_;
@@ -408,6 +411,20 @@ class tradergateway_req_trader : public ::google::protobuf::Message /* @@protoc_
   ::std::string* release_trader_rejectmessage();
   void set_allocated_trader_rejectmessage(::std::string* trader_rejectmessage);
 
+  // string trader_txpassword = 20;
+  void clear_trader_txpassword();
+  static const int kTraderTxpasswordFieldNumber = 20;
+  const ::std::string& trader_txpassword() const;
+  void set_trader_txpassword(const ::std::string& value);
+  #if LANG_CXX11
+  void set_trader_txpassword(::std::string&& value);
+  #endif
+  void set_trader_txpassword(const char* value);
+  void set_trader_txpassword(const char* value, size_t size);
+  ::std::string* mutable_trader_txpassword();
+  ::std::string* release_trader_txpassword();
+  void set_allocated_trader_txpassword(::std::string* trader_txpassword);
+
   // @@protoc_insertion_point(class_scope:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader)
  private:
 
@@ -431,6 +448,7 @@ class tradergateway_req_trader : public ::google::protobuf::Message /* @@protoc_
   ::google::protobuf::internal::ArenaStringPtr trader_encrymethod_;
   ::google::protobuf::internal::ArenaStringPtr trader_rawdatalength_;
   ::google::protobuf::internal::ArenaStringPtr trader_rejectmessage_;
+  ::google::protobuf::internal::ArenaStringPtr trader_txpassword_;
   mutable int _cached_size_;
   friend struct protobuf_tradergateway_2eproto::TableStruct;
 };
@@ -556,6 +574,111 @@ class tradergateway_req_gateway_status : public ::google::protobuf::Message /* @
 };
 // -------------------------------------------------------------------
 
+class tradergateway_req_order : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order) */ {
+ public:
+  tradergateway_req_order();
+  virtual ~tradergateway_req_order();
+
+  tradergateway_req_order(const tradergateway_req_order& from);
+
+  inline tradergateway_req_order& operator=(const tradergateway_req_order& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  tradergateway_req_order(tradergateway_req_order&& from) noexcept
+    : tradergateway_req_order() {
+    *this = ::std::move(from);
+  }
+
+  inline tradergateway_req_order& operator=(tradergateway_req_order&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const tradergateway_req_order& default_instance();
+
+  static inline const tradergateway_req_order* internal_default_instance() {
+    return reinterpret_cast<const tradergateway_req_order*>(
+               &_tradergateway_req_order_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    2;
+
+  void Swap(tradergateway_req_order* other);
+  friend void swap(tradergateway_req_order& a, tradergateway_req_order& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline tradergateway_req_order* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  tradergateway_req_order* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const tradergateway_req_order& from);
+  void MergeFrom(const tradergateway_req_order& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(tradergateway_req_order* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string order = 1;
+  void clear_order();
+  static const int kOrderFieldNumber = 1;
+  const ::std::string& order() const;
+  void set_order(const ::std::string& value);
+  #if LANG_CXX11
+  void set_order(::std::string&& value);
+  #endif
+  void set_order(const char* value);
+  void set_order(const char* value, size_t size);
+  ::std::string* mutable_order();
+  ::std::string* release_order();
+  void set_allocated_order(::std::string* order);
+
+  // @@protoc_insertion_point(class_scope:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr order_;
+  mutable int _cached_size_;
+  friend struct protobuf_tradergateway_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class tradergateway_req : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:QUANTAXIS_Runtime_Tradergateway.tradergateway_req) */ {
  public:
   tradergateway_req();
@@ -590,7 +713,7 @@ class tradergateway_req : public ::google::protobuf::Message /* @@protoc_inserti
                &_tradergateway_req_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(tradergateway_req* other);
   friend void swap(tradergateway_req& a, tradergateway_req& b) {
@@ -637,6 +760,7 @@ class tradergateway_req : public ::google::protobuf::Message /* @@protoc_inserti
 
   typedef tradergateway_req_trader trader;
   typedef tradergateway_req_gateway_status gateway_status;
+  typedef tradergateway_req_order order;
 
   // accessors -------------------------------------------------------
 
@@ -1756,6 +1880,59 @@ inline void tradergateway_req_trader::set_allocated_trader_rejectmessage(::std::
   // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_rejectmessage)
 }
 
+// string trader_txpassword = 20;
+inline void tradergateway_req_trader::clear_trader_txpassword() {
+  trader_txpassword_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& tradergateway_req_trader::trader_txpassword() const {
+  // @@protoc_insertion_point(field_get:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+  return trader_txpassword_.GetNoArena();
+}
+inline void tradergateway_req_trader::set_trader_txpassword(const ::std::string& value) {
+  
+  trader_txpassword_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+#if LANG_CXX11
+inline void tradergateway_req_trader::set_trader_txpassword(::std::string&& value) {
+  
+  trader_txpassword_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+#endif
+inline void tradergateway_req_trader::set_trader_txpassword(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  trader_txpassword_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+inline void tradergateway_req_trader::set_trader_txpassword(const char* value, size_t size) {
+  
+  trader_txpassword_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+inline ::std::string* tradergateway_req_trader::mutable_trader_txpassword() {
+  
+  // @@protoc_insertion_point(field_mutable:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+  return trader_txpassword_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* tradergateway_req_trader::release_trader_txpassword() {
+  // @@protoc_insertion_point(field_release:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+  
+  return trader_txpassword_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void tradergateway_req_trader::set_allocated_trader_txpassword(::std::string* trader_txpassword) {
+  if (trader_txpassword != NULL) {
+    
+  } else {
+    
+  }
+  trader_txpassword_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), trader_txpassword);
+  // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_txpassword)
+}
+
 // -------------------------------------------------------------------
 
 // tradergateway_req_gateway_status
@@ -1864,6 +2041,63 @@ inline void tradergateway_req_gateway_status::set_allocated_gateway_iserror(::st
   }
   gateway_iserror_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), gateway_iserror);
   // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_status.gateway_iserror)
+}
+
+// -------------------------------------------------------------------
+
+// tradergateway_req_order
+
+// string order = 1;
+inline void tradergateway_req_order::clear_order() {
+  order_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& tradergateway_req_order::order() const {
+  // @@protoc_insertion_point(field_get:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+  return order_.GetNoArena();
+}
+inline void tradergateway_req_order::set_order(const ::std::string& value) {
+  
+  order_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+}
+#if LANG_CXX11
+inline void tradergateway_req_order::set_order(::std::string&& value) {
+  
+  order_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+}
+#endif
+inline void tradergateway_req_order::set_order(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  order_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+}
+inline void tradergateway_req_order::set_order(const char* value, size_t size) {
+  
+  order_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+}
+inline ::std::string* tradergateway_req_order::mutable_order() {
+  
+  // @@protoc_insertion_point(field_mutable:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+  return order_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* tradergateway_req_order::release_order() {
+  // @@protoc_insertion_point(field_release:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
+  
+  return order_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void tradergateway_req_order::set_allocated_order(::std::string* order) {
+  if (order != NULL) {
+    
+  } else {
+    
+  }
+  order_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), order);
+  // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.order.order)
 }
 
 // -------------------------------------------------------------------
@@ -2192,6 +2426,8 @@ inline void tradergateway_req::set_allocated_gateway_message(::std::string* gate
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -23,10 +23,10 @@ namespace QUANTAXISRuntimeTradergateway {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "ChN0cmFkZXJnYXRld2F5LnByb3RvEh9RVUFOVEFYSVNfUnVudGltZV9UcmFk",
-            "ZXJnYXRld2F5ItIFChF0cmFkZXJnYXRld2F5X3JlcRIWCg5nYXRld2F5X2Jy",
+            "ZXJnYXRld2F5IoUGChF0cmFkZXJnYXRld2F5X3JlcRIWCg5nYXRld2F5X2Jy",
             "b2tlchgBIAEoCRIUCgxnYXRld2F5X3VzZXIYAiABKAkSGAoQZ2F0ZXdheV9w",
             "YXNzd29yZBgDIAEoCRIVCg1nYXRld2F5X3Rva2VuGAQgASgJEhcKD2dhdGV3",
-            "YXlfc2Vzc2lvbhgFIAEoCRIXCg9nYXRld2F5X21lc3NhZ2UYBiABKAka5wMK",
+            "YXlfc2Vzc2lvbhgFIAEoCRIXCg9nYXRld2F5X21lc3NhZ2UYBiABKAkaggQK",
             "BnRyYWRlchIVCg10cmFkZXJfYnJva2VyGAEgASgJEhMKC3RyYWRlcl91c2Vy",
             "GAIgASgJEhcKD3RyYWRlcl9wYXNzd29yZBgDIAEoCRIUCgx0cmFkZXJfdG9r",
             "ZW4YBCABKAkSFgoOdHJhZGVyX3Nlc3Npb24YBSABKAkSEQoJdHJhZGVyX2lw",
@@ -37,14 +37,16 @@ namespace QUANTAXISRuntimeTradergateway {
             "GA0gASgJEhwKFHRyYWRlcl9hY2NvdW50X21vZGVsGA4gASgJEhMKC3RyYWRl",
             "cl90aW1lGA8gASgJEhgKEHRyYWRlcl9oZWFydGJlYXQYECABKAkSGgoSdHJh",
             "ZGVyX2VuY3J5bWV0aG9kGBEgASgJEhwKFHRyYWRlcl9yYXdkYXRhbGVuZ3Ro",
-            "GBIgASgJEhwKFHRyYWRlcl9yZWplY3RtZXNzYWdlGBMgASgJGkIKDmdhdGV3",
-            "YXlfc3RhdHVzEhcKD2dhdGV3YXlfaXNsb2dpbhgBIAEoCRIXCg9nYXRld2F5",
-            "X2lzZXJyb3IYAiABKAliBnByb3RvMw=="));
+            "GBIgASgJEhwKFHRyYWRlcl9yZWplY3RtZXNzYWdlGBMgASgJEhkKEXRyYWRl",
+            "cl90eHBhc3N3b3JkGBQgASgJGkIKDmdhdGV3YXlfc3RhdHVzEhcKD2dhdGV3",
+            "YXlfaXNsb2dpbhgBIAEoCRIXCg9nYXRld2F5X2lzZXJyb3IYAiABKAkaFgoF",
+            "b3JkZXISDQoFb3JkZXIYASABKAliBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeTradergateway.tradergateway_req), global::QUANTAXISRuntimeTradergateway.tradergateway_req.Parser, new[]{ "GatewayBroker", "GatewayUser", "GatewayPassword", "GatewayToken", "GatewaySession", "GatewayMessage" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.trader), global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.trader.Parser, new[]{ "TraderBroker", "TraderUser", "TraderPassword", "TraderToken", "TraderSession", "TraderIp", "TraderPort", "TraderClientversion", "TraderRet", "TraderErrorContext", "TraderErrorId", "TraderDepId", "TraderCreditAccount", "TraderAccountModel", "TraderTime", "TraderHeartbeat", "TraderEncrymethod", "TraderRawdatalength", "TraderRejectmessage" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.gateway_status), global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.gateway_status.Parser, new[]{ "GatewayIslogin", "GatewayIserror" }, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeTradergateway.tradergateway_req), global::QUANTAXISRuntimeTradergateway.tradergateway_req.Parser, new[]{ "GatewayBroker", "GatewayUser", "GatewayPassword", "GatewayToken", "GatewaySession", "GatewayMessage" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.trader), global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.trader.Parser, new[]{ "TraderBroker", "TraderUser", "TraderPassword", "TraderToken", "TraderSession", "TraderIp", "TraderPort", "TraderClientversion", "TraderRet", "TraderErrorContext", "TraderErrorId", "TraderDepId", "TraderCreditAccount", "TraderAccountModel", "TraderTime", "TraderHeartbeat", "TraderEncrymethod", "TraderRawdatalength", "TraderRejectmessage", "TraderTxpassword" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.gateway_status), global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.gateway_status.Parser, new[]{ "GatewayIslogin", "GatewayIserror" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.order), global::QUANTAXISRuntimeTradergateway.tradergateway_req.Types.order.Parser, new[]{ "Order" }, null, null, null)})
           }));
     }
     #endregion
@@ -371,6 +373,7 @@ namespace QUANTAXISRuntimeTradergateway {
           traderEncrymethod_ = other.traderEncrymethod_;
           traderRawdatalength_ = other.traderRawdatalength_;
           traderRejectmessage_ = other.traderRejectmessage_;
+          traderTxpassword_ = other.traderTxpassword_;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -642,6 +645,20 @@ namespace QUANTAXISRuntimeTradergateway {
           }
         }
 
+        /// <summary>Field number for the "trader_txpassword" field.</summary>
+        public const int TraderTxpasswordFieldNumber = 20;
+        private string traderTxpassword_ = "";
+        /// <summary>
+        ///tdx 通讯密码
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string TraderTxpassword {
+          get { return traderTxpassword_; }
+          set {
+            traderTxpassword_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public override bool Equals(object other) {
           return Equals(other as trader);
@@ -674,6 +691,7 @@ namespace QUANTAXISRuntimeTradergateway {
           if (TraderEncrymethod != other.TraderEncrymethod) return false;
           if (TraderRawdatalength != other.TraderRawdatalength) return false;
           if (TraderRejectmessage != other.TraderRejectmessage) return false;
+          if (TraderTxpassword != other.TraderTxpassword) return false;
           return true;
         }
 
@@ -699,6 +717,7 @@ namespace QUANTAXISRuntimeTradergateway {
           if (TraderEncrymethod.Length != 0) hash ^= TraderEncrymethod.GetHashCode();
           if (TraderRawdatalength.Length != 0) hash ^= TraderRawdatalength.GetHashCode();
           if (TraderRejectmessage.Length != 0) hash ^= TraderRejectmessage.GetHashCode();
+          if (TraderTxpassword.Length != 0) hash ^= TraderTxpassword.GetHashCode();
           return hash;
         }
 
@@ -785,6 +804,10 @@ namespace QUANTAXISRuntimeTradergateway {
             output.WriteRawTag(154, 1);
             output.WriteString(TraderRejectmessage);
           }
+          if (TraderTxpassword.Length != 0) {
+            output.WriteRawTag(162, 1);
+            output.WriteString(TraderTxpassword);
+          }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -846,6 +869,9 @@ namespace QUANTAXISRuntimeTradergateway {
           }
           if (TraderRejectmessage.Length != 0) {
             size += 2 + pb::CodedOutputStream.ComputeStringSize(TraderRejectmessage);
+          }
+          if (TraderTxpassword.Length != 0) {
+            size += 2 + pb::CodedOutputStream.ComputeStringSize(TraderTxpassword);
           }
           return size;
         }
@@ -911,6 +937,9 @@ namespace QUANTAXISRuntimeTradergateway {
           }
           if (other.TraderRejectmessage.Length != 0) {
             TraderRejectmessage = other.TraderRejectmessage;
+          }
+          if (other.TraderTxpassword.Length != 0) {
+            TraderTxpassword = other.TraderTxpassword;
           }
         }
 
@@ -996,6 +1025,10 @@ namespace QUANTAXISRuntimeTradergateway {
               }
               case 154: {
                 TraderRejectmessage = input.ReadString();
+                break;
+              }
+              case 162: {
+                TraderTxpassword = input.ReadString();
                 break;
               }
             }
@@ -1147,6 +1180,123 @@ namespace QUANTAXISRuntimeTradergateway {
               }
               case 18: {
                 GatewayIserror = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+
+      }
+
+      public sealed partial class order : pb::IMessage<order> {
+        private static readonly pb::MessageParser<order> _parser = new pb::MessageParser<order>(() => new order());
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pb::MessageParser<order> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::QUANTAXISRuntimeTradergateway.tradergateway_req.Descriptor.NestedTypes[2]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public order() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public order(order other) : this() {
+          order_ = other.order_;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public order Clone() {
+          return new order(this);
+        }
+
+        /// <summary>Field number for the "order" field.</summary>
+        public const int OrderFieldNumber = 1;
+        private string order_ = "";
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public string Order {
+          get { return order_; }
+          set {
+            order_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override bool Equals(object other) {
+          return Equals(other as order);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public bool Equals(order other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Order != other.Order) return false;
+          return true;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Order.Length != 0) hash ^= Order.GetHashCode();
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void WriteTo(pb::CodedOutputStream output) {
+          if (Order.Length != 0) {
+            output.WriteRawTag(10);
+            output.WriteString(Order);
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public int CalculateSize() {
+          int size = 0;
+          if (Order.Length != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(Order);
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(order other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Order.Length != 0) {
+            Order = other.Order;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public void MergeFrom(pb::CodedInputStream input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                input.SkipLastField();
+                break;
+              case 10: {
+                Order = input.ReadString();
                 break;
               }
             }

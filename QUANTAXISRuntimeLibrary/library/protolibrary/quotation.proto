@@ -4,6 +4,8 @@ package QUANTAXIS_Runtime_Quotation;
 
 // 行情服务  无状态的
 
+// 参考XTP MarketDataStruct
+
 service QR_QuotationService {
     //low-level api
     rpc QR_quotation_p2p (quotation_req) returns (quotation_rep);
@@ -24,19 +26,41 @@ message quotation_req{
   string message=7;
 }
 
+
+
 message quotation_rep{
- string code=1; 
- float open=2;
- float high=3;
- float low=4;
- float close=5;
- float volume=6;
- string date =7;
- float amount=8;
- string date_stamp=9;
- string datetime =10;
- string time_stamp =11;
- string message = 12;
- string exchange=13;
- string type=14;
+  string exchange_id=1;
+  string ticker=2;
+  string code=3;
+  double last_price=4;
+  double pre_close_price=5;
+  double open=6;
+  double high=7;
+  double low=8;
+  double close=9;
+  double close_price=10;//今收盘
+  double pre_open_interest=11;
+  double open_interest=12; //持仓量
+  double pre_settlement_price=13;
+  double settlement_price=14;
+  double upper_limit_price=15;//涨停板价
+  double lower_limit_price=16;
+  double pre_delta=17;//昨虚实度
+  double curr_delta=18;//今虚实度
+  sint64 data_time=19;//YYYYMMDDHHMMSSsss
+  string datetime=20;
+  sint64 qty=21;//总成交量
+  float volume=22;
+  float vol=23;
+  double turnover=24;
+  double avg_price=25;
+  double iopv=26;//ETF净值估值
+  sint32 etf_buy_count=27;
+  sint32 etf_sell_count=28;
+  double etf_buy_qty=29;
+  double etf_buy_money=30;
+  double etf_sell_qty=31;
+  double etf_sell_money=32;
+  
+  
 }

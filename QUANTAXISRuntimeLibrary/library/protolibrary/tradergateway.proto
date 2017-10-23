@@ -27,7 +27,10 @@ message tradergateway_req{
     string trader_encrymethod=17; //下单接口的加密方式
     string trader_rawdatalength=18;//数据原始长度
     string trader_rejectmessage=19; //下单接口被拒绝消息*方正证券
-}
+    string trader_txpassword=20; //tdx 通讯密码
+
+
+    }
     //网关层
     string gateway_broker=1; //网关broker
     string gateway_user=2;// 网关用户
@@ -42,5 +45,8 @@ message tradergateway_req{
     }
 
 
-
+    message order{
+        string order=1;
+    }
 }
+
