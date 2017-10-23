@@ -19,22 +19,297 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='tradergateway.proto',
   package='QUANTAXIS_Runtime_Tradergateway',
   syntax='proto3',
-  serialized_pb=_b('\n\x13tradergateway.proto\x12\x1fQUANTAXIS_Runtime_Tradergatewayb\x06proto3')
+  serialized_pb=_b('\n\x13tradergateway.proto\x12\x1fQUANTAXIS_Runtime_Tradergateway\"\xd2\x05\n\x11tradergateway_req\x12\x16\n\x0egateway_broker\x18\x01 \x01(\t\x12\x14\n\x0cgateway_user\x18\x02 \x01(\t\x12\x18\n\x10gateway_password\x18\x03 \x01(\t\x12\x15\n\rgateway_token\x18\x04 \x01(\t\x12\x17\n\x0fgateway_session\x18\x05 \x01(\t\x12\x17\n\x0fgateway_message\x18\x06 \x01(\t\x1a\xe7\x03\n\x06trader\x12\x15\n\rtrader_broker\x18\x01 \x01(\t\x12\x13\n\x0btrader_user\x18\x02 \x01(\t\x12\x17\n\x0ftrader_password\x18\x03 \x01(\t\x12\x14\n\x0ctrader_token\x18\x04 \x01(\t\x12\x16\n\x0etrader_session\x18\x05 \x01(\t\x12\x11\n\ttrader_ip\x18\x06 \x01(\t\x12\x13\n\x0btrader_port\x18\x07 \x01(\t\x12\x1c\n\x14trader_clientversion\x18\x08 \x01(\t\x12\x12\n\ntrader_ret\x18\t \x01(\t\x12\x1c\n\x14trader_error_context\x18\n \x01(\t\x12\x17\n\x0ftrader_error_id\x18\x0b \x01(\t\x12\x15\n\rtrader_dep_id\x18\x0c \x01(\t\x12\x1d\n\x15trader_credit_account\x18\r \x01(\t\x12\x1c\n\x14trader_account_model\x18\x0e \x01(\t\x12\x13\n\x0btrader_time\x18\x0f \x01(\t\x12\x18\n\x10trader_heartbeat\x18\x10 \x01(\t\x12\x1a\n\x12trader_encrymethod\x18\x11 \x01(\t\x12\x1c\n\x14trader_rawdatalength\x18\x12 \x01(\t\x12\x1c\n\x14trader_rejectmessage\x18\x13 \x01(\t\x1a\x42\n\x0egateway_status\x12\x17\n\x0fgateway_islogin\x18\x01 \x01(\t\x12\x17\n\x0fgateway_iserror\x18\x02 \x01(\tb\x06proto3')
 )
 
 
 
+
+_TRADERGATEWAY_REQ_TRADER = _descriptor.Descriptor(
+  name='trader',
+  full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='trader_broker', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_broker', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_user', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_user', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_password', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_password', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_token', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_token', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_session', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_session', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_ip', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_ip', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_port', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_port', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_clientversion', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_clientversion', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_ret', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_ret', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_error_context', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_error_context', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_error_id', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_error_id', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_dep_id', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_dep_id', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_credit_account', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_credit_account', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_account_model', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_account_model', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_time', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_time', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_heartbeat', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_heartbeat', index=15,
+      number=16, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_encrymethod', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_encrymethod', index=16,
+      number=17, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_rawdatalength', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_rawdatalength', index=17,
+      number=18, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='trader_rejectmessage', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader.trader_rejectmessage', index=18,
+      number=19, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=224,
+  serialized_end=711,
+)
+
+_TRADERGATEWAY_REQ_GATEWAY_STATUS = _descriptor.Descriptor(
+  name='gateway_status',
+  full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_status',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gateway_islogin', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_status.gateway_islogin', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gateway_iserror', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_status.gateway_iserror', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=713,
+  serialized_end=779,
+)
+
+_TRADERGATEWAY_REQ = _descriptor.Descriptor(
+  name='tradergateway_req',
+  full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gateway_broker', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_broker', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gateway_user', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_user', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gateway_password', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_password', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gateway_token', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_token', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gateway_session', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_session', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='gateway_message', full_name='QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_message', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_TRADERGATEWAY_REQ_TRADER, _TRADERGATEWAY_REQ_GATEWAY_STATUS, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=57,
+  serialized_end=779,
+)
+
+_TRADERGATEWAY_REQ_TRADER.containing_type = _TRADERGATEWAY_REQ
+_TRADERGATEWAY_REQ_GATEWAY_STATUS.containing_type = _TRADERGATEWAY_REQ
+DESCRIPTOR.message_types_by_name['tradergateway_req'] = _TRADERGATEWAY_REQ
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
+tradergateway_req = _reflection.GeneratedProtocolMessageType('tradergateway_req', (_message.Message,), dict(
 
-try:
-  # THESE ELEMENTS WILL BE DEPRECATED.
-  # Please use the generated *_pb2_grpc.py files instead.
-  import grpc
-  from grpc.beta import implementations as beta_implementations
-  from grpc.beta import interfaces as beta_interfaces
-  from grpc.framework.common import cardinality
-  from grpc.framework.interfaces.face import utilities as face_utilities
-except ImportError:
-  pass
+  trader = _reflection.GeneratedProtocolMessageType('trader', (_message.Message,), dict(
+    DESCRIPTOR = _TRADERGATEWAY_REQ_TRADER,
+    __module__ = 'tradergateway_pb2'
+    # @@protoc_insertion_point(class_scope:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.trader)
+    ))
+  ,
+
+  gateway_status = _reflection.GeneratedProtocolMessageType('gateway_status', (_message.Message,), dict(
+    DESCRIPTOR = _TRADERGATEWAY_REQ_GATEWAY_STATUS,
+    __module__ = 'tradergateway_pb2'
+    # @@protoc_insertion_point(class_scope:QUANTAXIS_Runtime_Tradergateway.tradergateway_req.gateway_status)
+    ))
+  ,
+  DESCRIPTOR = _TRADERGATEWAY_REQ,
+  __module__ = 'tradergateway_pb2'
+  # @@protoc_insertion_point(class_scope:QUANTAXIS_Runtime_Tradergateway.tradergateway_req)
+  ))
+_sym_db.RegisterMessage(tradergateway_req)
+_sym_db.RegisterMessage(tradergateway_req.trader)
+_sym_db.RegisterMessage(tradergateway_req.gateway_status)
+
+
 # @@protoc_insertion_point(module_scope)

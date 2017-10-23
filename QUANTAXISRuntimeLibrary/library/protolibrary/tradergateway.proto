@@ -2,3 +2,45 @@ syntax="proto3";
 
 package QUANTAXIS_Runtime_Tradergateway;
 
+
+
+message tradergateway_req{
+    message trader{
+    // 会话层消息
+    //trader_setting 是指 对应的下单接口的设置
+    string trader_broker=1;//下单接口类型
+    string trader_user=2;//下单接口登录(可选)
+    string trader_password=3;//下单接口登录(可选)
+    string trader_token=4;//下单接口另外的登录模式
+    string trader_session=5;//下单接口的session(xtp需要)
+    string trader_ip=6;//交易服务器
+    string trader_port=7;//交易端口
+    string trader_clientversion=8;//trader客户端id
+    string trader_ret=9;//连接状态
+    string trader_error_context=10;//错误信息
+    string trader_error_id=11;
+    string trader_dep_id=12;//营业部id
+    string trader_credit_account=13;//是否为融资融券账户
+    string trader_account_model=14;//账号模式  资金账号,客户账号
+    string trader_time=15;//初始化时服务器时间戳
+    string trader_heartbeat=16; //下单接口的心跳间隔(方正证券)
+    string trader_encrymethod=17; //下单接口的加密方式
+    string trader_rawdatalength=18;//数据原始长度
+    string trader_rejectmessage=19; //下单接口被拒绝消息*方正证券
+}
+    //网关层
+    string gateway_broker=1; //网关broker
+    string gateway_user=2;// 网关用户
+    string gateway_password=3;//网关密码
+    string gateway_token=4;//网关认证
+    string gateway_session=5;//网关session
+    string gateway_message=6;//网关消息
+
+    message gateway_status{
+        string gateway_islogin=1;//状态:是否登录
+        string gateway_iserror=2;//状态:是否出现错误
+    }
+
+
+
+}
