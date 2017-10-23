@@ -1,23 +1,18 @@
 syntax = "proto3";
 
-//import "stock_day.proto";
-// .\protoc.exe --python_out .  --proto_path . --grpc_out . --plugin=protoc-gen-grpc=.\grpc_csharp_plugin.exe .\stock_hq.proto
-//import "stock_min.proto";
-
 package QUANTAXIS_Runtime_Quotation;
 
-service StockHQService {
-
-    rpc QA_fetch_p2p (query_struct) returns (hq_struct);
-    rpc QA_fetch_p2s (query_struct) returns (stream hq_struct);
-    rpc QA_fetch_s2s (stream query_struct) returns (stream hq_struct);
-    rpc QA_fetch_s2p (stream query_struct) returns (hq_struct);
-    //rpc RouteChat (stream long) returns (stream long_hq);
+service QR_QuotationService {
+    //low-level api
+    rpc QR_quotation_p2p (quotation_req) returns (quotation_rep);
+    rpc QA_quotation_p2s (quotation_req) returns (stream quotation_rep);
+    rpc QA_quotation_s2s (stream quotation_req) returns (stream quotation_rep);
+    //rpc QA_fetch_s2p (stream quotation_req) returns (quotation_rep);  // s2p模式没用处
   }
   
 
 
-message query_struct{
+message quotation_req{
   string type =1;
   string code =2;
   string message=3;
@@ -25,7 +20,7 @@ message query_struct{
 
 
 
-message hq_struct{
+message quotation_rep{
  string code=1; 
  float open=2;
  float high=3;

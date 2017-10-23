@@ -9,40 +9,33 @@ using System.Threading.Tasks;
 using grpc = global::Grpc.Core;
 
 namespace QUANTAXISRuntimeQuotation {
-  public static partial class StockHQService
+  public static partial class QR_QuotationService
   {
-    static readonly string __ServiceName = "QUANTAXIS_Runtime_Quotation.StockHQService";
+    static readonly string __ServiceName = "QUANTAXIS_Runtime_Quotation.QR_QuotationService";
 
-    static readonly grpc::Marshaller<global::QUANTAXISRuntimeQuotation.query_struct> __Marshaller_query_struct = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::QUANTAXISRuntimeQuotation.query_struct.Parser.ParseFrom);
-    static readonly grpc::Marshaller<global::QUANTAXISRuntimeQuotation.hq_struct> __Marshaller_hq_struct = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::QUANTAXISRuntimeQuotation.hq_struct.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::QUANTAXISRuntimeQuotation.quotation_req> __Marshaller_quotation_req = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::QUANTAXISRuntimeQuotation.quotation_req.Parser.ParseFrom);
+    static readonly grpc::Marshaller<global::QUANTAXISRuntimeQuotation.quotation_rep> __Marshaller_quotation_rep = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::QUANTAXISRuntimeQuotation.quotation_rep.Parser.ParseFrom);
 
-    static readonly grpc::Method<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct> __Method_QA_fetch_p2p = new grpc::Method<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct>(
+    static readonly grpc::Method<global::QUANTAXISRuntimeQuotation.quotation_req, global::QUANTAXISRuntimeQuotation.quotation_rep> __Method_QR_quotation_p2p = new grpc::Method<global::QUANTAXISRuntimeQuotation.quotation_req, global::QUANTAXISRuntimeQuotation.quotation_rep>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "QA_fetch_p2p",
-        __Marshaller_query_struct,
-        __Marshaller_hq_struct);
+        "QR_quotation_p2p",
+        __Marshaller_quotation_req,
+        __Marshaller_quotation_rep);
 
-    static readonly grpc::Method<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct> __Method_QA_fetch_p2s = new grpc::Method<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct>(
+    static readonly grpc::Method<global::QUANTAXISRuntimeQuotation.quotation_req, global::QUANTAXISRuntimeQuotation.quotation_rep> __Method_QA_quotation_p2s = new grpc::Method<global::QUANTAXISRuntimeQuotation.quotation_req, global::QUANTAXISRuntimeQuotation.quotation_rep>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
-        "QA_fetch_p2s",
-        __Marshaller_query_struct,
-        __Marshaller_hq_struct);
+        "QA_quotation_p2s",
+        __Marshaller_quotation_req,
+        __Marshaller_quotation_rep);
 
-    static readonly grpc::Method<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct> __Method_QA_fetch_s2s = new grpc::Method<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct>(
+    static readonly grpc::Method<global::QUANTAXISRuntimeQuotation.quotation_req, global::QUANTAXISRuntimeQuotation.quotation_rep> __Method_QA_quotation_s2s = new grpc::Method<global::QUANTAXISRuntimeQuotation.quotation_req, global::QUANTAXISRuntimeQuotation.quotation_rep>(
         grpc::MethodType.DuplexStreaming,
         __ServiceName,
-        "QA_fetch_s2s",
-        __Marshaller_query_struct,
-        __Marshaller_hq_struct);
-
-    static readonly grpc::Method<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct> __Method_QA_fetch_s2p = new grpc::Method<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct>(
-        grpc::MethodType.ClientStreaming,
-        __ServiceName,
-        "QA_fetch_s2p",
-        __Marshaller_query_struct,
-        __Marshaller_hq_struct);
+        "QA_quotation_s2s",
+        __Marshaller_quotation_req,
+        __Marshaller_quotation_rep);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -50,128 +43,149 @@ namespace QUANTAXISRuntimeQuotation {
       get { return global::QUANTAXISRuntimeQuotation.QuotationReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Base class for server-side implementations of StockHQService</summary>
-    public abstract partial class StockHQServiceBase
+    /// <summary>Base class for server-side implementations of QR_QuotationService</summary>
+    public abstract partial class QR_QuotationServiceBase
     {
-      public virtual global::System.Threading.Tasks.Task<global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_p2p(global::QUANTAXISRuntimeQuotation.query_struct request, grpc::ServerCallContext context)
+      /// <summary>
+      ///low-level api
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      public virtual global::System.Threading.Tasks.Task<global::QUANTAXISRuntimeQuotation.quotation_rep> QR_quotation_p2p(global::QUANTAXISRuntimeQuotation.quotation_req request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
-      public virtual global::System.Threading.Tasks.Task QA_fetch_p2s(global::QUANTAXISRuntimeQuotation.query_struct request, grpc::IServerStreamWriter<global::QUANTAXISRuntimeQuotation.hq_struct> responseStream, grpc::ServerCallContext context)
-      {
-        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-      }
-
-      public virtual global::System.Threading.Tasks.Task QA_fetch_s2s(grpc::IAsyncStreamReader<global::QUANTAXISRuntimeQuotation.query_struct> requestStream, grpc::IServerStreamWriter<global::QUANTAXISRuntimeQuotation.hq_struct> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task QA_quotation_p2s(global::QUANTAXISRuntimeQuotation.quotation_req request, grpc::IServerStreamWriter<global::QUANTAXISRuntimeQuotation.quotation_rep> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       /// <summary>
-      ///rpc RouteChat (stream long) returns (stream long_hq);
+      ///rpc QA_fetch_s2p (stream quotation_req) returns (quotation_rep);  // s2p模式没用处
       /// </summary>
       /// <param name="requestStream">Used for reading requests from the client.</param>
+      /// <param name="responseStream">Used for sending responses back to the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
-      public virtual global::System.Threading.Tasks.Task<global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_s2p(grpc::IAsyncStreamReader<global::QUANTAXISRuntimeQuotation.query_struct> requestStream, grpc::ServerCallContext context)
+      /// <returns>A task indicating completion of the handler.</returns>
+      public virtual global::System.Threading.Tasks.Task QA_quotation_s2s(grpc::IAsyncStreamReader<global::QUANTAXISRuntimeQuotation.quotation_req> requestStream, grpc::IServerStreamWriter<global::QUANTAXISRuntimeQuotation.quotation_rep> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
     }
 
-    /// <summary>Client for StockHQService</summary>
-    public partial class StockHQServiceClient : grpc::ClientBase<StockHQServiceClient>
+    /// <summary>Client for QR_QuotationService</summary>
+    public partial class QR_QuotationServiceClient : grpc::ClientBase<QR_QuotationServiceClient>
     {
-      /// <summary>Creates a new client for StockHQService</summary>
+      /// <summary>Creates a new client for QR_QuotationService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
-      public StockHQServiceClient(grpc::Channel channel) : base(channel)
+      public QR_QuotationServiceClient(grpc::Channel channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for StockHQService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for QR_QuotationService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
-      public StockHQServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public QR_QuotationServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
-      protected StockHQServiceClient() : base()
+      protected QR_QuotationServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
-      protected StockHQServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected QR_QuotationServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
-      public virtual global::QUANTAXISRuntimeQuotation.hq_struct QA_fetch_p2p(global::QUANTAXISRuntimeQuotation.query_struct request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      /// <summary>
+      ///low-level api
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::QUANTAXISRuntimeQuotation.quotation_rep QR_quotation_p2p(global::QUANTAXISRuntimeQuotation.quotation_req request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return QA_fetch_p2p(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual global::QUANTAXISRuntimeQuotation.hq_struct QA_fetch_p2p(global::QUANTAXISRuntimeQuotation.query_struct request, grpc::CallOptions options)
-      {
-        return CallInvoker.BlockingUnaryCall(__Method_QA_fetch_p2p, null, options, request);
-      }
-      public virtual grpc::AsyncUnaryCall<global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_p2pAsync(global::QUANTAXISRuntimeQuotation.query_struct request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
-      {
-        return QA_fetch_p2pAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncUnaryCall<global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_p2pAsync(global::QUANTAXISRuntimeQuotation.query_struct request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncUnaryCall(__Method_QA_fetch_p2p, null, options, request);
-      }
-      public virtual grpc::AsyncServerStreamingCall<global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_p2s(global::QUANTAXISRuntimeQuotation.query_struct request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
-      {
-        return QA_fetch_p2s(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncServerStreamingCall<global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_p2s(global::QUANTAXISRuntimeQuotation.query_struct request, grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncServerStreamingCall(__Method_QA_fetch_p2s, null, options, request);
-      }
-      public virtual grpc::AsyncDuplexStreamingCall<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_s2s(grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
-      {
-        return QA_fetch_s2s(new grpc::CallOptions(headers, deadline, cancellationToken));
-      }
-      public virtual grpc::AsyncDuplexStreamingCall<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_s2s(grpc::CallOptions options)
-      {
-        return CallInvoker.AsyncDuplexStreamingCall(__Method_QA_fetch_s2s, null, options);
+        return QR_quotation_p2p(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      ///rpc RouteChat (stream long) returns (stream long_hq);
+      ///low-level api
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      public virtual global::QUANTAXISRuntimeQuotation.quotation_rep QR_quotation_p2p(global::QUANTAXISRuntimeQuotation.quotation_req request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_QR_quotation_p2p, null, options, request);
+      }
+      /// <summary>
+      ///low-level api
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::QUANTAXISRuntimeQuotation.quotation_rep> QR_quotation_p2pAsync(global::QUANTAXISRuntimeQuotation.quotation_req request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      {
+        return QR_quotation_p2pAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      ///low-level api
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      public virtual grpc::AsyncUnaryCall<global::QUANTAXISRuntimeQuotation.quotation_rep> QR_quotation_p2pAsync(global::QUANTAXISRuntimeQuotation.quotation_req request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_QR_quotation_p2p, null, options, request);
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::QUANTAXISRuntimeQuotation.quotation_rep> QA_quotation_p2s(global::QUANTAXISRuntimeQuotation.quotation_req request, grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      {
+        return QA_quotation_p2s(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      public virtual grpc::AsyncServerStreamingCall<global::QUANTAXISRuntimeQuotation.quotation_rep> QA_quotation_p2s(global::QUANTAXISRuntimeQuotation.quotation_req request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncServerStreamingCall(__Method_QA_quotation_p2s, null, options, request);
+      }
+      /// <summary>
+      ///rpc QA_fetch_s2p (stream quotation_req) returns (quotation_rep);  // s2p模式没用处
       /// </summary>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
       /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
       /// <param name="cancellationToken">An optional token for canceling the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncClientStreamingCall<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_s2p(grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
+      public virtual grpc::AsyncDuplexStreamingCall<global::QUANTAXISRuntimeQuotation.quotation_req, global::QUANTAXISRuntimeQuotation.quotation_rep> QA_quotation_s2s(grpc::Metadata headers = null, DateTime? deadline = null, CancellationToken cancellationToken = default(CancellationToken))
       {
-        return QA_fetch_s2p(new grpc::CallOptions(headers, deadline, cancellationToken));
+        return QA_quotation_s2s(new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      ///rpc RouteChat (stream long) returns (stream long_hq);
+      ///rpc QA_fetch_s2p (stream quotation_req) returns (quotation_rep);  // s2p模式没用处
       /// </summary>
       /// <param name="options">The options for the call.</param>
       /// <returns>The call object.</returns>
-      public virtual grpc::AsyncClientStreamingCall<global::QUANTAXISRuntimeQuotation.query_struct, global::QUANTAXISRuntimeQuotation.hq_struct> QA_fetch_s2p(grpc::CallOptions options)
+      public virtual grpc::AsyncDuplexStreamingCall<global::QUANTAXISRuntimeQuotation.quotation_req, global::QUANTAXISRuntimeQuotation.quotation_rep> QA_quotation_s2s(grpc::CallOptions options)
       {
-        return CallInvoker.AsyncClientStreamingCall(__Method_QA_fetch_s2p, null, options);
+        return CallInvoker.AsyncDuplexStreamingCall(__Method_QA_quotation_s2s, null, options);
       }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
-      protected override StockHQServiceClient NewInstance(ClientBaseConfiguration configuration)
+      protected override QR_QuotationServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new StockHQServiceClient(configuration);
+        return new QR_QuotationServiceClient(configuration);
       }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
     /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
-    public static grpc::ServerServiceDefinition BindService(StockHQServiceBase serviceImpl)
+    public static grpc::ServerServiceDefinition BindService(QR_QuotationServiceBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_QA_fetch_p2p, serviceImpl.QA_fetch_p2p)
-          .AddMethod(__Method_QA_fetch_p2s, serviceImpl.QA_fetch_p2s)
-          .AddMethod(__Method_QA_fetch_s2s, serviceImpl.QA_fetch_s2s)
-          .AddMethod(__Method_QA_fetch_s2p, serviceImpl.QA_fetch_s2p).Build();
+          .AddMethod(__Method_QR_quotation_p2p, serviceImpl.QR_quotation_p2p)
+          .AddMethod(__Method_QA_quotation_p2s, serviceImpl.QA_quotation_p2s)
+          .AddMethod(__Method_QA_quotation_s2s, serviceImpl.QA_quotation_s2s).Build();
     }
 
   }
