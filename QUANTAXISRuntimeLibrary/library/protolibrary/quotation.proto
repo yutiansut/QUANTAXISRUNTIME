@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package QUANTAXIS_Runtime_Quotation;
 
+// 行情服务  无状态的
+
 service QR_QuotationService {
     //low-level api
     rpc QR_quotation_p2p (quotation_req) returns (quotation_rep);
@@ -13,12 +15,14 @@ service QR_QuotationService {
 
 
 message quotation_req{
-  string type =1;
-  string code =2;
-  string message=3;
+  string exchange=1;// sz/sh/etf/index
+  string type =2; //min/day
+  string code =3; //code
+  string ip =4; //tdx ip
+  string time=5;
+  string date=6;
+  string message=7;
 }
-
-
 
 message quotation_rep{
  string code=1; 
@@ -33,5 +37,6 @@ message quotation_rep{
  string datetime =10;
  string time_stamp =11;
  string message = 12;
-
+ string exchange=13;
+ string type=14;
 }

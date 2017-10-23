@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='quotation.proto',
   package='QUANTAXIS_Runtime_Quotation',
   syntax='proto3',
-  serialized_pb=_b('\n\x0fquotation.proto\x12\x1bQUANTAXIS_Runtime_Quotation\"<\n\rquotation_req\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"\xce\x01\n\rquotation_rep\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04open\x18\x02 \x01(\x02\x12\x0c\n\x04high\x18\x03 \x01(\x02\x12\x0b\n\x03low\x18\x04 \x01(\x02\x12\r\n\x05\x63lose\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x07 \x01(\t\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x02\x12\x12\n\ndate_stamp\x18\t \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\n \x01(\t\x12\x12\n\ntime_stamp\x18\x0b \x01(\t\x12\x0f\n\x07message\x18\x0c \x01(\t2\xdf\x02\n\x13QR_QuotationService\x12j\n\x10QR_quotation_p2p\x12*.QUANTAXIS_Runtime_Quotation.quotation_req\x1a*.QUANTAXIS_Runtime_Quotation.quotation_rep\x12l\n\x10QA_quotation_p2s\x12*.QUANTAXIS_Runtime_Quotation.quotation_req\x1a*.QUANTAXIS_Runtime_Quotation.quotation_rep0\x01\x12n\n\x10QA_quotation_s2s\x12*.QUANTAXIS_Runtime_Quotation.quotation_req\x1a*.QUANTAXIS_Runtime_Quotation.quotation_rep(\x01\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0fquotation.proto\x12\x1bQUANTAXIS_Runtime_Quotation\"v\n\rquotation_req\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\n\n\x02ip\x18\x04 \x01(\t\x12\x0c\n\x04time\x18\x05 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x06 \x01(\t\x12\x0f\n\x07message\x18\x07 \x01(\t\"\xee\x01\n\rquotation_rep\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04open\x18\x02 \x01(\x02\x12\x0c\n\x04high\x18\x03 \x01(\x02\x12\x0b\n\x03low\x18\x04 \x01(\x02\x12\r\n\x05\x63lose\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x07 \x01(\t\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x02\x12\x12\n\ndate_stamp\x18\t \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\n \x01(\t\x12\x12\n\ntime_stamp\x18\x0b \x01(\t\x12\x0f\n\x07message\x18\x0c \x01(\t\x12\x10\n\x08\x65xchange\x18\r \x01(\t\x12\x0c\n\x04type\x18\x0e \x01(\t2\xdf\x02\n\x13QR_QuotationService\x12j\n\x10QR_quotation_p2p\x12*.QUANTAXIS_Runtime_Quotation.quotation_req\x1a*.QUANTAXIS_Runtime_Quotation.quotation_rep\x12l\n\x10QA_quotation_p2s\x12*.QUANTAXIS_Runtime_Quotation.quotation_req\x1a*.QUANTAXIS_Runtime_Quotation.quotation_rep0\x01\x12n\n\x10QA_quotation_s2s\x12*.QUANTAXIS_Runtime_Quotation.quotation_req\x1a*.QUANTAXIS_Runtime_Quotation.quotation_rep(\x01\x30\x01\x62\x06proto3')
 )
 
 
@@ -33,22 +33,50 @@ _QUOTATION_REQ = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.type', index=0,
+      name='exchange', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.exchange', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='code', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.code', index=1,
+      name='type', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.type', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='message', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.message', index=2,
+      name='code', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.code', index=2,
       number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='ip', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.ip', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='time', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.time', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='date', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.date', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='QUANTAXIS_Runtime_Quotation.quotation_req.message', index=6,
+      number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -66,7 +94,7 @@ _QUOTATION_REQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=48,
-  serialized_end=108,
+  serialized_end=166,
 )
 
 
@@ -161,6 +189,20 @@ _QUOTATION_REP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='QUANTAXIS_Runtime_Quotation.quotation_rep.exchange', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='QUANTAXIS_Runtime_Quotation.quotation_rep.type', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -173,8 +215,8 @@ _QUOTATION_REP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=111,
-  serialized_end=317,
+  serialized_start=169,
+  serialized_end=407,
 )
 
 DESCRIPTOR.message_types_by_name['quotation_req'] = _QUOTATION_REQ
@@ -203,8 +245,8 @@ _QR_QUOTATIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=320,
-  serialized_end=671,
+  serialized_start=410,
+  serialized_end=761,
   methods=[
   _descriptor.MethodDescriptor(
     name='QR_quotation_p2p',
@@ -238,4 +280,189 @@ _sym_db.RegisterServiceDescriptor(_QR_QUOTATIONSERVICE)
 
 DESCRIPTOR.services_by_name['QR_QuotationService'] = _QR_QUOTATIONSERVICE
 
+try:
+  # THESE ELEMENTS WILL BE DEPRECATED.
+  # Please use the generated *_pb2_grpc.py files instead.
+  import grpc
+  from grpc.beta import implementations as beta_implementations
+  from grpc.beta import interfaces as beta_interfaces
+  from grpc.framework.common import cardinality
+  from grpc.framework.interfaces.face import utilities as face_utilities
+
+
+  class QR_QuotationServiceStub(object):
+    """行情服务  无状态的
+
+    """
+
+    def __init__(self, channel):
+      """Constructor.
+
+      Args:
+        channel: A grpc.Channel.
+      """
+      self.QR_quotation_p2p = channel.unary_unary(
+          '/QUANTAXIS_Runtime_Quotation.QR_QuotationService/QR_quotation_p2p',
+          request_serializer=quotation_req.SerializeToString,
+          response_deserializer=quotation_rep.FromString,
+          )
+      self.QA_quotation_p2s = channel.unary_stream(
+          '/QUANTAXIS_Runtime_Quotation.QR_QuotationService/QA_quotation_p2s',
+          request_serializer=quotation_req.SerializeToString,
+          response_deserializer=quotation_rep.FromString,
+          )
+      self.QA_quotation_s2s = channel.stream_stream(
+          '/QUANTAXIS_Runtime_Quotation.QR_QuotationService/QA_quotation_s2s',
+          request_serializer=quotation_req.SerializeToString,
+          response_deserializer=quotation_rep.FromString,
+          )
+
+
+  class QR_QuotationServiceServicer(object):
+    """行情服务  无状态的
+
+    """
+
+    def QR_quotation_p2p(self, request, context):
+      """low-level api
+      """
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+    def QA_quotation_p2s(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+    def QA_quotation_s2s(self, request_iterator, context):
+      """rpc QA_fetch_s2p (stream quotation_req) returns (quotation_rep);  // s2p模式没用处
+      """
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
+
+  def add_QR_QuotationServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+        'QR_quotation_p2p': grpc.unary_unary_rpc_method_handler(
+            servicer.QR_quotation_p2p,
+            request_deserializer=quotation_req.FromString,
+            response_serializer=quotation_rep.SerializeToString,
+        ),
+        'QA_quotation_p2s': grpc.unary_stream_rpc_method_handler(
+            servicer.QA_quotation_p2s,
+            request_deserializer=quotation_req.FromString,
+            response_serializer=quotation_rep.SerializeToString,
+        ),
+        'QA_quotation_s2s': grpc.stream_stream_rpc_method_handler(
+            servicer.QA_quotation_s2s,
+            request_deserializer=quotation_req.FromString,
+            response_serializer=quotation_rep.SerializeToString,
+        ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+        'QUANTAXIS_Runtime_Quotation.QR_QuotationService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+  class BetaQR_QuotationServiceServicer(object):
+    """The Beta API is deprecated for 0.15.0 and later.
+
+    It is recommended to use the GA API (classes and functions in this
+    file not marked beta) for all further purposes. This class was generated
+    only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
+    """行情服务  无状态的
+
+    """
+    def QR_quotation_p2p(self, request, context):
+      """low-level api
+      """
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def QA_quotation_p2s(self, request, context):
+      # missing associated documentation comment in .proto file
+      pass
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def QA_quotation_s2s(self, request_iterator, context):
+      """rpc QA_fetch_s2p (stream quotation_req) returns (quotation_rep);  // s2p模式没用处
+      """
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+
+
+  class BetaQR_QuotationServiceStub(object):
+    """The Beta API is deprecated for 0.15.0 and later.
+
+    It is recommended to use the GA API (classes and functions in this
+    file not marked beta) for all further purposes. This class was generated
+    only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0."""
+    """行情服务  无状态的
+
+    """
+    def QR_quotation_p2p(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      """low-level api
+      """
+      raise NotImplementedError()
+    QR_quotation_p2p.future = None
+    def QA_quotation_p2s(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      # missing associated documentation comment in .proto file
+      pass
+      raise NotImplementedError()
+    def QA_quotation_s2s(self, request_iterator, timeout, metadata=None, with_call=False, protocol_options=None):
+      """rpc QA_fetch_s2p (stream quotation_req) returns (quotation_rep);  // s2p模式没用处
+      """
+      raise NotImplementedError()
+
+
+  def beta_create_QR_QuotationService_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
+    """The Beta API is deprecated for 0.15.0 and later.
+
+    It is recommended to use the GA API (classes and functions in this
+    file not marked beta) for all further purposes. This function was
+    generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
+    request_deserializers = {
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_p2s'): quotation_req.FromString,
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_s2s'): quotation_req.FromString,
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QR_quotation_p2p'): quotation_req.FromString,
+    }
+    response_serializers = {
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_p2s'): quotation_rep.SerializeToString,
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_s2s'): quotation_rep.SerializeToString,
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QR_quotation_p2p'): quotation_rep.SerializeToString,
+    }
+    method_implementations = {
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_p2s'): face_utilities.unary_stream_inline(servicer.QA_quotation_p2s),
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_s2s'): face_utilities.stream_stream_inline(servicer.QA_quotation_s2s),
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QR_quotation_p2p'): face_utilities.unary_unary_inline(servicer.QR_quotation_p2p),
+    }
+    server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
+    return beta_implementations.server(method_implementations, options=server_options)
+
+
+  def beta_create_QR_QuotationService_stub(channel, host=None, metadata_transformer=None, pool=None, pool_size=None):
+    """The Beta API is deprecated for 0.15.0 and later.
+
+    It is recommended to use the GA API (classes and functions in this
+    file not marked beta) for all further purposes. This function was
+    generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
+    request_serializers = {
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_p2s'): quotation_req.SerializeToString,
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_s2s'): quotation_req.SerializeToString,
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QR_quotation_p2p'): quotation_req.SerializeToString,
+    }
+    response_deserializers = {
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_p2s'): quotation_rep.FromString,
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QA_quotation_s2s'): quotation_rep.FromString,
+      ('QUANTAXIS_Runtime_Quotation.QR_QuotationService', 'QR_quotation_p2p'): quotation_rep.FromString,
+    }
+    cardinalities = {
+      'QA_quotation_p2s': cardinality.Cardinality.UNARY_STREAM,
+      'QA_quotation_s2s': cardinality.Cardinality.STREAM_STREAM,
+      'QR_quotation_p2p': cardinality.Cardinality.UNARY_UNARY,
+    }
+    stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
+    return beta_implementations.dynamic_stub(channel, 'QUANTAXIS_Runtime_Quotation.QR_QuotationService', cardinalities, options=stub_options)
+except ImportError:
+  pass
 # @@protoc_insertion_point(module_scope)

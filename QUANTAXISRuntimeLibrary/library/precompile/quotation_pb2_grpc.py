@@ -5,8 +5,9 @@ import quotation_pb2 as quotation__pb2
 
 
 class QR_QuotationServiceStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """行情服务  无状态的
+
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -32,8 +33,9 @@ class QR_QuotationServiceStub(object):
 
 
 class QR_QuotationServiceServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """行情服务  无状态的
+
+  """
 
   def QR_quotation_p2p(self, request, context):
     """low-level api
