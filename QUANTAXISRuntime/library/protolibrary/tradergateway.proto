@@ -46,7 +46,7 @@ message tradergateway_req{
 
 
     message order{
-        string order=1;
+        string order=1; 
     }
 }
 
