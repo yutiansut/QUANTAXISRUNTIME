@@ -9,22 +9,24 @@ from asyncio import BaseProtocol, BaseTransport
 class QAR_Transport(BaseTransport):
 
     def write(self, data):
+        'WriteTransport'
         raise NotImplementedError
 
     def abort(self):
-
+        'WriteTransport'
         raise NotImplementedError
 
-    def getsockopt(self, option):
 
+    def write_eof(self):
+        'WriteTransport'
         raise NotImplementedError
 
-    def setsockopt(self, option, value):
-
+    def writelines(self,list_of_data):
+        'WriteTransport'
         raise NotImplementedError
 
     def set_write_buffer_limits(self, high=None, low=None):
-
+    
         raise NotImplementedError
 
     def get_write_buffer_limits(self):
@@ -34,13 +36,29 @@ class QAR_Transport(BaseTransport):
         """Return the current size of the write buffer."""
         raise NotImplementedError
 
+
+
+    def getsockopt(self, option):
+
+        raise NotImplementedError
+
+    def setsockopt(self, option, value):
+
+        raise NotImplementedError
+
+
+
+
     def pause_reading(self):
+        """ReadTransport"""
 
         raise NotImplementedError
 
     def resume_reading(self):
-
+        """ReadTransport"""
         raise NotImplementedError
+
+
 
     def bind(self, endpoint):
 

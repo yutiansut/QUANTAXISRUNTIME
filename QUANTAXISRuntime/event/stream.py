@@ -1,5 +1,5 @@
+import collections
 import asyncio
-
 from QUANTAXISRuntime.event.interface import QAR_Protocol
 
 
@@ -64,3 +64,185 @@ class QAR_StreamProtocol(QAR_Protocol):
 
     def event_received(self, event):
         self._stream.feed_event(event)
+
+
+class QAR_Stream:
+    def __init__(self, loop, *, high=None, low=None, events_backlog=100):
+        self._transport = None
+        self._protocol = QAR_StreamProtocol(self, loop=loop)
+        self._loop = loop
+        self._queue = collections.deque()
+        self._event_queue = collections.deque(maxlen=events_backlog)
+        self._closing = False  # Whether we're done.
+        self._waiter = None  # A future.
+        self._event_waiter = None  # A future.
+        self._exception = None
+        self._paused = False
+        self._set_read_buffer_limits(high, low)
+        self._queue_len = 0
+
+    @property
+    def transport(self):
+        return self._transport
+
+    def write(self, msg):
+        self._transport.write(msg)
+
+    def close(self):
+        return self._transport.close()
+
+    def get_extra_info(self, name, default=None):
+        return self._transport.get_extra_info(name, default)
+
+    @asyncio.coroutine
+    def drain(self):
+        """Flush the write buffer.
+
+        The intended use is to write
+
+          w.write(data)
+          yield from w.drain()
+        """
+        if self._exception is not None:
+            raise self._exception
+        yield from self._protocol._drain_helper()
+
+    def exception(self):
+        return self._exception
+
+    def set_exception(self, exc):
+        """Private"""
+        self._exception = exc
+
+        waiter = self._waiter
+        if waiter is not None:
+            self._waiter = None
+            if not waiter.cancelled():
+                waiter.set_exception(exc)
+
+        waiter = self._event_waiter
+        if waiter is not None:
+            self._event_waiter = None
+            if not waiter.cancelled():
+                waiter.set_exception(exc)
+
+    def set_transport(self, transport):
+        """Private"""
+        assert self._transport is None, 'Transport already set'
+        self._transport = transport
+
+    def _set_read_buffer_limits(self, high=None, low=None):
+        if high is None:
+            if low is None:
+                high = 64 * 1024
+            else:
+                high = 4 * low
+        if low is None:
+            low = high // 4
+        if not high >= low >= 0:
+            raise ValueError('high (%r) must be >= low (%r) must be >= 0' %
+                             (high, low))
+        self._high_water = high
+        self._low_water = low
+
+    def set_read_buffer_limits(self, high=None, low=None):
+        self._set_read_buffer_limits(high, low)
+        self._maybe_resume_transport()
+
+    def _maybe_resume_transport(self):
+        if self._paused and self._queue_len <= self._low_water:
+            self._paused = False
+            self._transport.resume_reading()
+
+    def feed_closing(self):
+        """Private"""
+        self._closing = True
+        self._transport = None
+
+        waiter = self._waiter
+        if waiter is not None:
+            self._waiter = None
+            if not waiter.cancelled():
+                waiter.set_exception(ZmqStreamClosed())
+
+        waiter = self._event_waiter
+        if waiter is not None:
+            self._event_waiter = None
+            if not waiter.cancelled():
+                waiter.set_exception(ZmqStreamClosed())
+
+    def at_closing(self):
+        """Return True if the buffer is empty and 'feed_closing' was called."""
+        return self._closing and not self._queue
+
+    def feed_msg(self, msg):
+        """Private"""
+        assert not self._closing, 'feed_msg after feed_closing'
+
+        msg_len = sum(len(i) for i in msg)
+        self._queue.append((msg_len, msg))
+        self._queue_len += msg_len
+
+        waiter = self._waiter
+        if waiter is not None:
+            self._waiter = None
+            if not waiter.cancelled():
+                waiter.set_result(None)
+        if (self._transport is not None and
+                not self._paused and
+                self._queue_len > self._high_water):
+            self._transport.pause_reading()
+            self._paused = True
+
+    def feed_event(self, event):
+        """Private"""
+        assert not self._closing, 'feed_event after feed_closing'
+
+        self._event_queue.append(event)
+
+        event_waiter = self._event_waiter
+        if event_waiter is not None:
+            self._event_waiter = None
+            if not event_waiter.cancelled():
+                event_waiter.set_result(None)
+
+    @asyncio.coroutine
+    def read(self):
+        if self._exception is not None:
+            raise self._exception
+
+        if self._closing:
+            raise ZmqStreamClosed()
+
+        if not self._queue_len:
+            if self._waiter is not None:
+                raise RuntimeError('read called while another coroutine is '
+                                   'already waiting for incoming data')
+            self._waiter = asyncio.Future(loop=self._loop)
+            try:
+                yield from self._waiter
+            finally:
+                self._waiter = None
+
+        msg_len, msg = self._queue.popleft()
+        self._queue_len -= msg_len
+        self._maybe_resume_transport()
+        return msg
+
+    @asyncio.coroutine
+    def read_event(self):
+        if self._closing:
+            raise ZmqStreamClosed()
+
+        if not self._event_queue:
+            if self._event_waiter is not None:
+                raise RuntimeError('read_event called while another coroutine'
+                                   ' is already waiting for incoming data')
+            self._event_waiter = asyncio.Future(loop=self._loop)
+            try:
+                yield from self._event_waiter
+            finally:
+                self._event_waiter = None
+
+        event = self._event_queue.popleft()
+        return event

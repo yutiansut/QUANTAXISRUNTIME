@@ -59,7 +59,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(quotation_req, exchange_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(quotation_req, exchange_id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(quotation_req, type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(quotation_req, code_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(quotation_req, ip_),
@@ -155,38 +155,38 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n\017quotation.proto\022\033QUANTAXIS_Runtime_Quo"
-      "tation\"v\n\rquotation_req\022\020\n\010exchange\030\001 \001("
-      "\t\022\014\n\004type\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\022\n\n\002ip\030\004 \001("
-      "\t\022\014\n\004time\030\005 \001(\t\022\014\n\004date\030\006 \001(\t\022\017\n\007message"
-      "\030\007 \001(\t\"\216\005\n\rquotation_rep\022\023\n\013exchange_id\030"
-      "\001 \001(\t\022\016\n\006ticker\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\022\022\n\nl"
-      "ast_price\030\004 \001(\001\022\027\n\017pre_close_price\030\005 \001(\001"
-      "\022\014\n\004open\030\006 \001(\001\022\014\n\004high\030\007 \001(\001\022\013\n\003low\030\010 \001("
-      "\001\022\r\n\005close\030\t \001(\001\022\023\n\013close_price\030\n \001(\001\022\031\n"
-      "\021pre_open_interest\030\013 \001(\001\022\025\n\ropen_interes"
-      "t\030\014 \001(\001\022\034\n\024pre_settlement_price\030\r \001(\001\022\030\n"
-      "\020settlement_price\030\016 \001(\001\022\031\n\021upper_limit_p"
-      "rice\030\017 \001(\001\022\031\n\021lower_limit_price\030\020 \001(\001\022\021\n"
-      "\tpre_delta\030\021 \001(\001\022\022\n\ncurr_delta\030\022 \001(\001\022\021\n\t"
-      "data_time\030\023 \001(\022\022\020\n\010datetime\030\024 \001(\t\022\013\n\003qty"
-      "\030\025 \001(\022\022\016\n\006volume\030\026 \001(\002\022\013\n\003vol\030\027 \001(\002\022\020\n\010t"
-      "urnover\030\030 \001(\001\022\021\n\tavg_price\030\031 \001(\001\022\014\n\004iopv"
-      "\030\032 \001(\001\022\025\n\retf_buy_count\030\033 \001(\021\022\026\n\016etf_sel"
-      "l_count\030\034 \001(\021\022\023\n\013etf_buy_qty\030\035 \001(\001\022\025\n\ret"
-      "f_buy_money\030\036 \001(\001\022\024\n\014etf_sell_qty\030\037 \001(\001\022"
-      "\026\n\016etf_sell_money\030  \001(\0012\337\002\n\023QR_Quotation"
-      "Service\022j\n\020QR_quotation_p2p\022*.QUANTAXIS_"
-      "Runtime_Quotation.quotation_req\032*.QUANTA"
-      "XIS_Runtime_Quotation.quotation_rep\022l\n\020Q"
-      "A_quotation_p2s\022*.QUANTAXIS_Runtime_Quot"
-      "ation.quotation_req\032*.QUANTAXIS_Runtime_"
-      "Quotation.quotation_rep0\001\022n\n\020QA_quotatio"
-      "n_s2s\022*.QUANTAXIS_Runtime_Quotation.quot"
-      "ation_req\032*.QUANTAXIS_Runtime_Quotation."
-      "quotation_rep(\0010\001b\006proto3"
+      "tation\"y\n\rquotation_req\022\023\n\013exchange_id\030\001"
+      " \001(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\022\n\n\002ip\030\004"
+      " \001(\t\022\014\n\004time\030\005 \001(\t\022\014\n\004date\030\006 \001(\t\022\017\n\007mess"
+      "age\030\007 \001(\t\"\216\005\n\rquotation_rep\022\023\n\013exchange_"
+      "id\030\001 \001(\t\022\016\n\006ticker\030\002 \001(\t\022\014\n\004code\030\003 \001(\t\022\022"
+      "\n\nlast_price\030\004 \001(\001\022\027\n\017pre_close_price\030\005 "
+      "\001(\001\022\014\n\004open\030\006 \001(\001\022\014\n\004high\030\007 \001(\001\022\013\n\003low\030\010"
+      " \001(\001\022\r\n\005close\030\t \001(\001\022\023\n\013close_price\030\n \001(\001"
+      "\022\031\n\021pre_open_interest\030\013 \001(\001\022\025\n\ropen_inte"
+      "rest\030\014 \001(\001\022\034\n\024pre_settlement_price\030\r \001(\001"
+      "\022\030\n\020settlement_price\030\016 \001(\001\022\031\n\021upper_limi"
+      "t_price\030\017 \001(\001\022\031\n\021lower_limit_price\030\020 \001(\001"
+      "\022\021\n\tpre_delta\030\021 \001(\001\022\022\n\ncurr_delta\030\022 \001(\001\022"
+      "\021\n\tdata_time\030\023 \001(\022\022\020\n\010datetime\030\024 \001(\t\022\013\n\003"
+      "qty\030\025 \001(\022\022\016\n\006volume\030\026 \001(\002\022\013\n\003vol\030\027 \001(\002\022\020"
+      "\n\010turnover\030\030 \001(\001\022\021\n\tavg_price\030\031 \001(\001\022\014\n\004i"
+      "opv\030\032 \001(\001\022\025\n\retf_buy_count\030\033 \001(\021\022\026\n\016etf_"
+      "sell_count\030\034 \001(\021\022\023\n\013etf_buy_qty\030\035 \001(\001\022\025\n"
+      "\retf_buy_money\030\036 \001(\001\022\024\n\014etf_sell_qty\030\037 \001"
+      "(\001\022\026\n\016etf_sell_money\030  \001(\0012\337\002\n\023QR_Quotat"
+      "ionService\022j\n\020QR_quotation_p2p\022*.QUANTAX"
+      "IS_Runtime_Quotation.quotation_req\032*.QUA"
+      "NTAXIS_Runtime_Quotation.quotation_rep\022l"
+      "\n\020QA_quotation_p2s\022*.QUANTAXIS_Runtime_Q"
+      "uotation.quotation_req\032*.QUANTAXIS_Runti"
+      "me_Quotation.quotation_rep0\001\022n\n\020QA_quota"
+      "tion_s2s\022*.QUANTAXIS_Runtime_Quotation.q"
+      "uotation_req\032*.QUANTAXIS_Runtime_Quotati"
+      "on.quotation_rep(\0010\001b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1185);
+      descriptor, 1188);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "quotation.proto", &protobuf_RegisterTypes);
 }
@@ -209,7 +209,7 @@ struct StaticDescriptorInitializer {
 // ===================================================================
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int quotation_req::kExchangeFieldNumber;
+const int quotation_req::kExchangeIdFieldNumber;
 const int quotation_req::kTypeFieldNumber;
 const int quotation_req::kCodeFieldNumber;
 const int quotation_req::kIpFieldNumber;
@@ -231,9 +231,9 @@ quotation_req::quotation_req(const quotation_req& from)
       _internal_metadata_(NULL),
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  exchange_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.exchange().size() > 0) {
-    exchange_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.exchange_);
+  exchange_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.exchange_id().size() > 0) {
+    exchange_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.exchange_id_);
   }
   type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.type().size() > 0) {
@@ -263,7 +263,7 @@ quotation_req::quotation_req(const quotation_req& from)
 }
 
 void quotation_req::SharedCtor() {
-  exchange_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  exchange_id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   code_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ip_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -279,7 +279,7 @@ quotation_req::~quotation_req() {
 }
 
 void quotation_req::SharedDtor() {
-  exchange_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  exchange_id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   code_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ip_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -317,7 +317,7 @@ void quotation_req::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  exchange_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  exchange_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   type_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   code_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ip_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -337,16 +337,16 @@ bool quotation_req::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string exchange = 1;
+      // string exchange_id = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_exchange()));
+                input, this->mutable_exchange_id()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            this->exchange().data(), static_cast<int>(this->exchange().length()),
+            this->exchange_id().data(), static_cast<int>(this->exchange_id().length()),
             ::google::protobuf::internal::WireFormatLite::PARSE,
-            "QUANTAXIS_Runtime_Quotation.quotation_req.exchange"));
+            "QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id"));
         } else {
           goto handle_unusual;
         }
@@ -475,14 +475,14 @@ void quotation_req::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string exchange = 1;
-  if (this->exchange().size() > 0) {
+  // string exchange_id = 1;
+  if (this->exchange_id().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->exchange().data(), static_cast<int>(this->exchange().length()),
+      this->exchange_id().data(), static_cast<int>(this->exchange_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "QUANTAXIS_Runtime_Quotation.quotation_req.exchange");
+      "QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->exchange(), output);
+      1, this->exchange_id(), output);
   }
 
   // string type = 2;
@@ -559,15 +559,15 @@ void quotation_req::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string exchange = 1;
-  if (this->exchange().size() > 0) {
+  // string exchange_id = 1;
+  if (this->exchange_id().size() > 0) {
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-      this->exchange().data(), static_cast<int>(this->exchange().length()),
+      this->exchange_id().data(), static_cast<int>(this->exchange_id().length()),
       ::google::protobuf::internal::WireFormatLite::SERIALIZE,
-      "QUANTAXIS_Runtime_Quotation.quotation_req.exchange");
+      "QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->exchange(), target);
+        1, this->exchange_id(), target);
   }
 
   // string type = 2;
@@ -653,11 +653,11 @@ size_t quotation_req::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // string exchange = 1;
-  if (this->exchange().size() > 0) {
+  // string exchange_id = 1;
+  if (this->exchange_id().size() > 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->exchange());
+        this->exchange_id());
   }
 
   // string type = 2;
@@ -731,9 +731,9 @@ void quotation_req::MergeFrom(const quotation_req& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.exchange().size() > 0) {
+  if (from.exchange_id().size() > 0) {
 
-    exchange_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.exchange_);
+    exchange_id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.exchange_id_);
   }
   if (from.type().size() > 0) {
 
@@ -785,7 +785,7 @@ void quotation_req::Swap(quotation_req* other) {
 }
 void quotation_req::InternalSwap(quotation_req* other) {
   using std::swap;
-  exchange_.Swap(&other->exchange_);
+  exchange_id_.Swap(&other->exchange_id_);
   type_.Swap(&other->type_);
   code_.Swap(&other->code_);
   ip_.Swap(&other->ip_);
@@ -804,57 +804,57 @@ void quotation_req::InternalSwap(quotation_req* other) {
 #if PROTOBUF_INLINE_NOT_IN_HEADERS
 // quotation_req
 
-// string exchange = 1;
-void quotation_req::clear_exchange() {
-  exchange_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string exchange_id = 1;
+void quotation_req::clear_exchange_id() {
+  exchange_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-const ::std::string& quotation_req::exchange() const {
-  // @@protoc_insertion_point(field_get:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
-  return exchange_.GetNoArena();
+const ::std::string& quotation_req::exchange_id() const {
+  // @@protoc_insertion_point(field_get:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
+  return exchange_id_.GetNoArena();
 }
-void quotation_req::set_exchange(const ::std::string& value) {
+void quotation_req::set_exchange_id(const ::std::string& value) {
   
-  exchange_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  exchange_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
 #if LANG_CXX11
-void quotation_req::set_exchange(::std::string&& value) {
+void quotation_req::set_exchange_id(::std::string&& value) {
   
-  exchange_.SetNoArena(
+  exchange_id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  // @@protoc_insertion_point(field_set_rvalue:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
 #endif
-void quotation_req::set_exchange(const char* value) {
+void quotation_req::set_exchange_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  exchange_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  exchange_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
-void quotation_req::set_exchange(const char* value, size_t size) {
+void quotation_req::set_exchange_id(const char* value, size_t size) {
   
-  exchange_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  exchange_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  // @@protoc_insertion_point(field_set_pointer:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
-::std::string* quotation_req::mutable_exchange() {
+::std::string* quotation_req::mutable_exchange_id() {
   
-  // @@protoc_insertion_point(field_mutable:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
-  return exchange_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
+  return exchange_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-::std::string* quotation_req::release_exchange() {
-  // @@protoc_insertion_point(field_release:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+::std::string* quotation_req::release_exchange_id() {
+  // @@protoc_insertion_point(field_release:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
   
-  return exchange_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return exchange_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-void quotation_req::set_allocated_exchange(::std::string* exchange) {
-  if (exchange != NULL) {
+void quotation_req::set_allocated_exchange_id(::std::string* exchange_id) {
+  if (exchange_id != NULL) {
     
   } else {
     
   }
-  exchange_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exchange);
-  // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  exchange_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exchange_id);
+  // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
 
 // string type = 2;

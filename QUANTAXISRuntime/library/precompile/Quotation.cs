@@ -23,36 +23,36 @@ namespace QUANTAXISRuntimeQuotation {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
             "Cg9xdW90YXRpb24ucHJvdG8SG1FVQU5UQVhJU19SdW50aW1lX1F1b3RhdGlv",
-            "biJ2Cg1xdW90YXRpb25fcmVxEhAKCGV4Y2hhbmdlGAEgASgJEgwKBHR5cGUY",
-            "AiABKAkSDAoEY29kZRgDIAEoCRIKCgJpcBgEIAEoCRIMCgR0aW1lGAUgASgJ",
-            "EgwKBGRhdGUYBiABKAkSDwoHbWVzc2FnZRgHIAEoCSKOBQoNcXVvdGF0aW9u",
-            "X3JlcBITCgtleGNoYW5nZV9pZBgBIAEoCRIOCgZ0aWNrZXIYAiABKAkSDAoE",
-            "Y29kZRgDIAEoCRISCgpsYXN0X3ByaWNlGAQgASgBEhcKD3ByZV9jbG9zZV9w",
-            "cmljZRgFIAEoARIMCgRvcGVuGAYgASgBEgwKBGhpZ2gYByABKAESCwoDbG93",
-            "GAggASgBEg0KBWNsb3NlGAkgASgBEhMKC2Nsb3NlX3ByaWNlGAogASgBEhkK",
-            "EXByZV9vcGVuX2ludGVyZXN0GAsgASgBEhUKDW9wZW5faW50ZXJlc3QYDCAB",
-            "KAESHAoUcHJlX3NldHRsZW1lbnRfcHJpY2UYDSABKAESGAoQc2V0dGxlbWVu",
-            "dF9wcmljZRgOIAEoARIZChF1cHBlcl9saW1pdF9wcmljZRgPIAEoARIZChFs",
-            "b3dlcl9saW1pdF9wcmljZRgQIAEoARIRCglwcmVfZGVsdGEYESABKAESEgoK",
-            "Y3Vycl9kZWx0YRgSIAEoARIRCglkYXRhX3RpbWUYEyABKBISEAoIZGF0ZXRp",
-            "bWUYFCABKAkSCwoDcXR5GBUgASgSEg4KBnZvbHVtZRgWIAEoAhILCgN2b2wY",
-            "FyABKAISEAoIdHVybm92ZXIYGCABKAESEQoJYXZnX3ByaWNlGBkgASgBEgwK",
-            "BGlvcHYYGiABKAESFQoNZXRmX2J1eV9jb3VudBgbIAEoERIWCg5ldGZfc2Vs",
-            "bF9jb3VudBgcIAEoERITCgtldGZfYnV5X3F0eRgdIAEoARIVCg1ldGZfYnV5",
-            "X21vbmV5GB4gASgBEhQKDGV0Zl9zZWxsX3F0eRgfIAEoARIWCg5ldGZfc2Vs",
-            "bF9tb25leRggIAEoATLfAgoTUVJfUXVvdGF0aW9uU2VydmljZRJqChBRUl9x",
-            "dW90YXRpb25fcDJwEiouUVVBTlRBWElTX1J1bnRpbWVfUXVvdGF0aW9uLnF1",
-            "b3RhdGlvbl9yZXEaKi5RVUFOVEFYSVNfUnVudGltZV9RdW90YXRpb24ucXVv",
-            "dGF0aW9uX3JlcBJsChBRQV9xdW90YXRpb25fcDJzEiouUVVBTlRBWElTX1J1",
-            "bnRpbWVfUXVvdGF0aW9uLnF1b3RhdGlvbl9yZXEaKi5RVUFOVEFYSVNfUnVu",
-            "dGltZV9RdW90YXRpb24ucXVvdGF0aW9uX3JlcDABEm4KEFFBX3F1b3RhdGlv",
-            "bl9zMnMSKi5RVUFOVEFYSVNfUnVudGltZV9RdW90YXRpb24ucXVvdGF0aW9u",
-            "X3JlcRoqLlFVQU5UQVhJU19SdW50aW1lX1F1b3RhdGlvbi5xdW90YXRpb25f",
-            "cmVwKAEwAWIGcHJvdG8z"));
+            "biJ5Cg1xdW90YXRpb25fcmVxEhMKC2V4Y2hhbmdlX2lkGAEgASgJEgwKBHR5",
+            "cGUYAiABKAkSDAoEY29kZRgDIAEoCRIKCgJpcBgEIAEoCRIMCgR0aW1lGAUg",
+            "ASgJEgwKBGRhdGUYBiABKAkSDwoHbWVzc2FnZRgHIAEoCSKOBQoNcXVvdGF0",
+            "aW9uX3JlcBITCgtleGNoYW5nZV9pZBgBIAEoCRIOCgZ0aWNrZXIYAiABKAkS",
+            "DAoEY29kZRgDIAEoCRISCgpsYXN0X3ByaWNlGAQgASgBEhcKD3ByZV9jbG9z",
+            "ZV9wcmljZRgFIAEoARIMCgRvcGVuGAYgASgBEgwKBGhpZ2gYByABKAESCwoD",
+            "bG93GAggASgBEg0KBWNsb3NlGAkgASgBEhMKC2Nsb3NlX3ByaWNlGAogASgB",
+            "EhkKEXByZV9vcGVuX2ludGVyZXN0GAsgASgBEhUKDW9wZW5faW50ZXJlc3QY",
+            "DCABKAESHAoUcHJlX3NldHRsZW1lbnRfcHJpY2UYDSABKAESGAoQc2V0dGxl",
+            "bWVudF9wcmljZRgOIAEoARIZChF1cHBlcl9saW1pdF9wcmljZRgPIAEoARIZ",
+            "ChFsb3dlcl9saW1pdF9wcmljZRgQIAEoARIRCglwcmVfZGVsdGEYESABKAES",
+            "EgoKY3Vycl9kZWx0YRgSIAEoARIRCglkYXRhX3RpbWUYEyABKBISEAoIZGF0",
+            "ZXRpbWUYFCABKAkSCwoDcXR5GBUgASgSEg4KBnZvbHVtZRgWIAEoAhILCgN2",
+            "b2wYFyABKAISEAoIdHVybm92ZXIYGCABKAESEQoJYXZnX3ByaWNlGBkgASgB",
+            "EgwKBGlvcHYYGiABKAESFQoNZXRmX2J1eV9jb3VudBgbIAEoERIWCg5ldGZf",
+            "c2VsbF9jb3VudBgcIAEoERITCgtldGZfYnV5X3F0eRgdIAEoARIVCg1ldGZf",
+            "YnV5X21vbmV5GB4gASgBEhQKDGV0Zl9zZWxsX3F0eRgfIAEoARIWCg5ldGZf",
+            "c2VsbF9tb25leRggIAEoATLfAgoTUVJfUXVvdGF0aW9uU2VydmljZRJqChBR",
+            "Ul9xdW90YXRpb25fcDJwEiouUVVBTlRBWElTX1J1bnRpbWVfUXVvdGF0aW9u",
+            "LnF1b3RhdGlvbl9yZXEaKi5RVUFOVEFYSVNfUnVudGltZV9RdW90YXRpb24u",
+            "cXVvdGF0aW9uX3JlcBJsChBRQV9xdW90YXRpb25fcDJzEiouUVVBTlRBWElT",
+            "X1J1bnRpbWVfUXVvdGF0aW9uLnF1b3RhdGlvbl9yZXEaKi5RVUFOVEFYSVNf",
+            "UnVudGltZV9RdW90YXRpb24ucXVvdGF0aW9uX3JlcDABEm4KEFFBX3F1b3Rh",
+            "dGlvbl9zMnMSKi5RVUFOVEFYSVNfUnVudGltZV9RdW90YXRpb24ucXVvdGF0",
+            "aW9uX3JlcRoqLlFVQU5UQVhJU19SdW50aW1lX1F1b3RhdGlvbi5xdW90YXRp",
+            "b25fcmVwKAEwAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeQuotation.quotation_req), global::QUANTAXISRuntimeQuotation.quotation_req.Parser, new[]{ "Exchange", "Type", "Code", "Ip", "Time", "Date", "Message" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeQuotation.quotation_req), global::QUANTAXISRuntimeQuotation.quotation_req.Parser, new[]{ "ExchangeId", "Type", "Code", "Ip", "Time", "Date", "Message" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::QUANTAXISRuntimeQuotation.quotation_rep), global::QUANTAXISRuntimeQuotation.quotation_rep.Parser, new[]{ "ExchangeId", "Ticker", "Code", "LastPrice", "PreClosePrice", "Open", "High", "Low", "Close", "ClosePrice", "PreOpenInterest", "OpenInterest", "PreSettlementPrice", "SettlementPrice", "UpperLimitPrice", "LowerLimitPrice", "PreDelta", "CurrDelta", "DataTime", "Datetime", "Qty", "Volume", "Vol", "Turnover", "AvgPrice", "Iopv", "EtfBuyCount", "EtfSellCount", "EtfBuyQty", "EtfBuyMoney", "EtfSellQty", "EtfSellMoney" }, null, null, null)
           }));
     }
@@ -84,7 +84,7 @@ namespace QUANTAXISRuntimeQuotation {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public quotation_req(quotation_req other) : this() {
-      exchange_ = other.exchange_;
+      exchangeId_ = other.exchangeId_;
       type_ = other.type_;
       code_ = other.code_;
       ip_ = other.ip_;
@@ -98,17 +98,17 @@ namespace QUANTAXISRuntimeQuotation {
       return new quotation_req(this);
     }
 
-    /// <summary>Field number for the "exchange" field.</summary>
-    public const int ExchangeFieldNumber = 1;
-    private string exchange_ = "";
+    /// <summary>Field number for the "exchange_id" field.</summary>
+    public const int ExchangeIdFieldNumber = 1;
+    private string exchangeId_ = "";
     /// <summary>
     /// sz/sh/etf/index
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Exchange {
-      get { return exchange_; }
+    public string ExchangeId {
+      get { return exchangeId_; }
       set {
-        exchange_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        exchangeId_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -200,7 +200,7 @@ namespace QUANTAXISRuntimeQuotation {
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Exchange != other.Exchange) return false;
+      if (ExchangeId != other.ExchangeId) return false;
       if (Type != other.Type) return false;
       if (Code != other.Code) return false;
       if (Ip != other.Ip) return false;
@@ -213,7 +213,7 @@ namespace QUANTAXISRuntimeQuotation {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Exchange.Length != 0) hash ^= Exchange.GetHashCode();
+      if (ExchangeId.Length != 0) hash ^= ExchangeId.GetHashCode();
       if (Type.Length != 0) hash ^= Type.GetHashCode();
       if (Code.Length != 0) hash ^= Code.GetHashCode();
       if (Ip.Length != 0) hash ^= Ip.GetHashCode();
@@ -230,9 +230,9 @@ namespace QUANTAXISRuntimeQuotation {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public void WriteTo(pb::CodedOutputStream output) {
-      if (Exchange.Length != 0) {
+      if (ExchangeId.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Exchange);
+        output.WriteString(ExchangeId);
       }
       if (Type.Length != 0) {
         output.WriteRawTag(18);
@@ -263,8 +263,8 @@ namespace QUANTAXISRuntimeQuotation {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Exchange.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Exchange);
+      if (ExchangeId.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(ExchangeId);
       }
       if (Type.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Type);
@@ -292,8 +292,8 @@ namespace QUANTAXISRuntimeQuotation {
       if (other == null) {
         return;
       }
-      if (other.Exchange.Length != 0) {
-        Exchange = other.Exchange;
+      if (other.ExchangeId.Length != 0) {
+        ExchangeId = other.ExchangeId;
       }
       if (other.Type.Length != 0) {
         Type = other.Type;
@@ -324,7 +324,7 @@ namespace QUANTAXISRuntimeQuotation {
             input.SkipLastField();
             break;
           case 10: {
-            Exchange = input.ReadString();
+            ExchangeId = input.ReadString();
             break;
           }
           case 18: {

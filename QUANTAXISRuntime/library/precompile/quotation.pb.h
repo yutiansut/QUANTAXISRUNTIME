@@ -139,19 +139,19 @@ class quotation_req : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
-  // string exchange = 1;
-  void clear_exchange();
-  static const int kExchangeFieldNumber = 1;
-  const ::std::string& exchange() const;
-  void set_exchange(const ::std::string& value);
+  // string exchange_id = 1;
+  void clear_exchange_id();
+  static const int kExchangeIdFieldNumber = 1;
+  const ::std::string& exchange_id() const;
+  void set_exchange_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_exchange(::std::string&& value);
+  void set_exchange_id(::std::string&& value);
   #endif
-  void set_exchange(const char* value);
-  void set_exchange(const char* value, size_t size);
-  ::std::string* mutable_exchange();
-  ::std::string* release_exchange();
-  void set_allocated_exchange(::std::string* exchange);
+  void set_exchange_id(const char* value);
+  void set_exchange_id(const char* value, size_t size);
+  ::std::string* mutable_exchange_id();
+  ::std::string* release_exchange_id();
+  void set_allocated_exchange_id(::std::string* exchange_id);
 
   // string type = 2;
   void clear_type();
@@ -241,7 +241,7 @@ class quotation_req : public ::google::protobuf::Message /* @@protoc_insertion_p
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::ArenaStringPtr exchange_;
+  ::google::protobuf::internal::ArenaStringPtr exchange_id_;
   ::google::protobuf::internal::ArenaStringPtr type_;
   ::google::protobuf::internal::ArenaStringPtr code_;
   ::google::protobuf::internal::ArenaStringPtr ip_;
@@ -609,57 +609,57 @@ class quotation_rep : public ::google::protobuf::Message /* @@protoc_insertion_p
 #endif  // __GNUC__
 // quotation_req
 
-// string exchange = 1;
-inline void quotation_req::clear_exchange() {
-  exchange_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+// string exchange_id = 1;
+inline void quotation_req::clear_exchange_id() {
+  exchange_id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline const ::std::string& quotation_req::exchange() const {
-  // @@protoc_insertion_point(field_get:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
-  return exchange_.GetNoArena();
+inline const ::std::string& quotation_req::exchange_id() const {
+  // @@protoc_insertion_point(field_get:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
+  return exchange_id_.GetNoArena();
 }
-inline void quotation_req::set_exchange(const ::std::string& value) {
+inline void quotation_req::set_exchange_id(const ::std::string& value) {
   
-  exchange_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  exchange_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
 #if LANG_CXX11
-inline void quotation_req::set_exchange(::std::string&& value) {
+inline void quotation_req::set_exchange_id(::std::string&& value) {
   
-  exchange_.SetNoArena(
+  exchange_id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  // @@protoc_insertion_point(field_set_rvalue:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
 #endif
-inline void quotation_req::set_exchange(const char* value) {
+inline void quotation_req::set_exchange_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
   
-  exchange_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  exchange_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
-inline void quotation_req::set_exchange(const char* value, size_t size) {
+inline void quotation_req::set_exchange_id(const char* value, size_t size) {
   
-  exchange_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  exchange_id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  // @@protoc_insertion_point(field_set_pointer:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
-inline ::std::string* quotation_req::mutable_exchange() {
+inline ::std::string* quotation_req::mutable_exchange_id() {
   
-  // @@protoc_insertion_point(field_mutable:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
-  return exchange_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  // @@protoc_insertion_point(field_mutable:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
+  return exchange_id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* quotation_req::release_exchange() {
-  // @@protoc_insertion_point(field_release:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+inline ::std::string* quotation_req::release_exchange_id() {
+  // @@protoc_insertion_point(field_release:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
   
-  return exchange_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  return exchange_id_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void quotation_req::set_allocated_exchange(::std::string* exchange) {
-  if (exchange != NULL) {
+inline void quotation_req::set_allocated_exchange_id(::std::string* exchange_id) {
+  if (exchange_id != NULL) {
     
   } else {
     
   }
-  exchange_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exchange);
-  // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Quotation.quotation_req.exchange)
+  exchange_id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exchange_id);
+  // @@protoc_insertion_point(field_set_allocated:QUANTAXIS_Runtime_Quotation.quotation_req.exchange_id)
 }
 
 // string type = 2;
