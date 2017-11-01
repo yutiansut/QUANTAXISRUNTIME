@@ -13,7 +13,7 @@ def __select_market_code(code):
 
 
 def changer(pack, code):
-    print(pack)
+    #print(pack)
     data = hq_struct()
     data.open = pack['open']
     data.close = pack['close']
@@ -69,10 +69,12 @@ def QA_Fetcher_long(code, type_):
             try:
                 if f.done():
                     data = f.result()
+                    print(data[-2])
                     return data
             except Exception as e:
                 f.cancel()
                 print(str(e))
+
 
 
 if __name__ =='__main__':
