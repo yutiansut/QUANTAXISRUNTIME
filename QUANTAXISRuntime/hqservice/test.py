@@ -7,6 +7,7 @@ from concurrent.futures import wait, as_completed
 from pytdx.hq import TdxHq_API
 import tushare as ts
 import asyncio
+import QUANTAXIS as QA
 import datetime
 from stock_min_pb2 import stock_min
 def __select_market_code(code):
@@ -15,9 +16,14 @@ def __select_market_code(code):
         return 1
     return 0
 
+#print(ts.get_stock_basics())
+CODE = ts.get_stock_basics().index.tolist()
+print(len(CODE))
 
-CODE = ts.get_hs300s()['code'].tolist()[0:2]
+"""
 
+
+#ts.get_stock_basics()
 #@asyncio.coroutine
 def change(pack,code):
     data=stock_min()
@@ -29,16 +35,19 @@ def change(pack,code):
     return data
 
 
-
+api = TdxHq_API()
+api.connect('218.75.126.9', 7709)
 # 任务包 task_module
-def task(code, timeout=100):
-    api = TdxHq_API()
-    api.connect('115.238.90.165', 7709)
+def task(code, timeout=1):
+
     market = __select_market_code(code)
-    res = api.get_security_bars(1, market, code, 0, 2)
-    re=[change(x,code) for x in res]
+
+
+    res = api.get_security_bars(1, market, code, 0, 1)
+    #print(res)
+    #re=[change(x,code) for x in res]
     #res=api.get_security_quotes([(__select_market_code(code), code)])
-    return re
+    return res
 
 
 
@@ -48,29 +57,40 @@ def task(code, timeout=100):
 import datetime
 a = datetime.datetime.now()
 data = []
-with Pool(max_workers=40) as executor:
+with Pool(max_workers=50) as executor:
     future_tasks = [executor.submit(task, code) for code in CODE]
     for f in future_tasks:
-        if f.running():
-            print('%s is running' % str(f))
+        #if f.running():
+         #   pass
+            #print('%s is running' % str(f))
+
     for f in as_completed(future_tasks):
         try:
-            if f.done():
+            if f.done():    
+                pass
 
                 data.extend(f.result())
 
         except Exception as e:
             f.cancel()
-            print(str(e))
+            #print(str(e))
 
 
 
+print(datetime.datetime.now() - a)
+"""
 
 #api = TdxHq_API()
-print(data)
-print([type(data_) for data_ in data])
+#print(lend(data))
+#print([type(data_) for data_ in data])
 #dt=[change(x) for x in data]
+
+
+a = datetime.datetime.now()
+
+data=QA.QA_fetch_get_stock_realtime('tdx',CODE)
 print(datetime.datetime.now() - a)
 #print(dt)
+print(len(data))
 
 
