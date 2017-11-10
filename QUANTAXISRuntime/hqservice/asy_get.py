@@ -55,7 +55,7 @@ def original_api():
 
 import tushare as ts
 code=ts.get_stock_basics().index.tolist()
-best_ip='218.75.126.9'
+best_ip='115.238.90.165'
 
 
 #获取全市场行情，并行版
@@ -85,7 +85,7 @@ def original_quotes():
 import pymongo
 d=pymongo.MongoClient().qa.realtime2
 
-for i in range(200):
+for i in range(2000000):
     #a=concurrent_quotes()
     #res=[]
     data=original_quotes()

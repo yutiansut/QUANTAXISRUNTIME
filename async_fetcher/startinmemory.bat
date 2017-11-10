@@ -1,0 +1,1 @@
+ mongod --dbpath C:\databases\inmemmory\data\ --logpath C:\databases\inmemmory\log\mongo.log --storageEngine ephemeralForTest  --port 27018
