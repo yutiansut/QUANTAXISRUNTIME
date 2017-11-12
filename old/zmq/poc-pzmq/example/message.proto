@@ -1,0 +1,28 @@
+message User {
+    required string name = 1;
+}
+
+message EchoRequest {
+    required string echo = 1;
+}
+
+message EchoResponse {
+    required string echo = 1;
+}
+
+message AddRequest {
+    required int32 a = 1;
+    required int32 b = 2;
+}
+
+message AddResponse {
+    required int32 result = 1;
+}
+
+message SearchRequest {
+    required string query = 1;
+}
+
+message SearchResponse {
+    repeated User users = 1;
+}
