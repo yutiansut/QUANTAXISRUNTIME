@@ -2,7 +2,7 @@ from concurrent.futures import ThreadPoolExecutor as Pool
 from concurrent.futures import wait, as_completed
 from pytdx.hq import TdxHq_API
 from stock_hq_pb2 import hq_struct
-
+from runtime.fetcher.fetch import QA_Tdx_Executor
 
 def __select_market_code(code):
     code = str(code)
@@ -75,7 +75,11 @@ def QA_Fetcher_long(code, type_):
                 f.cancel()
                 print(str(e))
 
+def QA_fetch_all_market(code):
+    executor=QA_Tdx_Executor(thread_num=4)
+    return executor.get_realtime_concurrent(code)
 
 
 if __name__ =='__main__':
-    QA_Fetcher_long('000001','9')
+    #QA_Fetcher_long('000001','9')
+    print(QA_fetch_all_market('000001'))
