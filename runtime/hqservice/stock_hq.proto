@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+//import "stock_day.proto";
+// .\protoc.exe --python_out .  --proto_path . --grpc_out . --plugin=protoc-gen-grpc=.\grpc_csharp_plugin.exe .\stock_hq.proto
+//import "stock_min.proto";
+
+package stock_hq;
+
+service StockHQService {
+
+    rpc QA_fetch_p2p (query_struct) returns (hq_struct);
+    rpc QA_fetch_p2s (query_struct) returns (stream hq_struct);
+    rpc QA_fetch_s2s (stream query_struct) returns (stream hq_struct);
+    rpc QA_fetch_s2p (stream query_struct) returns (hq_struct);
+
+    rpc QA_fetch_all_market (stream query_all_market) returns (stream hq_struct);
+    //rpc RouteChat (stream long) returns (stream long_hq);
+  }
+  
+
+
+message query_struct{
+  string type =1;
+  string code =2;
+  string message=3;
+}
+
+message query_all_market{
+  float status =1;
+  string code =2;
+
+}
+
+
+
+message hq_struct{
+ string code=1; 
+ float open=2;
+ float high=3;
+ float low=4;
+ float close=5;
+ float volume=6;
+ string date =7;
+ float amount=8;
+ string date_stamp=9;
+ string datetime =10;
+ string time_stamp =11;
+ string message = 12;
+ float price =13;
+ float ask1 =14;
+ float ask_vol1 =15;
+ float ask2=16;
+ float ask_vol2=17;
+ float ask3=18;
+ float ask_vol3=19;
+ float ask4=20;
+ float ask_vol4=21;
+ float ask5=22;
+ float ask_vol5=23;
+}
