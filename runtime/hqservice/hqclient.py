@@ -186,7 +186,7 @@ if __name__ == '__main__':
 
     client = QA_Runtime_client(broker='192.168.4.239:50052')
     client.connect()
-    print(threading.enumerate())
+    #print(threading.enumerate())
     # client.Subscribe()
     client.Subscribe(stock_list)
     time.sleep(3)
