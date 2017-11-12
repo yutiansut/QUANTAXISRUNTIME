@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='stock_hq.proto',
   package='stock_hq',
   syntax='proto3',
-  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\";\n\x0cquery_struct\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"0\n\x10query_all_market\x12\x0e\n\x06status\x18\x01 \x01(\x02\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"\xf9\x02\n\thq_struct\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04open\x18\x02 \x01(\x02\x12\x0c\n\x04high\x18\x03 \x01(\x02\x12\x0b\n\x03low\x18\x04 \x01(\x02\x12\r\n\x05\x63lose\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x07 \x01(\t\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x02\x12\x12\n\ndate_stamp\x18\t \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\n \x01(\t\x12\x12\n\ntime_stamp\x18\x0b \x01(\t\x12\x0f\n\x07message\x18\x0c \x01(\t\x12\r\n\x05price\x18\r \x01(\x02\x12\x0c\n\x04\x61sk1\x18\x0e \x01(\x02\x12\x10\n\x08\x61sk_vol1\x18\x0f \x01(\x02\x12\x0c\n\x04\x61sk2\x18\x10 \x01(\x02\x12\x10\n\x08\x61sk_vol2\x18\x11 \x01(\x02\x12\x0c\n\x04\x61sk3\x18\x12 \x01(\x02\x12\x10\n\x08\x61sk_vol3\x18\x13 \x01(\x02\x12\x0c\n\x04\x61sk4\x18\x14 \x01(\x02\x12\x10\n\x08\x61sk_vol4\x18\x15 \x01(\x02\x12\x0c\n\x04\x61sk5\x18\x16 \x01(\x02\x12\x10\n\x08\x61sk_vol5\x18\x17 \x01(\x02\x32\xd8\x02\n\x0eStockHQService\x12;\n\x0cQA_fetch_p2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct\x12=\n\x0cQA_fetch_p2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct0\x01\x12?\n\x0cQA_fetch_s2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x30\x01\x12=\n\x0cQA_fetch_s2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x12J\n\x13QA_fetch_all_market\x12\x1a.stock_hq.query_all_market\x1a\x13.stock_hq.hq_struct(\x01\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\";\n\x0cquery_struct\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"0\n\x10query_all_market\x12\x0e\n\x06status\x18\x01 \x01(\x02\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"\xdc\x04\n\thq_struct\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04open\x18\x02 \x01(\x02\x12\x0c\n\x04high\x18\x03 \x01(\x02\x12\x0b\n\x03low\x18\x04 \x01(\x02\x12\r\n\x05\x63lose\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x07 \x01(\t\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x02\x12\x12\n\ndate_stamp\x18\t \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\n \x01(\t\x12\x12\n\ntime_stamp\x18\x0b \x01(\t\x12\x0f\n\x07message\x18\x0c \x01(\t\x12\r\n\x05price\x18\r \x01(\x02\x12\x0c\n\x04\x61sk1\x18\x0e \x01(\x02\x12\x10\n\x08\x61sk_vol1\x18\x0f \x01(\x02\x12\x0c\n\x04\x61sk2\x18\x10 \x01(\x02\x12\x10\n\x08\x61sk_vol2\x18\x11 \x01(\x02\x12\x0c\n\x04\x61sk3\x18\x12 \x01(\x02\x12\x10\n\x08\x61sk_vol3\x18\x13 \x01(\x02\x12\x0c\n\x04\x61sk4\x18\x14 \x01(\x02\x12\x10\n\x08\x61sk_vol4\x18\x15 \x01(\x02\x12\x0c\n\x04\x61sk5\x18\x16 \x01(\x02\x12\x10\n\x08\x61sk_vol5\x18\x17 \x01(\x02\x12\x12\n\nlast_close\x18\x18 \x01(\x02\x12\x0c\n\x04\x62id1\x18\x19 \x01(\x02\x12\x10\n\x08\x62id_vol1\x18\x1a \x01(\x02\x12\x0c\n\x04\x62id2\x18\x1b \x01(\x02\x12\x10\n\x08\x62id_vol2\x18\x1c \x01(\x02\x12\x0c\n\x04\x62id3\x18\x1d \x01(\x02\x12\x10\n\x08\x62id_vol3\x18\x1e \x01(\x02\x12\x0c\n\x04\x62id4\x18\x1f \x01(\x02\x12\x10\n\x08\x62id_vol4\x18  \x01(\x02\x12\x0c\n\x04\x62id5\x18! \x01(\x02\x12\x10\n\x08\x62id_vol5\x18\" \x01(\x02\x12\x0f\n\x07\x63ur_vol\x18# \x01(\x02\x12\r\n\x05\x62_vol\x18$ \x01(\x02\x12\r\n\x05s_vol\x18% \x01(\x02\x32\xd8\x02\n\x0eStockHQService\x12;\n\x0cQA_fetch_p2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct\x12=\n\x0cQA_fetch_p2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct0\x01\x12?\n\x0cQA_fetch_s2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x30\x01\x12=\n\x0cQA_fetch_s2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x12J\n\x13QA_fetch_all_market\x12\x1a.stock_hq.query_all_market\x1a\x13.stock_hq.hq_struct(\x01\x30\x01\x62\x06proto3')
 )
 
 
@@ -276,6 +276,104 @@ _HQ_STRUCT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='last_close', full_name='stock_hq.hq_struct.last_close', index=23,
+      number=24, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid1', full_name='stock_hq.hq_struct.bid1', index=24,
+      number=25, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid_vol1', full_name='stock_hq.hq_struct.bid_vol1', index=25,
+      number=26, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid2', full_name='stock_hq.hq_struct.bid2', index=26,
+      number=27, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid_vol2', full_name='stock_hq.hq_struct.bid_vol2', index=27,
+      number=28, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid3', full_name='stock_hq.hq_struct.bid3', index=28,
+      number=29, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid_vol3', full_name='stock_hq.hq_struct.bid_vol3', index=29,
+      number=30, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid4', full_name='stock_hq.hq_struct.bid4', index=30,
+      number=31, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid_vol4', full_name='stock_hq.hq_struct.bid_vol4', index=31,
+      number=32, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid5', full_name='stock_hq.hq_struct.bid5', index=32,
+      number=33, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='bid_vol5', full_name='stock_hq.hq_struct.bid_vol5', index=33,
+      number=34, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='cur_vol', full_name='stock_hq.hq_struct.cur_vol', index=34,
+      number=35, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='b_vol', full_name='stock_hq.hq_struct.b_vol', index=35,
+      number=36, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='s_vol', full_name='stock_hq.hq_struct.s_vol', index=36,
+      number=37, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -289,7 +387,7 @@ _HQ_STRUCT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=140,
-  serialized_end=517,
+  serialized_end=744,
 )
 
 DESCRIPTOR.message_types_by_name['query_struct'] = _QUERY_STRUCT
@@ -326,8 +424,8 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=520,
-  serialized_end=864,
+  serialized_start=747,
+  serialized_end=1091,
   methods=[
   _descriptor.MethodDescriptor(
     name='QA_fetch_p2p',

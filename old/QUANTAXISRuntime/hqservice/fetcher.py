@@ -1,3 +1,4 @@
+#coding:utf-8
 from concurrent.futures import ThreadPoolExecutor as Pool
 from concurrent.futures import wait, as_completed
 from pytdx.hq import TdxHq_API

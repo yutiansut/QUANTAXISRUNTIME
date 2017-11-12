@@ -25,8 +25,8 @@ from concurrent.futures import ThreadPoolExecutor as Pool
 from concurrent.futures import as_completed, wait
 
 from pytdx.hq import TdxHq_API
-from runtime.fetcher import fetch
-from runtime.hqservice.stock_hq_pb2 import hq_struct
+from QUANTAXIS.QAFetch.QATdx_adv import QA_Tdx_Executor
+from stock_hq_pb2 import hq_struct
 
 
 def __select_market_code(code):
@@ -49,6 +49,28 @@ def changer(pack, code):
     data.datetime= pack['datetime']
 
     return data
+
+
+def changer_realtime(pack):
+    try:
+        print(len(pack))
+        for item in pack:
+            print(len(item))
+            for _data in item:
+                data = hq_struct()
+                data.open = float(_data['open'])
+                data.price = float(_data['price'])
+                data.high = float(_data['high'])
+                data.low = float(_data['low'])
+                data.code = str(_data['code'])
+                data.volume = float(_data['vol'])
+                data.ask1
+                #data.datetime= pack['datetime']
+                print(_data)
+                print(data)
+    except Exception as e:
+        raise e
+
 
 def single_task(code, timeout=100):
     api = TdxHq_API()
@@ -101,10 +123,10 @@ def QA_Fetcher_long(code, type_):
                 print(str(e))
 
 def QA_fetch_all_market(code):
-    executor=fetch.QA_Tdx_Executor(thread_num=4)
+    executor=QA_Tdx_Executor(thread_num=4)
     return executor.get_realtime_concurrent(code)
 
 
 if __name__ =='__main__':
-    #QA_Fetcher_long('000001','9')
-    print(QA_fetch_all_market('000001'))
+    #print(QA_Fetcher_long('000001','9'))
+    print(changer_realtime(QA_fetch_all_market('000001')))

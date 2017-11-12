@@ -57,4 +57,18 @@ message hq_struct{
  float ask_vol4=21;
  float ask5=22;
  float ask_vol5=23;
+ float last_close=24;
+ float bid1=25;
+ float bid_vol1 =26;
+ float bid2=27;
+ float bid_vol2=28;
+ float bid3=29;
+ float bid_vol3=30;
+ float bid4=31;
+ float bid_vol4=32;
+ float bid5=33;
+ float bid_vol5=34;
+ float cur_vol=35;
+ float b_vol=36;
+ float s_vol=37;
 }
