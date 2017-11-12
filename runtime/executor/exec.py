@@ -43,6 +43,6 @@ for i in range(100000):
     time.sleep(1)
     print('Connection Pool NOW LEFT {} Available IP'.format(x._queue.qsize()))
     print('Program Last Time {}'.format(
-        (datetime.datetime.now() - _time1).total_seconds()))
+        (datetime.datetime.now() - _time).total_seconds()))
     # print(threading.enumerate())
 #
