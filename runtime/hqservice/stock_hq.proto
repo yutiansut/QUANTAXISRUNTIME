@@ -13,7 +13,7 @@ service StockHQService {
     rpc QA_fetch_s2s (stream query_struct) returns (stream hq_struct);
     rpc QA_fetch_s2p (stream query_struct) returns (hq_struct);
 
-    rpc QA_fetch_all_market (stream query_all_market) returns (stream hq_struct);
+    rpc QA_fetch_realtime (query_realtime) returns (stream hq_struct);
     //rpc RouteChat (stream long) returns (stream long_hq);
   }
   
@@ -25,7 +25,7 @@ message query_struct{
   string message=3;
 }
 
-message query_all_market{
+message query_realtime{
   float status =1;
   string code =2;
 

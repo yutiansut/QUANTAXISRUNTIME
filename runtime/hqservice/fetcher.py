@@ -26,6 +26,7 @@ from concurrent.futures import as_completed, wait
 
 from pytdx.hq import TdxHq_API
 from QUANTAXIS.QAFetch.QATdx_adv import QA_Tdx_Executor
+import datetime
 from stock_hq_pb2 import hq_struct
 
 
@@ -36,9 +37,8 @@ def __select_market_code(code):
     return 0
 
 
-
 def changer(pack, code):
-    #print(pack)
+    # print(pack)
     data = hq_struct()
     data.open = pack['open']
     data.close = pack['close']
@@ -46,30 +46,52 @@ def changer(pack, code):
     data.low = pack['low']
     data.code = str(code)[0:6]
     data.volume = pack['vol']
-    data.datetime= pack['datetime']
+    data.datetime = pack['datetime']
 
     return data
 
-
-def changer_realtime(pack):
+def _base_realtime_changer(_data,_time):
+    data = hq_struct()
+    data.last_close = float(_data['last_close'])
+    data.open = float(_data['open'])
+    data.price = float(_data['price'])
+    data.high = float(_data['high'])
+    data.low = float(_data['low'])
+    data.code = str(_data['code'])
+    data.cur_vol = float(_data['cur_vol'])
+    data.b_vol = float(_data['b_vol'])
+    data.s_vol = float(_data['s_vol'])
+    data.volume = float(_data['vol'])
+    data.ask1 = float(_data['ask1'])
+    data.ask_vol1 = float(_data['ask_vol1'])
+    data.ask2 = float(_data['ask2'])
+    data.ask_vol2 = float(_data['ask_vol2'])
+    data.ask3 = float(_data['ask3'])
+    data.ask_vol3 = float(_data['ask_vol3'])
+    data.ask4 = float(_data['ask4'])
+    data.ask_vol4 = float(_data['ask_vol4'])
+    data.ask5 = float(_data['ask5'])
+    data.ask_vol5 = float(_data['ask_vol5'])
+    data.bid1 = float(_data['bid1'])
+    data.bid_vol1 = float(_data['bid_vol1'])
+    data.bid2 = float(_data['bid2'])
+    data.bid_vol2 = float(_data['bid_vol2'])
+    data.bid3 = float(_data['bid3'])
+    data.bid_vol3 = float(_data['bid_vol3'])
+    data.bid4 = float(_data['bid4'])
+    data.bid_vol4 = float(_data['bid_vol4'])
+    data.bid5 = float(_data['bid5'])
+    data.bid_vol5 = float(_data['bid_vol5'])
+    data.datetime = str(_time)
+    return data
+def changer_realtime(pack, _time=datetime.datetime.now()):
     try:
-        print(len(pack))
-        for item in pack:
-            print(len(item))
-            for _data in item:
-                data = hq_struct()
-                data.open = float(_data['open'])
-                data.price = float(_data['price'])
-                data.high = float(_data['high'])
-                data.low = float(_data['low'])
-                data.code = str(_data['code'])
-                data.volume = float(_data['vol'])
-                data.ask1
-                #data.datetime= pack['datetime']
-                print(_data)
-                print(data)
+        #print(len(pack))
+
+        return [_base_realtime_changer(_data,_time) for item in pack for _data in item ]
+
     except Exception as e:
-        raise e
+        pass
 
 
 def single_task(code, timeout=100):
@@ -80,16 +102,19 @@ def single_task(code, timeout=100):
     #re=[change(x,code) for x in res]
     #res=api.get_security_quotes([(__select_market_code(code), code)])
     return changer(res, code)
+
+
 def multiple_task(code, timeout=100):
     api = TdxHq_API()
     api.connect('115.238.90.165', 7709)
     market = __select_market_code(code)
     res = api.get_security_bars(1, market, code, 0, 800)
-    
-    re=[changer(x,code) for x in res]
-    #print(re)
+
+    re = [changer(x, code) for x in res]
+    # print(re)
     #res=api.get_security_quotes([(__select_market_code(code), code)])
     return re
+
 
 def QA_Fetcher(code, type_):
     with Pool(max_workers=40) as executor:
@@ -105,6 +130,7 @@ def QA_Fetcher(code, type_):
             except Exception as e:
                 f.cancel()
                 print(str(e))
+
 
 def QA_Fetcher_long(code, type_):
     with Pool(max_workers=40) as executor:
@@ -122,11 +148,12 @@ def QA_Fetcher_long(code, type_):
                 f.cancel()
                 print(str(e))
 
-def QA_fetch_all_market(code):
-    executor=QA_Tdx_Executor(thread_num=4)
-    return executor.get_realtime_concurrent(code)
 
+def quotation(code):
+    executor = QA_Tdx_Executor(thread_num=4)
+    _data,_time=executor.get_realtime_concurrent(code)
+    return changer_realtime(_data,_time)
 
-if __name__ =='__main__':
-    #print(QA_Fetcher_long('000001','9'))
-    print(changer_realtime(QA_fetch_all_market('000001')))
+if __name__ == '__main__':
+    # print(QA_Fetcher_long('000001','9'))
+    print(quotation(['000001','000002']))

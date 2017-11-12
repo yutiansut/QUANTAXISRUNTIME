@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='stock_hq.proto',
   package='stock_hq',
   syntax='proto3',
-  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\";\n\x0cquery_struct\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\"0\n\x10query_all_market\x12\x0e\n\x06status\x18\x01 \x01(\x02\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"\xdc\x04\n\thq_struct\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04open\x18\x02 \x01(\x02\x12\x0c\n\x04high\x18\x03 \x01(\x02\x12\x0b\n\x03low\x18\x04 \x01(\x02\x12\r\n\x05\x63lose\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x07 \x01(\t\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x02\x12\x12\n\ndate_stamp\x18\t \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\n \x01(\t\x12\x12\n\ntime_stamp\x18\x0b \x01(\t\x12\x0f\n\x07message\x18\x0c \x01(\t\x12\r\n\x05price\x18\r \x01(\x02\x12\x0c\n\x04\x61sk1\x18\x0e \x01(\x02\x12\x10\n\x08\x61sk_vol1\x18\x0f \x01(\x02\x12\x0c\n\x04\x61sk2\x18\x10 \x01(\x02\x12\x10\n\x08\x61sk_vol2\x18\x11 \x01(\x02\x12\x0c\n\x04\x61sk3\x18\x12 \x01(\x02\x12\x10\n\x08\x61sk_vol3\x18\x13 \x01(\x02\x12\x0c\n\x04\x61sk4\x18\x14 \x01(\x02\x12\x10\n\x08\x61sk_vol4\x18\x15 \x01(\x02\x12\x0c\n\x04\x61sk5\x18\x16 \x01(\x02\x12\x10\n\x08\x61sk_vol5\x18\x17 \x01(\x02\x12\x12\n\nlast_close\x18\x18 \x01(\x02\x12\x0c\n\x04\x62id1\x18\x19 \x01(\x02\x12\x10\n\x08\x62id_vol1\x18\x1a \x01(\x02\x12\x0c\n\x04\x62id2\x18\x1b \x01(\x02\x12\x10\n\x08\x62id_vol2\x18\x1c \x01(\x02\x12\x0c\n\x04\x62id3\x18\x1d \x01(\x02\x12\x10\n\x08\x62id_vol3\x18\x1e \x01(\x02\x12\x0c\n\x04\x62id4\x18\x1f \x01(\x02\x12\x10\n\x08\x62id_vol4\x18  \x01(\x02\x12\x0c\n\x04\x62id5\x18! \x01(\x02\x12\x10\n\x08\x62id_vol5\x18\" \x01(\x02\x12\x0f\n\x07\x63ur_vol\x18# \x01(\x02\x12\r\n\x05\x62_vol\x18$ \x01(\x02\x12\r\n\x05s_vol\x18% \x01(\x02\x32\xd8\x02\n\x0eStockHQService\x12;\n\x0cQA_fetch_p2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct\x12=\n\x0cQA_fetch_p2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct0\x01\x12?\n\x0cQA_fetch_s2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x30\x01\x12=\n\x0cQA_fetch_s2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x12J\n\x13QA_fetch_all_market\x12\x1a.stock_hq.query_all_market\x1a\x13.stock_hq.hq_struct(\x01\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0estock_hq.proto\x12\x08stock_hq\";\n\x0cquery_struct\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\".\n\x0equery_realtime\x12\x0e\n\x06status\x18\x01 \x01(\x02\x12\x0c\n\x04\x63ode\x18\x02 \x01(\t\"\xdc\x04\n\thq_struct\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04open\x18\x02 \x01(\x02\x12\x0c\n\x04high\x18\x03 \x01(\x02\x12\x0b\n\x03low\x18\x04 \x01(\x02\x12\r\n\x05\x63lose\x18\x05 \x01(\x02\x12\x0e\n\x06volume\x18\x06 \x01(\x02\x12\x0c\n\x04\x64\x61te\x18\x07 \x01(\t\x12\x0e\n\x06\x61mount\x18\x08 \x01(\x02\x12\x12\n\ndate_stamp\x18\t \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\n \x01(\t\x12\x12\n\ntime_stamp\x18\x0b \x01(\t\x12\x0f\n\x07message\x18\x0c \x01(\t\x12\r\n\x05price\x18\r \x01(\x02\x12\x0c\n\x04\x61sk1\x18\x0e \x01(\x02\x12\x10\n\x08\x61sk_vol1\x18\x0f \x01(\x02\x12\x0c\n\x04\x61sk2\x18\x10 \x01(\x02\x12\x10\n\x08\x61sk_vol2\x18\x11 \x01(\x02\x12\x0c\n\x04\x61sk3\x18\x12 \x01(\x02\x12\x10\n\x08\x61sk_vol3\x18\x13 \x01(\x02\x12\x0c\n\x04\x61sk4\x18\x14 \x01(\x02\x12\x10\n\x08\x61sk_vol4\x18\x15 \x01(\x02\x12\x0c\n\x04\x61sk5\x18\x16 \x01(\x02\x12\x10\n\x08\x61sk_vol5\x18\x17 \x01(\x02\x12\x12\n\nlast_close\x18\x18 \x01(\x02\x12\x0c\n\x04\x62id1\x18\x19 \x01(\x02\x12\x10\n\x08\x62id_vol1\x18\x1a \x01(\x02\x12\x0c\n\x04\x62id2\x18\x1b \x01(\x02\x12\x10\n\x08\x62id_vol2\x18\x1c \x01(\x02\x12\x0c\n\x04\x62id3\x18\x1d \x01(\x02\x12\x10\n\x08\x62id_vol3\x18\x1e \x01(\x02\x12\x0c\n\x04\x62id4\x18\x1f \x01(\x02\x12\x10\n\x08\x62id_vol4\x18  \x01(\x02\x12\x0c\n\x04\x62id5\x18! \x01(\x02\x12\x10\n\x08\x62id_vol5\x18\" \x01(\x02\x12\x0f\n\x07\x63ur_vol\x18# \x01(\x02\x12\r\n\x05\x62_vol\x18$ \x01(\x02\x12\r\n\x05s_vol\x18% \x01(\x02\x32\xd2\x02\n\x0eStockHQService\x12;\n\x0cQA_fetch_p2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct\x12=\n\x0cQA_fetch_p2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct0\x01\x12?\n\x0cQA_fetch_s2s\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x30\x01\x12=\n\x0cQA_fetch_s2p\x12\x16.stock_hq.query_struct\x1a\x13.stock_hq.hq_struct(\x01\x12\x44\n\x11QA_fetch_realtime\x12\x18.stock_hq.query_realtime\x1a\x13.stock_hq.hq_struct0\x01\x62\x06proto3')
 )
 
 
@@ -70,22 +70,22 @@ _QUERY_STRUCT = _descriptor.Descriptor(
 )
 
 
-_QUERY_ALL_MARKET = _descriptor.Descriptor(
-  name='query_all_market',
-  full_name='stock_hq.query_all_market',
+_QUERY_REALTIME = _descriptor.Descriptor(
+  name='query_realtime',
+  full_name='stock_hq.query_realtime',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='stock_hq.query_all_market.status', index=0,
+      name='status', full_name='stock_hq.query_realtime.status', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='code', full_name='stock_hq.query_all_market.code', index=1,
+      name='code', full_name='stock_hq.query_realtime.code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -104,7 +104,7 @@ _QUERY_ALL_MARKET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=89,
-  serialized_end=137,
+  serialized_end=135,
 )
 
 
@@ -386,12 +386,12 @@ _HQ_STRUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=140,
-  serialized_end=744,
+  serialized_start=138,
+  serialized_end=742,
 )
 
 DESCRIPTOR.message_types_by_name['query_struct'] = _QUERY_STRUCT
-DESCRIPTOR.message_types_by_name['query_all_market'] = _QUERY_ALL_MARKET
+DESCRIPTOR.message_types_by_name['query_realtime'] = _QUERY_REALTIME
 DESCRIPTOR.message_types_by_name['hq_struct'] = _HQ_STRUCT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -402,12 +402,12 @@ query_struct = _reflection.GeneratedProtocolMessageType('query_struct', (_messag
   ))
 _sym_db.RegisterMessage(query_struct)
 
-query_all_market = _reflection.GeneratedProtocolMessageType('query_all_market', (_message.Message,), dict(
-  DESCRIPTOR = _QUERY_ALL_MARKET,
+query_realtime = _reflection.GeneratedProtocolMessageType('query_realtime', (_message.Message,), dict(
+  DESCRIPTOR = _QUERY_REALTIME,
   __module__ = 'stock_hq_pb2'
-  # @@protoc_insertion_point(class_scope:stock_hq.query_all_market)
+  # @@protoc_insertion_point(class_scope:stock_hq.query_realtime)
   ))
-_sym_db.RegisterMessage(query_all_market)
+_sym_db.RegisterMessage(query_realtime)
 
 hq_struct = _reflection.GeneratedProtocolMessageType('hq_struct', (_message.Message,), dict(
   DESCRIPTOR = _HQ_STRUCT,
@@ -424,8 +424,8 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=747,
-  serialized_end=1091,
+  serialized_start=745,
+  serialized_end=1083,
   methods=[
   _descriptor.MethodDescriptor(
     name='QA_fetch_p2p',
@@ -464,11 +464,11 @@ _STOCKHQSERVICE = _descriptor.ServiceDescriptor(
     options=None,
   ),
   _descriptor.MethodDescriptor(
-    name='QA_fetch_all_market',
-    full_name='stock_hq.StockHQService.QA_fetch_all_market',
+    name='QA_fetch_realtime',
+    full_name='stock_hq.StockHQService.QA_fetch_realtime',
     index=4,
     containing_service=None,
-    input_type=_QUERY_ALL_MARKET,
+    input_type=_QUERY_REALTIME,
     output_type=_HQ_STRUCT,
     options=None,
   ),
@@ -517,9 +517,9 @@ try:
           request_serializer=query_struct.SerializeToString,
           response_deserializer=hq_struct.FromString,
           )
-      self.QA_fetch_all_market = channel.stream_stream(
-          '/stock_hq.StockHQService/QA_fetch_all_market',
-          request_serializer=query_all_market.SerializeToString,
+      self.QA_fetch_realtime = channel.unary_stream(
+          '/stock_hq.StockHQService/QA_fetch_realtime',
+          request_serializer=query_realtime.SerializeToString,
           response_deserializer=hq_struct.FromString,
           )
 
@@ -556,7 +556,7 @@ try:
       context.set_details('Method not implemented!')
       raise NotImplementedError('Method not implemented!')
 
-    def QA_fetch_all_market(self, request_iterator, context):
+    def QA_fetch_realtime(self, request, context):
       """rpc RouteChat (stream long) returns (stream long_hq);
       """
       context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -586,9 +586,9 @@ try:
             request_deserializer=query_struct.FromString,
             response_serializer=hq_struct.SerializeToString,
         ),
-        'QA_fetch_all_market': grpc.stream_stream_rpc_method_handler(
-            servicer.QA_fetch_all_market,
-            request_deserializer=query_all_market.FromString,
+        'QA_fetch_realtime': grpc.unary_stream_rpc_method_handler(
+            servicer.QA_fetch_realtime,
+            request_deserializer=query_realtime.FromString,
             response_serializer=hq_struct.SerializeToString,
         ),
     }
@@ -621,7 +621,7 @@ try:
       # missing associated documentation comment in .proto file
       pass
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
-    def QA_fetch_all_market(self, request_iterator, context):
+    def QA_fetch_realtime(self, request, context):
       """rpc RouteChat (stream long) returns (stream long_hq);
       """
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
@@ -653,7 +653,7 @@ try:
       pass
       raise NotImplementedError()
     QA_fetch_s2p.future = None
-    def QA_fetch_all_market(self, request_iterator, timeout, metadata=None, with_call=False, protocol_options=None):
+    def QA_fetch_realtime(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
       """rpc RouteChat (stream long) returns (stream long_hq);
       """
       raise NotImplementedError()
@@ -666,23 +666,23 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_all_market'): query_all_market.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_p2p'): query_struct.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_p2s'): query_struct.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_realtime'): query_realtime.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_s2p'): query_struct.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_s2s'): query_struct.FromString,
     }
     response_serializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_all_market'): hq_struct.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_p2p'): hq_struct.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_p2s'): hq_struct.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_realtime'): hq_struct.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_s2p'): hq_struct.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_s2s'): hq_struct.SerializeToString,
     }
     method_implementations = {
-      ('stock_hq.StockHQService', 'QA_fetch_all_market'): face_utilities.stream_stream_inline(servicer.QA_fetch_all_market),
       ('stock_hq.StockHQService', 'QA_fetch_p2p'): face_utilities.unary_unary_inline(servicer.QA_fetch_p2p),
       ('stock_hq.StockHQService', 'QA_fetch_p2s'): face_utilities.unary_stream_inline(servicer.QA_fetch_p2s),
+      ('stock_hq.StockHQService', 'QA_fetch_realtime'): face_utilities.unary_stream_inline(servicer.QA_fetch_realtime),
       ('stock_hq.StockHQService', 'QA_fetch_s2p'): face_utilities.stream_unary_inline(servicer.QA_fetch_s2p),
       ('stock_hq.StockHQService', 'QA_fetch_s2s'): face_utilities.stream_stream_inline(servicer.QA_fetch_s2s),
     }
@@ -697,23 +697,23 @@ try:
     file not marked beta) for all further purposes. This function was
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_all_market'): query_all_market.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_p2p'): query_struct.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_p2s'): query_struct.SerializeToString,
+      ('stock_hq.StockHQService', 'QA_fetch_realtime'): query_realtime.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_s2p'): query_struct.SerializeToString,
       ('stock_hq.StockHQService', 'QA_fetch_s2s'): query_struct.SerializeToString,
     }
     response_deserializers = {
-      ('stock_hq.StockHQService', 'QA_fetch_all_market'): hq_struct.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_p2p'): hq_struct.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_p2s'): hq_struct.FromString,
+      ('stock_hq.StockHQService', 'QA_fetch_realtime'): hq_struct.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_s2p'): hq_struct.FromString,
       ('stock_hq.StockHQService', 'QA_fetch_s2s'): hq_struct.FromString,
     }
     cardinalities = {
-      'QA_fetch_all_market': cardinality.Cardinality.STREAM_STREAM,
       'QA_fetch_p2p': cardinality.Cardinality.UNARY_UNARY,
       'QA_fetch_p2s': cardinality.Cardinality.UNARY_STREAM,
+      'QA_fetch_realtime': cardinality.Cardinality.UNARY_STREAM,
       'QA_fetch_s2p': cardinality.Cardinality.STREAM_UNARY,
       'QA_fetch_s2s': cardinality.Cardinality.STREAM_STREAM,
     }

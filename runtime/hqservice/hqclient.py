@@ -2,6 +2,7 @@
 from __future__ import print_function
 
 import grpc
+import datetime
 
 import stock_hq_pb2
 import stock_hq_pb2_grpc
@@ -22,7 +23,11 @@ def gen():
     for item in stock_list:
         yield stock_hq_pb2.query_struct(code=item, type='1min')
 
+def quo_gen():
+    #while datetime.datetime.now()
 
+    for i in range(100000):
+        yield stock_hq_pb2.query_realtime(code=' '.join(stock_list))
 class QA_Runtime_client:
     def __init__(self, *args, **kwargs):
         self.channel = grpc.insecure_channel('192.168.4.239:50052')
@@ -59,6 +64,14 @@ class QA_Runtime_client:
         print([(response.code, response.open, response.high,
                 response.low, response.close, response.datetime) for response in resp])
 
+
+    def quotation(self):
+        for i in range(10000):
+            resp=self.stub.QA_fetch_realtime(stock_hq_pb2.query_realtime(code=' '.join(stock_list)))
+            
+            #print(resp)
+            print([(resp_.code,resp_.price) for resp_ in resp])
+
     # 订阅(直到结束)
     def subscribe(self, code, type='1min'):
         pass
@@ -69,4 +82,4 @@ class QA_Runtime_client:
 
 
 if __name__ == '__main__':
-    QA_Runtime_client().s2s()
+    print(QA_Runtime_client().quotation())
