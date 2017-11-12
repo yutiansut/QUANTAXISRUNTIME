@@ -29,6 +29,7 @@ class StockHQService(stock_hq_pb2_grpc.StockHQServiceServicer):
     def QA_fetch_realtime(self, request, context):
 
         for item in quotation(str(request.code).split()):
+            #print(item)
             yield item
 
 
