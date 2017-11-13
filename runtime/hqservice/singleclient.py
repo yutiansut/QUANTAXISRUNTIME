@@ -50,13 +50,12 @@ class QA_Runtime_single_client:
         self._sub_code = []
         self._res = queue.Queue(maxsize=100)
 
-
+    def _req_history_bar(self,code,lens):
+        data=s
 
     def _quotation_(self, code):
         _t=datetime.datetime.now()
         data,time=q(code)
-        print(len(data))
-        print(datetime.datetime.now()-_t)
         return data,time
 
     def connect(self):
@@ -99,7 +98,7 @@ class QA_Runtime_single_client:
             else:
                 pass
 
-            #time.sleep(1)
+            time.sleep(2)
 
 
     def ReqDepMarketData(self, code):
@@ -117,6 +116,26 @@ class QA_Runtime_single_client:
         if data is None:
             raise Exception
     # 订阅(直到结束)
+
+    def ReqHistoryBar(self, code,lens):
+        _job = req_job('self._req_history_bar({},{})'.format(
+            code,lens), 'self._OnReqHistoryBar()')
+        self._callback_queue.put(_job)
+
+    def _OnReqHistoryBar(self):
+        data = self._res.get()
+        if data is not None:
+            self.OnReqHistoryBar(data)
+
+    def OnReqHistoryBar(self,data):
+
+        if data is None:
+            raise Exception
+    # 订阅(直到结束)
+
+
+
+
 
 
     def Subscribe(self, code=stock_list):
