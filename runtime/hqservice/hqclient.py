@@ -4,19 +4,19 @@ from __future__ import print_function
 import asyncio
 import concurrent
 import datetime
+import queue
 import threading
 import time
-import queue
 from concurrent.futures import ThreadPoolExecutor
 from threading import Thread, Timer
 
 import grpc
+import pandas as pd
 from aiogrpc import insecure_channel
 
-import stock_hq_pb2
-import stock_hq_pb2_grpc
-import pandas as pd
-from parser_proto import parse_from_proto
+from . import stock_hq_pb2, stock_hq_pb2_grpc
+from .parser_proto import parse_from_proto
+
 """
 有四种通信模式:
 
@@ -137,7 +137,7 @@ class QA_Runtime_client:
                 self.OnSubscribe([_x for _x in _data])
             else:
                 pass
-            time.sleep(1)
+            time.sleep(0.001)
 
     async def asyReqDepthMarketData(self, code):
 
@@ -145,20 +145,25 @@ class QA_Runtime_client:
 
     def ReqDepMarketData(self, code):
         _job = req_job('self._quotation({})'.format(
-            code), 'self.OnReqDepthMarketData()')
+            code), 'self._OnReqDepthMarketData()')
         self._callback_queue.put(_job)
 
-    def OnReqDepthMarketData(self):
+    def _OnReqDepthMarketData(self):
         data = self._res.get()
         if data is not None:
-            #print(data[0])
+            self.OnReqDepthMarketData(data)
+
+    def OnReqDepthMarketData(self,data):
+
+        if data is not None:
+            # print(data[0])
             print(parse_from_proto(data))
-            #print(pd.DataFrame([data[0]]))
+            # print(pd.DataFrame([data[0]]))
 
     # 订阅(直到结束)
     def Subscribe(self, code=stock_list):
 
-        print('SUB {}'.format(code))
+        #print('SUB {}'.format(code))
         self._sub_code.extend(code)
 
     def OnSubscribe(self, data):
@@ -170,9 +175,9 @@ class QA_Runtime_client:
             print('wrong')
 
     def Unsubscribe(self, code):
-        print('UNSUB {}'.format(code))
+        #print('UNSUB {}'.format(code))
         self._sub_code = list(set(self._sub_code).difference(set(code)))
-        print(self._sub_code)
+        #print(self._sub_code)
 
     def _subscribe(self, code):
         asyncio.run_coroutine_threadsafe(
@@ -186,10 +191,10 @@ if __name__ == '__main__':
 
     client = QA_Runtime_client(broker='192.168.4.239:50052')
     client.connect()
-    #print(threading.enumerate())
+    # print(threading.enumerate())
     # client.Subscribe()
     client.Subscribe(stock_list)
-    time.sleep(3)
+    #time.sleep(3)
     client.Unsubscribe(['000001'])
     client.ReqDepMarketData(['000001'])
     # client.subscribe()

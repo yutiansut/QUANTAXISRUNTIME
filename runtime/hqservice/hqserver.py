@@ -3,10 +3,10 @@ import time
 
 import grpc
 
-import stock_hq_pb2
-import stock_hq_pb2_grpc
+from . import stock_hq_pb2
+from . import stock_hq_pb2_grpc
 #import stock_min_pb2
-from fetcher import QA_Fetcher, QA_Fetcher_long, quotation
+from .fetcher import QA_Fetcher, QA_Fetcher_long, quotation
 
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
@@ -34,7 +34,7 @@ class StockHQService(stock_hq_pb2_grpc.StockHQServiceServicer):
 
 
 def serve():
-    server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+    server = grpc.server(futures.ThreadPoolExecutor(max_workers=1))
     stock_hq_pb2_grpc.add_StockHQServiceServicer_to_server(
         StockHQService(), server)
     server.add_insecure_port('[::]:50052')

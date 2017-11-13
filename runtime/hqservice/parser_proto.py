@@ -1,4 +1,4 @@
-from stock_hq_pb2 import hq_struct
+from .stock_hq_pb2 import hq_struct
 import pandas as pd
 
 
@@ -8,10 +8,11 @@ def parse_from_proto(data):
                        'bid2', 'bid_vol2', 'ask3', 'ask_vol3', 'bid3', 'bid_vol3', 'ask4',
                        'ask_vol4', 'bid4', 'bid_vol4', 'ask5', 'ask_vol5', 'bid5', 'bid_vol5']
     if isinstance(data,list):
-        return pd.DataFrame([[_.datetime,_.last_close,_.code,_.open,_.high,_.low,_.price,_.cur_vol,_.s_vol,
+        data=pd.DataFrame([[_.datetime,_.last_close,_.code,_.open,_.high,_.low,_.price,_.cur_vol,_.s_vol,
                               _.b_vol,_.volume,_.ask1,_.ask_vol1,_.bid1,_.bid_vol1,_.ask2,_.ask_vol2,_.bid2,_.bid_vol2,
                               _.ask3,_.ask_vol3,_.bid3,_.bid_vol3, _.ask4,_.ask_vol4,_.bid4,_.bid_vol4, 
                               _.ask5,_.ask_vol5,_.bid5,_.bid_vol5 ] for _ in data],columns=mask)
+        return data.set_index('code',drop=False)
     else:
         return parse_from_proto([data])
             

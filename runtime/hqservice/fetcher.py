@@ -27,7 +27,10 @@ from concurrent.futures import as_completed, wait
 from pytdx.hq import TdxHq_API
 from QUANTAXIS.QAFetch.QATdx_adv import QA_Tdx_Executor
 import datetime
-from stock_hq_pb2 import hq_struct
+try:
+    from .stock_hq_pb2 import hq_struct
+except:
+    from stock_hq_pb2 import hq_struct
 
 
 def __select_market_code(code):
@@ -85,10 +88,16 @@ def _base_realtime_changer(_data,_time):
     data.datetime = str(_time)
     return data
 def changer_realtime(pack, _time=datetime.datetime.now()):
+    data=[]
     try:
-        #print(len(pack))
-
-        return [_base_realtime_changer(_data,_time) for item in pack for _data in item ]
+        if pack is not None:
+            for item in pack:
+                if item is not None:
+                    for _data in item:
+                        if _data is not None:
+                            data.append(_base_realtime_changer(_data,_time))
+                        
+        return data
 
     except Exception as e:
         pass
@@ -150,10 +159,18 @@ def QA_Fetcher_long(code, type_):
 
 
 def quotation(code):
-    executor = QA_Tdx_Executor(thread_num=4)
-    _data,_time=executor.get_realtime_concurrent(code)
+    _data,_time=_quotation(code)
+    #print(_data)
     return changer_realtime(_data,_time)
 
+
+def _quotation(code):
+    executor = QA_Tdx_Executor(thread_num=1)
+    _data,_time=executor.get_realtime_concurrent(code)
+    return _data,_time
 if __name__ == '__main__':
+    import QUANTAXIS as QA
+    stock_list=QA.QA_fetch_stock_block_adv().code
     # print(QA_Fetcher_long('000001','9'))
-    print(quotation(['000001','000002']))
+    for i in range(100):
+        print(_quotation(stock_list))
