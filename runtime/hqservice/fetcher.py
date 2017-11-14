@@ -168,9 +168,15 @@ def _quotation(code):
     executor = QA_Tdx_Executor(thread_num=1)
     _data,_time=executor.get_realtime_concurrent(code)
     return _data,_time
+
+def _query_k(code,_type,lens):
+    executor = QA_Tdx_Executor(thread_num=1)
+    _data=executor.get_security_bars(code,_type,lens)
+    return _data
 if __name__ == '__main__':
     import QUANTAXIS as QA
     stock_list=QA.QA_fetch_stock_block_adv().code
     # print(QA_Fetcher_long('000001','9'))
-    for i in range(100):
-        print(_quotation(stock_list))
+    # for i in range(100):
+    #     print(_quotation(stock_list))
+    print(_query_k(stock_list[0:10],'15min',1))

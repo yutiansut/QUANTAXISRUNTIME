@@ -17,6 +17,7 @@ from aiogrpc import insecure_channel
 from . import stock_hq_pb2, stock_hq_pb2_grpc
 from .parser_proto import parse_from_proto
 from .fetcher import _quotation as q
+from .fetcher import _query_k as qk
 """
 有四种通信模式:
 
@@ -50,8 +51,9 @@ class QA_Runtime_single_client:
         self._sub_code = []
         self._res = queue.Queue(maxsize=100)
 
-    def _req_history_bar(self,code,lens):
-        data=s
+    def _req_history_bar(self,code,_type,lens):
+        data=qk(code,_type,lens)
+        return data
 
     def _quotation_(self, code):
         _t=datetime.datetime.now()
@@ -69,6 +71,7 @@ class QA_Runtime_single_client:
             if self._callback_queue.qsize() > 0:
                 _job = self._callback_queue.get()
                 try:
+                    #print(_job.func)
                     _job.res = eval(_job.func)
                     if _job.res is not None:
                         self._res.put_nowait(_job.res)
@@ -117,9 +120,9 @@ class QA_Runtime_single_client:
             raise Exception
     # 订阅(直到结束)
 
-    def ReqHistoryBar(self, code,lens):
-        _job = req_job('self._req_history_bar({},{})'.format(
-            code,lens), 'self._OnReqHistoryBar()')
+    def ReqHistoryBar(self, code,_type,lens):
+        _job = req_job('self._req_history_bar({},\'{}\',{})'.format(
+            code,str(_type),lens), 'self._OnReqHistoryBar()')
         self._callback_queue.put(_job)
 
     def _OnReqHistoryBar(self):
