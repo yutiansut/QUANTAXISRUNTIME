@@ -91,12 +91,12 @@ class QA_Runtime_single_client:
 
             if len(self._sub_code) > 0:
 
-                print('before_q{}'.format(datetime.datetime.now()))
+                #print('before_q{}'.format(datetime.datetime.now()))
                 _data,_time = self._quotation_(self._sub_code)
-                print('after_q{}'.format(datetime.datetime.now()))
+                #print('after_q{}'.format(datetime.datetime.now()))
                 if _data is not None:
-                    self.OnSubscribe(_data)
-                    print('after_callback{}'.format(datetime.datetime.now()))
+                    self.OnSubscribe(_data,_time)
+                    #print('after_callback{}'.format(datetime.datetime.now()))
                 
             else:
                 pass
@@ -147,7 +147,7 @@ class QA_Runtime_single_client:
         #self.OnSubscribe(self._quotation_(self._sub_code)[0])
         
 
-    def OnSubscribe(self, data):
+    def OnSubscribe(self, data,time):
         # data=self._res.get()
         if data is not None:
             print('CALLBACK')
