@@ -14,7 +14,8 @@ class sc(QA_Runtime_single_client):
 
     def OnSubscribe(self, data,time):
         try:
-            print(len(data[0]))
+            data['datetime']=time
+            print(data.head())
         except:
             pass
 
@@ -23,8 +24,8 @@ stock_list = QA.QA_fetch_stock_block_adv().code
 
 c = sc()
 c.connect()
-c.ReqDepMarketData(['000001'])
-c.ReqHistoryBar(stock_list[0:500],'15min',5)
-#c.Subscribe(stock_list[0:500])
+#c.ReqDepMarketData(['000001'])
+#c.ReqHistoryBar(stock_list[0:500],'15min',5)
+c.Subscribe(stock_list[0:500])
 
 print(c._sub_code)
